@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAccountsTable extends Migration
+class CreateStoreBranchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateAccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('accounts', function (Blueprint $table) {
+        Schema::create('store_branches', function (Blueprint $table) {
             $table->id();
-            $table->boolean('is_admin');
-            $table->string('username', 64)->unique();
-            $table->string('password');
+            $table->string('store_name', 64)->unique();
+            $table->string('address');
+            $table->unsignedBigInteger('account_id');
+
             $table->timestamps();
+            $table->foreign('account_id')->references('id')->on('accounts');
         });
     }
 
@@ -29,6 +31,6 @@ class CreateAccountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('accounts');
+        Schema::dropIfExists('store_branches');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStoreBranchesTable extends Migration
+class CreateBeveragesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class CreateStoreBranchesTable extends Migration
      */
     public function up()
     {
-        Schema::create('store__branches', function (Blueprint $table) {
+        Schema::create('beverages', function (Blueprint $table) {
             $table->id();
+            $table->string('beverage_name', 64);
+            $table->enum('type', ['food', 'drink', 'snack', 'other'])->default('other');
+            $table->integer('price');
+            $table->string('description')->nullable();
+
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateStoreBranchesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('store__branches');
+        Schema::dropIfExists('beverages');
     }
 }

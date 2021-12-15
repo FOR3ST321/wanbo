@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\StoreBranch;
-use App\Http\Requests\StoreStoreBranchRequest;
-use App\Http\Requests\UpdateStoreBranchRequest;
+use App\Models\Order;
+use App\Http\Requests\StoreOrderRequest;
+use App\Http\Requests\UpdateOrderRequest;
 
-class StoreBranchController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class StoreBranchController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreStoreBranchRequest  $request
+     * @param  \App\Http\Requests\StoreOrderRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreStoreBranchRequest $request)
+    public function store(StoreOrderRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class StoreBranchController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\StoreBranch  $storeBranch
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(StoreBranch $storeBranch)
+    public function show(Order $order)
     {
         //
     }
@@ -53,10 +53,10 @@ class StoreBranchController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\StoreBranch  $storeBranch
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(StoreBranch $storeBranch)
+    public function edit(Order $order)
     {
         //
     }
@@ -64,11 +64,11 @@ class StoreBranchController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateStoreBranchRequest  $request
-     * @param  \App\Models\StoreBranch  $storeBranch
+     * @param  \App\Http\Requests\UpdateOrderRequest  $request
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateStoreBranchRequest $request, StoreBranch $storeBranch)
+    public function update(UpdateOrderRequest $request, Order $order)
     {
         //
     }
@@ -76,10 +76,10 @@ class StoreBranchController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\StoreBranch  $storeBranch
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StoreBranch $storeBranch)
+    public function destroy(Order $order)
     {
         //
     }
