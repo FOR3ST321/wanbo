@@ -53,7 +53,7 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
@@ -62,7 +62,7 @@
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-th-large"></i>
         </a>
-      </li>
+      </li> --}}
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -122,15 +122,6 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -186,41 +177,6 @@
                 <a href="../layout/collapsed-sidebar.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Collapsed Sidebar</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Charts
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../charts/chartjs.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>ChartJS</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../charts/flot.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Flot</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../charts/inline.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inline</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../charts/uplot.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>uPlot</p>
                 </a>
               </li>
             </ul>
@@ -284,70 +240,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Forms
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../forms/general.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>General Elements</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../forms/advanced.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Advanced Elements</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../forms/editors.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Editors</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../forms/validation.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Validation</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Tables
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../tables/simple.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../tables/data.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../tables/jsgrid.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+
+
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="../calendar.html" class="nav-link">
@@ -603,49 +497,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-search"></i>
-              <p>
-                Search
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../search/simple.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Search</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../search/enhanced.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Enhanced</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-header">MISCELLANEOUS</li>
-          <li class="nav-item">
-            <a href="../../iframe.html" class="nav-link">
-              <i class="nav-icon fas fa-ellipsis-h"></i>
-              <p>Tabbed IFrame Plugin</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
-              <p>Documentation</p>
-            </a>
-          </li>
           <li class="nav-header">MULTI LEVEL EXAMPLE</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-circle nav-icon"></i>
-              <p>Level 1</p>
-            </a>
-          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-circle"></i>
@@ -698,12 +550,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-circle nav-icon"></i>
-              <p>Level 1</p>
-            </a>
-          </li>
           <li class="nav-header">LABELS</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -737,7 +583,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Icons</h1>
+            <h1>TEST PAGE</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -757,13 +603,7 @@
             <h3 class="card-title">Icons</h3>
           </div> <!-- /.card-body -->
           <div class="card-body">
-            <p>You can use any font library you like with AdminLTE 3.</p>
-            <strong>Recommendations</strong>
-            <div>
-              <a href="https://fontawesome.com/">Font Awesome</a><br>
-              <a href="https://useiconic.com/open/">Iconic Icons</a><br>
-              <a href="https://ionicons.com/">Ion Icons</a><br>
-            </div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, dolor ullam! Quos consequatur neque aperiam quae molestiae, vero provident, nisi facilis illo beatae odio veniam nobis consectetur eum dolores sapiente?</p>
           </div><!-- /.card-body -->
         </div>
       </div><!-- /.container-fluid -->
