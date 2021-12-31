@@ -15,7 +15,9 @@ class PackageController extends Controller
      */
     public function index()
     {
-        //
+        return view('/admin/page/packageMainMenu', [
+            'active' => ['packages', false, null],
+        ]);
     }
 
     /**

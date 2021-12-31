@@ -15,7 +15,9 @@ class FoodOrderController extends Controller
      */
     public function index()
     {
-        //
+        return view('/admin/page/foodOrderMainMenu', [
+            'active' => ['food', true, 'food-order'],
+        ]);
     }
 
     /**
