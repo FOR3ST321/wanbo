@@ -5,6 +5,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\BeverageController;
+use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\FoodOrderController;
 
 /*
@@ -31,3 +32,7 @@ Route::resource('/wanboAdmin/beverages', BeverageController::class);
 Route::get('/wanboAdmin/reportSummary', [ReportController::class, 'reportSummary']);
 Route::get('/wanboAdmin/paymentHistory', [ReportController::class, 'paymentHistory']);
 Route::get('/wanboAdmin/orderHistory', [ReportController::class, 'orderHistory']);
+
+
+Route::get('/wanbo', [FrontEndController::class, 'index']);
+Route::get('/wanbo/login', [FrontEndController::class, 'login']);
