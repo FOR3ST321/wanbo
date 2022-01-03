@@ -15,8 +15,9 @@ class BeverageController extends Controller
      */
     public function index()
     {
-        return view('/admin/page/foodListMainMenu', [
+        return view('/admin/page/foodList/foodListMainMenu', [
             'active' => ['food', true, 'food-list'],
+            'beverages' => Beverage::all()
         ]);
     }
 
@@ -49,7 +50,10 @@ class BeverageController extends Controller
      */
     public function show(Beverage $beverage)
     {
-        //
+        return view('/admin/page/foodList/showFoodDetail', [
+            'active' => ['food', true, 'food-list'],
+            'beverage' => $beverage
+        ]);
     }
 
     /**

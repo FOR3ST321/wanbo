@@ -54,7 +54,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/wanboAdmin/foodList" class="nav-link <?= $active[2]=='food-list' ? 'active' : '' ?>">
+                            <a href="/wanboAdmin/beverages" class="nav-link <?= $active[2]=='food-list' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Food List</p>
                             </a>
