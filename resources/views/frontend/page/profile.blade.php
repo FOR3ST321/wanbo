@@ -1,7 +1,8 @@
 @extends('frontend.partial.headerfooter')
 
 @section('content')
-@if (session('error'))
+
+    @if (session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}
         </div>
@@ -12,14 +13,18 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-12 col-md-10">
+                    <div class="hero-content">
+                        <h2>Discover places near you</h2>
+                        <h4>This is the best guide of your city</h4>
+                    </div>
                     <!-- Hero Search Form -->
                     <div class="hero-search-form">
                         <!-- Tabs -->
                         <div class="nav nav-tabs" id="heroTab" role="tablist">
                             <a class="nav-item nav-link active" id="nav-places-tab" data-toggle="tab" href="#nav-places"
-                                role="tab" aria-controls="nav-places" aria-selected="true">Login</a>
+                                role="tab" aria-controls="nav-places" aria-selected="true">Places</a>
                             <a class="nav-item nav-link" id="nav-events-tab" data-toggle="tab" href="#nav-events" role="tab"
-                                aria-controls="nav-events" aria-selected="false">Register</a>
+                                aria-controls="nav-events" aria-selected="false">Events</a>
                         </div>
                         <!-- Tabs Content -->
                         <div class="tab-content" id="nav-tabContent">

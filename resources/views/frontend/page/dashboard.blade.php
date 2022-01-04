@@ -1,7 +1,11 @@
 @extends('frontend.partial.headerfooter')
 
 @section('content')
-
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
 
     <!-- ***** Welcome Area Start ***** -->
     <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(/frontend/img/bg-img/hero-1.jpg);">

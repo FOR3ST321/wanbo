@@ -1,5 +1,5 @@
 @extends('admin.partial.headerfooter')
-
+{{-- @dump(auth()->user()); --}}
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">

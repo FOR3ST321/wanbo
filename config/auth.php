@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Account;
+
 return [
 
     /*
@@ -60,15 +62,15 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
-
         // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\Account::class,
         // ],
+
+        'users' => [
+            'driver' => 'database',
+            'table' => 'accounts',
+        ],
     ],
 
     /*

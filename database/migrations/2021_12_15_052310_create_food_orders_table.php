@@ -18,6 +18,7 @@ class CreateFoodOrdersTable extends Migration
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('beverage_id');
             $table->integer('quantity');
+            $table->enum('status', ['pending', 'canceled', 'success']);
     
             $table->timestamps();
             $table->foreign('order_id')->references('id')->on('orders');

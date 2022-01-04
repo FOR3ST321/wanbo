@@ -10,7 +10,7 @@ class FrontEndController extends Controller
         return view('/frontend/page/dashboard');
     }
 
-    public function login(){
-        return view('/frontend/page/login');
+    public function profile(){
+        return view('/frontend/page/profile');
     }
 }

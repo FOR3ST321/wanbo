@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\BackEndController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\BeverageController;
 use App\Http\Controllers\FrontEndController;
@@ -23,7 +25,7 @@ Route::get('/', function () {
     return redirect('/wanboAdmin'); //temporary, selagi belum bikin login auth
 });
 
-Route::get('/wanboAdmin', [OrderController::class, 'index']);
+Route::get('/wanboAdmin', [OrderController::class, 'index'])->middleware('is_admin');
 Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
 // Route::get('/wanboAdmin/foodList', [BeverageController::class, 'index']);
 Route::get('/wanboAdmin/foodOrder', [FoodOrderController::class, 'index']);
@@ -34,5 +36,23 @@ Route::get('/wanboAdmin/paymentHistory', [ReportController::class, 'paymentHisto
 Route::get('/wanboAdmin/orderHistory', [ReportController::class, 'orderHistory']);
 
 
-Route::get('/wanbo', [FrontEndController::class, 'index']);
-Route::get('/wanbo/login', [FrontEndController::class, 'login']);
+
+Route::get('/wanboAdmin/logout', [AuthController::class, 'logoutAdmin']); 
+Route::post('/wanboAdmin/auth', [AuthController::class, 'authenticate']);
+
+
+Route::middleware(['guest'])->group(function () {
+    //guest - bisa diakses tanpa auth (kayanya. belum test)
+    Route::get('/wanbo/login', [AuthController::class, 'loginPageUser']);
+    Route::get('/wanboAdmin/login', [AuthController::class, 'loginPageAdmin']);
+});
+
+Route::middleware(['is_admin'])->group(function () {
+    //admin - buat wanbo admin
+});
+
+Route::middleware(['is_user'])->group(function () {
+    //admin - buat wanbo user
+    Route::get('/wanbo', [FrontEndController::class, 'index']);
+    Route::get('/wanbo/profile', [FrontEndController::class, 'profile'])->middleware('is_user');;
+});
