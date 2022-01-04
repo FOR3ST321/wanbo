@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PackageController;
@@ -24,10 +25,12 @@ Route::get('/', function () {
 });
 
 Route::get('/wanboAdmin', [OrderController::class, 'index']);
-Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
+// Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
 // Route::get('/wanboAdmin/foodList', [BeverageController::class, 'index']);
 Route::get('/wanboAdmin/foodOrder', [FoodOrderController::class, 'index']);
 Route::resource('/wanboAdmin/beverages', BeverageController::class);
+Route::resource('/wanboAdmin/packages', PackageController::class);
+Route::resource('/wanboAdmin/rooms', RoomController::class);
 
 Route::get('/wanboAdmin/reportSummary', [ReportController::class, 'reportSummary']);
 Route::get('/wanboAdmin/paymentHistory', [ReportController::class, 'paymentHistory']);

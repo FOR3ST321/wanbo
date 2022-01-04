@@ -35,13 +35,28 @@
 
                 <li class="nav-header">MANAGE</li>
 
-                <li class="nav-item">
-                    <a href="/wanboAdmin/packages" class="nav-link <?= $active[0]=='packages' ? 'active' : '' ?>">
+                <li class="nav-item <?= $active[1] && $active[0]=='packages' ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= $active[0]=='packages' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-box-open"></i>
                         <p>
                             Packages
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/wanboAdmin/packages" class="nav-link <?= $active[2]=='package-list' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Package List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/wanboAdmin/rooms" class="nav-link <?= $active[2]=='room-list' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Room List</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item <?= $active[1] && $active[0]=='food' ? 'menu-open' : '' ?>">

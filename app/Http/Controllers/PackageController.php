@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use App\Http\Requests\StorePackageRequest;
 use App\Http\Requests\UpdatePackageRequest;
+use App\Models\Room;
 
 class PackageController extends Controller
 {
@@ -15,8 +16,9 @@ class PackageController extends Controller
      */
     public function index()
     {
-        return view('/admin/page/packageMainMenu', [
-            'active' => ['packages', false, null],
+        return view('/admin/page/package/packageMainMenu', [
+            'active' => ['packages', true, 'package-list'],
+            'packages' => Package::all()
         ]);
     }
 
@@ -27,7 +29,9 @@ class PackageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/page/package/insertPackage', [
+            'active' => ['packages', true, 'package-list'],
+        ]);
     }
 
     /**
@@ -49,7 +53,11 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-        //
+        return view('admin/page/package/showPackage', [
+            'active' => ['packages', true, 'package-list'],
+            'rooms' => Room::all(),
+            'package' => $package
+        ]);
     }
 
     /**
@@ -83,6 +91,8 @@ class PackageController extends Controller
      */
     public function destroy(Package $package)
     {
-        //
+        Package::destroy($package->id);
+
+        return redirect('/wanboAdmin/packages')->with('success', 'Package has been deleted!');
     }
 }

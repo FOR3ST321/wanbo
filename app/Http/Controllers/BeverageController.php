@@ -115,6 +115,6 @@ class BeverageController extends Controller
     {
         Beverage::destroy($beverage->id);
 
-        return redirect('/wanboAdmin/beverages')->with('success', 'Post has been deleted!');
+        return redirect('/wanboAdmin/beverages')->with('success', 'Beverage has been deleted!');
     }
 }

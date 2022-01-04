@@ -15,7 +15,10 @@ class RoomController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin/page/room/roomMainMenu',[
+            'active' => ['packages', true, 'room-list'],
+            'rooms' => Room::all()
+        ]);
     }
 
     /**
