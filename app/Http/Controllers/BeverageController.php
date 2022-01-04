@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Beverage;
 use App\Http\Requests\StoreBeverageRequest;
 use App\Http\Requests\UpdateBeverageRequest;
+use Illuminate\Http\Request;
 
 class BeverageController extends Controller
 {
@@ -28,7 +29,10 @@ class BeverageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/page/foodList/insertNewFood',[
+            'active' => ['food', true, 'food-list'],
+            'types' => ['other', 'food', 'drink', 'snack']
+        ]);
     }
 
     /**
@@ -37,9 +41,18 @@ class BeverageController extends Controller
      * @param  \App\Http\Requests\StoreBeverageRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBeverageRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'beverage_name' => 'required|max:64',
+            'price' => 'required|digits_between:0,100000',
+            'type' => 'required',
+            'description' => 'max:255'
+        ]);
+        
+        Beverage::create($validatedData);
+
+        return redirect('/wanboAdmin/beverages')->with('success', 'New beverage has been added!');
     }
 
     /**
@@ -64,7 +77,11 @@ class BeverageController extends Controller
      */
     public function edit(Beverage $beverage)
     {
-        //
+        return view('admin/page/foodList/editFoodDetail', [
+            'beverage' => $beverage,
+            'active' => ['food', true, 'food-list'],
+            'types' => ["other", "food", "drink", "snack"]
+        ]);
     }
 
     /**
@@ -74,9 +91,18 @@ class BeverageController extends Controller
      * @param  \App\Models\Beverage  $beverage
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBeverageRequest $request, Beverage $beverage)
+    public function update(Request $request, Beverage $beverage)
     {
-        //
+        $validatedData = $request->validate([
+            'beverage_name' => 'required|max:64',
+            'price' => 'required|digits_between:0,100000',
+            'type' => 'required',
+            'description' => 'max:255'
+        ]);
+
+        Beverage::where('id', $beverage->id)->update($validatedData);
+
+        return redirect('/wanboAdmin/beverages')->with('success', 'Beverage has been updated!');
     }
 
     /**
@@ -87,6 +113,8 @@ class BeverageController extends Controller
      */
     public function destroy(Beverage $beverage)
     {
-        //
+        Beverage::destroy($beverage->id);
+
+        return redirect('/wanboAdmin/beverages')->with('success', 'Post has been deleted!');
     }
 }

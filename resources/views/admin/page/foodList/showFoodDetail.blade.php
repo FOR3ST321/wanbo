@@ -29,8 +29,8 @@
                 <div class="card-body">
 
                     <a href="/wanboAdmin/beverages" class="btn btn-success"><span data-feather="arrow-left"></span> Back to food list</a>
-                    <a href="#" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
-                    <form action="#" method="POST" class="d-inline">
+                    <a href="/wanboAdmin/beverages/{{ $beverage->id }}/edit" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                    <form action="/wanboAdmin/beverages/{{ $beverage->id }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
                         <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
