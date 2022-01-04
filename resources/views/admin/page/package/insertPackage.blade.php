@@ -20,39 +20,38 @@
                     <form method="POST" action="/wanboAdmin/packages" class="mb-5"> 
                         @csrf
                         <div class="mb-3">
-                            <label for="beverage_name" class="form-label">Name</label>
-                            <input type="text" class="form-control @error('beverage_name') is-invalid @enderror" id="beverage_name" name="beverage_name" autofocus value="{{ old('beverage_name') }}">
-                            @error('beverage_name')
+                            <label for="package_name" class="form-label">Name</label>
+                            <input type="text" class="form-control @error('package_name') is-invalid @enderror" id="package_name" name="package_name" autofocus value="{{ old('package_name') }}">
+                            @error('package_name')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="type" class="form-label">Type</label>
-                            <select name="type" class="custom-select">
-                                @foreach ($types as $type)
-                                    @if (old('type') == $type)
-                                        <option value="{{ $type }}" selected>{{ $type }}</option>
-                                    @else
-                                        <option value="{{ $type }}">{{ $type }}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="price" class="form-label">Price</label>
-                            <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price') }}">
-                            @error('price')
+                            <label for="price_per_hour" class="form-label">Price/hour</label>
+                            <input type="number" class="form-control @error('price_per_hour') is-invalid @enderror" id="price_per_hour" name="price_per_hour" value="{{ old('price_per_hour') }}">
+                            @error('price_per_hour')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="computer_spec" class="form-label">Computer Spesification</label>
+                            <div class="form-floating">
+                                <textarea class="form-control @error('computer_spec') is-invalid @enderror" placeholder="Insert computer's spesification" name="computer_spec" id="computer_spec" >{{ old('computer_spec') }}</textarea>
+                                @error('computer_spec')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
                             <div class="form-floating">
-                                <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Insert beverage's description" name="description" id="description" >{{ old('description') }}</textarea>
+                                <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Insert package's description" name="description" id="description" >{{ old('description') }}</textarea>
                                 @error('description')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -60,7 +59,16 @@
                                 @enderror
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Insert Beverage</button>
+                        <div class="mb-3">
+                            <label for="photo_url" class="form-label">Photo url</label>
+                            <input type="text" class="form-control @error('photo_url') is-invalid @enderror" id="photo_url" name="photo_url" autofocus value="{{ old('photo_url') }}">
+                            @error('photo_url')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <button type="submit" class="btn btn-primary">Insert Package</button>
                     </form>
                 </div><!-- /.card-body -->
             </div>

@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Package Detail</h1>
+                    <h1>Room Detail</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -17,14 +17,14 @@
         <div class="container-fluid">
             <div class="card card-primary card-outline">
                 <div class="card-header">
-                    <h3 class="card-title">{{ $package->package_name }}</h3>
+                    <h3 class="card-title">{{ $room->room_name }}</h3>
                 </div> <!-- /.card-body -->
 
                 <div class="card-body">
 
-                    <a href="/wanboAdmin/packages" class="btn btn-success"><span data-feather="arrow-left"></span> Back to package list</a>
-                    <a href="/wanboAdmin/packages/{{ $package->id }}/edit" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
-                    <form action="/wanboAdmin/packages/{{ $package->id }}" method="POST" class="d-inline">
+                    <a href="/wanboAdmin/rooms" class="btn btn-success"><span data-feather="arrow-left"></span> Back to room list</a>
+                    <a href="/wanboAdmin/rooms/{{ $room->id }}/edit" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                    <form action="/wanboAdmin/rooms/{{ $room->id }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
                         <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
@@ -42,31 +42,22 @@
                         <tbody>
                             <tr>
                                 <td>Name</td>
-                                <td>{{ $package->package_name }}</td>
+                                <td>{{ $room->room_name }}</td>
                             </tr>
                             <tr>
-                                <td>Price/hour</td>
-                                <td>Rp. {{ $package->price_per_hour }}</td>
-                            </tr>
-                            <tr>
-                                <td>Computer Spec</td>
-                                <td>{{ $package->computer_spec }}</td>
-                            </tr>
-                            <tr>    
                                 <td>Desc</td>
-                                <td>{{ $package->description }}</td>
+                                <td>{{ $room->description }}</td>
                             </tr>
                             <tr>
-                                <td>Associated Room</td>
+                                <td>Package related</td>
                                 <td>
                                     <table>
-                                    @foreach ($rooms as $room)
-                                        @if ($room->package_id == $package->id)
+                                    @foreach ($packages as $package)
+                                        @if ($package->id == $room->package_id)
                                             <tr>
-                                                {{-- <td>{{ $loop->iteration }}</td> --}}
-                                                <td>{{ $room->room_name }}</td>
+                                                <td>{{ $package->package_name }}</td>
                                                 <td>
-                                                    <a href="/wanboAdmin/rooms/{{ $room->id }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
+                                                    <a href="/wanboAdmin/packages/{{ $package->id }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
                                                 </td>
                                             </tr>
                                         @endif
@@ -74,9 +65,15 @@
                                     </table>
                                 </td>
                             </tr>
-                            <tr>    
-                                <td>Photo</td>
-                                <td><img src="{{ $package->photo_url }}" alt="photo"></td>
+                            <tr>
+                                <td>Branch related</td>
+                                <td>
+                                    @foreach ($branches as $branch)
+                                        @if ($branch->id == $room->store_branch_id)
+                                            {{ $branch->store_name }}
+                                        @endif
+                                    @endforeach
+                                </td>
                             </tr>
                         </tbody>
                     </table>
