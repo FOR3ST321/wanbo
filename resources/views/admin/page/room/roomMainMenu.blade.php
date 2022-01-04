@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Beverage List</h1>
+                    <h1>Room List</h1>
                 </div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -25,13 +25,12 @@
         </div><!-- /.container-fluid -->
     </section>
 
-
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
             <div class="card card-primary card-outline">
                 <div class="card-header">
-                    <a href="/wanboAdmin/beverages/create" class="btn btn-primary">Insert new beverage</a>
+                    <a href="/wanboAdmin/rooms/create" class="btn btn-primary">Insert new room</a>
                 </div> <!-- /.card-body -->
                 <div class="card-body">
                     <table class="table table-striped table-sm">
@@ -39,20 +38,18 @@
                             <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Type</th>
                             <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($beverages as $beverage)
+                            @foreach ($rooms as $room)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $beverage->beverage_name }}</td>
-                                    <td>{{ $beverage->type }}</td>
+                                    <td>{{ $room->room_name }}</td>
                                     <td>
-                                        <a href="/wanboAdmin/beverages/{{ $beverage->id }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
-                                        <a href="/wanboAdmin/beverages/{{ $beverage->id }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></a>
-                                        <form action="/wanboAdmin/beverages/{{ $beverage->id }}" method="POST" class="d-inline">
+                                        <a href="/wanboAdmin/rooms/{{ $room->id }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
+                                        <a href="/wanboAdmin/rooms/{{ $room->id }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></a>
+                                        <form action="/wanboAdmin/rooms/{{ $room->id }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
                                         <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">

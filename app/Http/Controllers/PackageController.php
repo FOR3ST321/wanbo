@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use App\Http\Requests\StorePackageRequest;
 use App\Http\Requests\UpdatePackageRequest;
+use App\Models\Room;
+use Illuminate\Http\Request;
 
 class PackageController extends Controller
 {
@@ -15,8 +17,9 @@ class PackageController extends Controller
      */
     public function index()
     {
-        return view('/admin/page/packageMainMenu', [
-            'active' => ['packages', false, null],
+        return view('/admin/page/package/packageMainMenu', [
+            'active' => ['packages', true, 'package-list'],
+            'packages' => Package::all()
         ]);
     }
 
@@ -27,7 +30,9 @@ class PackageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/page/package/insertPackage', [
+            'active' => ['packages', true, 'package-list'],
+        ]);
     }
 
     /**
@@ -36,9 +41,19 @@ class PackageController extends Controller
      * @param  \App\Http\Requests\StorePackageRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePackageRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'package_name' => 'required|max:64',
+            'price_per_hour' => 'required|digits_between:0,100000',
+            'computer_spec' => 'max:255',
+            'description' => 'required|max:255',
+            'photo_url' => 'max:255'
+        ]);
+        
+        Package::create($validatedData);
+
+        return redirect('/wanboAdmin/packages')->with('success', 'New package has been added!');
     }
 
     /**
@@ -49,7 +64,11 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-        //
+        return view('admin/page/package/showPackage', [
+            'active' => ['packages', true, 'package-list'],
+            'rooms' => Room::all(),
+            'package' => $package
+        ]);
     }
 
     /**
@@ -60,7 +79,10 @@ class PackageController extends Controller
      */
     public function edit(Package $package)
     {
-        //
+        return view('admin/page/package/editPackage',[
+            'active' => ['packages', true, 'package-list'],
+            'package' => $package
+        ]);
     }
 
     /**
@@ -70,9 +92,19 @@ class PackageController extends Controller
      * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePackageRequest $request, Package $package)
+    public function update(Request $request, Package $package)
     {
-        //
+        $validatedData = $request->validate([
+            'package_name' => 'required|max:64',
+            'price_per_hour' => 'required|digits_between:0,100000',
+            'computer_spec' => 'max:255',
+            'description' => 'required|max:255',
+            'photo_url' => 'max:255'
+        ]);
+
+        Package::where('id', $package->id)->update($validatedData);
+
+        return redirect('/wanboAdmin/packages')->with('success', 'Package has been updated!');
     }
 
     /**
@@ -83,6 +115,8 @@ class PackageController extends Controller
      */
     public function destroy(Package $package)
     {
-        //
+        Package::destroy($package->id);
+
+        return redirect('/wanboAdmin/packages')->with('success', 'Package has been deleted!');
     }
 }

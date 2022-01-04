@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\BackEndController;
@@ -26,8 +27,6 @@ Route::get('/', function () {
 });
 
 
-
-
 Route::middleware(['guest'])->group(function () {
     //guest - bisa diakses tanpa auth (kayanya. belum test)
     Route::get('/wanbo/login', [AuthController::class, 'loginPageUser']);
@@ -40,7 +39,12 @@ Route::middleware(['is_admin'])->group(function () {
     Route::get('/wanboAdmin/logout', [AuthController::class, 'logoutAdmin']);
     Route::post('/wanboAdmin/auth', [AuthController::class, 'authenticate']);
 
-    Route::get('/wanboAdmin', [OrderController::class, 'index'])->middleware('is_admin');
+    // Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
+    // Route::get('/wanboAdmin/foodList', [BeverageController::class, 'index']);
+    Route::resource('/wanboAdmin/beverages', BeverageController::class);
+    Route::resource('/wanboAdmin/rooms', RoomController::class);
+
+    Route::get('/wanboAdmin', [OrderController::class, 'index']);
     Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
     // Route::get('/wanboAdmin/foodList', [BeverageController::class, 'index']);
     Route::get('/wanboAdmin/foodOrder', [FoodOrderController::class, 'index']);
