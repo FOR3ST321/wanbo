@@ -25,20 +25,7 @@ Route::get('/', function () {
     return redirect('/wanboAdmin'); //temporary, selagi belum bikin login auth
 });
 
-Route::get('/wanboAdmin', [OrderController::class, 'index'])->middleware('is_admin');
-Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
-// Route::get('/wanboAdmin/foodList', [BeverageController::class, 'index']);
-Route::get('/wanboAdmin/foodOrder', [FoodOrderController::class, 'index']);
-Route::resource('/wanboAdmin/beverages', BeverageController::class);
 
-Route::get('/wanboAdmin/reportSummary', [ReportController::class, 'reportSummary']);
-Route::get('/wanboAdmin/paymentHistory', [ReportController::class, 'paymentHistory']);
-Route::get('/wanboAdmin/orderHistory', [ReportController::class, 'orderHistory']);
-
-
-
-Route::get('/wanboAdmin/logout', [AuthController::class, 'logoutAdmin']); 
-Route::post('/wanboAdmin/auth', [AuthController::class, 'authenticate']);
 
 
 Route::middleware(['guest'])->group(function () {
@@ -49,6 +36,19 @@ Route::middleware(['guest'])->group(function () {
 
 Route::middleware(['is_admin'])->group(function () {
     //admin - buat wanbo admin
+
+    Route::get('/wanboAdmin/logout', [AuthController::class, 'logoutAdmin']);
+    Route::post('/wanboAdmin/auth', [AuthController::class, 'authenticate']);
+
+    Route::get('/wanboAdmin', [OrderController::class, 'index'])->middleware('is_admin');
+    Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
+    // Route::get('/wanboAdmin/foodList', [BeverageController::class, 'index']);
+    Route::get('/wanboAdmin/foodOrder', [FoodOrderController::class, 'index']);
+    Route::resource('/wanboAdmin/beverages', BeverageController::class);
+
+    Route::get('/wanboAdmin/reportSummary', [ReportController::class, 'reportSummary']);
+    Route::get('/wanboAdmin/paymentHistory', [ReportController::class, 'paymentHistory']);
+    Route::get('/wanboAdmin/orderHistory', [ReportController::class, 'orderHistory']);
 });
 
 Route::middleware(['is_user'])->group(function () {
