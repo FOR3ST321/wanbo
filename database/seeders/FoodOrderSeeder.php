@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\FoodOrder;
 
 class FoodOrderSeeder extends Seeder
 {
@@ -13,6 +14,32 @@ class FoodOrderSeeder extends Seeder
      */
     public function run()
     {
-        //
+        FoodOrder::create([
+            'order_id'=>1,
+            'beverage_id'=>2,
+            'quantity'=>3,
+            'status'=>'pending'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>1,
+            'beverage_id'=>2,
+            'quantity'=>3,
+            'status'=>'pending'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>1,
+            'beverage_id'=>3,
+            'quantity'=>3,
+            'status'=>'pending'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>1,
+            'beverage_id'=>2,
+            'quantity'=>3,
+            'status'=>'pending'
+        ]);
     }
 }

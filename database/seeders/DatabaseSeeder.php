@@ -8,6 +8,8 @@ use App\Models\Account;
 use App\Models\Package;
 use App\Models\Beverage;
 use App\Models\StoreBranch;
+use App\Models\FoodOrder;
+use App\Models\Order;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -210,5 +212,42 @@ class DatabaseSeeder extends Seeder
             'description' => 'this is an extra cheese'
         ]);
 
+        Order::create([
+            'room_id'=>1,
+            'user_id'=>1,
+            'status'=>'pending',
+            'total_price'=>50000,
+            'schedule'=>'2022-01-04 21:24:33',
+            'checkin'=>'2022-01-04 21:24:33',
+            'checkout'=>'2022-01-04 21:24:33'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>1,
+            'beverage_id'=>2,
+            'quantity'=>3,
+            'status'=>'pending'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>1,
+            'beverage_id'=>2,
+            'quantity'=>3,
+            'status'=>'pending'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>1,
+            'beverage_id'=>3,
+            'quantity'=>3,
+            'status'=>'pending'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>1,
+            'beverage_id'=>1,
+            'quantity'=>3,
+            'status'=>'pending'
+        ]);
     }
 }

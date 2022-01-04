@@ -17,6 +17,7 @@ class FoodOrderController extends Controller
     {
         return view('/admin/page/foodOrderMainMenu', [
             'active' => ['food', true, 'food-order'],
+            'food_orders' => FoodOrder::all()
         ]);
     }
 
