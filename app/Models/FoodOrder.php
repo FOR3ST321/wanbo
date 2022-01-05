@@ -23,7 +23,10 @@ class FoodOrder extends Model
         return DB::table('food_orders')
         ->join('orders', 'food_orders.order_id', '=', 'orders.id')
         ->join('beverages', 'beverages.id', '=', 'food_orders.beverage_id')
-        ->select('beverages.*', 'orders.*', 'food_orders.*')
+        ->join('rooms', 'orders.room_id', '=', 'rooms.id')
+        ->join('users', 'orders.user_id', '=', 'users.id')
+        // ->select('beverages.*', 'orders.*', 'food_orders.*', 'rooms.*', 'users.*')
+        // ga harus pake select juga bisa kalo emang mau pilih semua
         ->get();
     }
 }
