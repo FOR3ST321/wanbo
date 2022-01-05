@@ -1,5 +1,5 @@
 @extends('admin.partial.headerfooter')
-
+@dump($food_orders);
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -37,14 +37,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($food_orders as $foodOrder)
+                            {{-- @foreach($food_orders as $foodOrder)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $foodOrder->beverage->beverage_name }}</td>
                                     <td>{{ $foodOrder->beverage->type }}</td>
                                     <td>{{ $foodOrder->quantity }}</td>
                                 </tr>
-                            @endforeach
+                            @endforeach --}}
                         </tbody>
                     </table>
                 </div><!-- /.card-body -->
