@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/admin/dist/css/adminlte.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/frontend/img/core-img/favicon1.png">
 </head>
 
 <body class="hold-transition login-page">

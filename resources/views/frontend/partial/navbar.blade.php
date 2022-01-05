@@ -4,7 +4,7 @@
         <div class="row h-100">
             <div class="col-12 h-100">
                 <nav class="h-100 navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="index.html"><img src="/frontend/img/core-img/logo.png" alt=""></a>
+                    <a class="navbar-brand" href="index.html" style="width: 200px"><img src="/img/logoWanbo2.png" alt="" style="height: 100%"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
                     <!-- Nav -->
                     <div class="collapse navbar-collapse" id="dorneNav">
