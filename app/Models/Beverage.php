@@ -11,10 +11,10 @@ class Beverage extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public static function food_orders(){
-        return DB::table('food_orders')
-        ->join('food_orders', 'beverages.beverage_id', '=', 'food_orders.beverage_id')
-        ->select('beverages.*', 'food_orders.*')
+    public static function getData(){
+        return DB::table('beverages')
+        ->join('food_orders', 'beverages.id', '=', 'food_orders.beverage_id')
+        // ->select('beverages.*', 'food_orders.*')
         ->get();
     }
 }
