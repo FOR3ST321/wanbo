@@ -109,7 +109,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link <?= $active[2]=='order-history' ? 'active' : '' ?>">
+                            <a href="#" class="nav-link <?= $active[2]=='food-order-history' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Food Order History</p>
                             </a>
