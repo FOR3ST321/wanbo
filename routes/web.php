@@ -22,14 +22,15 @@ use App\Http\Controllers\FoodOrderController;
 |
 */
 
+//bisa dibuka sama semua
 Route::get('/', function () {
     return redirect('/wanbo'); //temporary, selagi belum bikin login auth
 });
+Route::get('/wanbo', [FrontEndController::class, 'index']);
 
 
 Route::middleware(['guest'])->group(function () {
-    //guest - bisa diakses tanpa auth (kayanya. belum test)
-    Route::get('/wanbo', [FrontEndController::class, 'index']);
+    //guest - bisa diakses tanpa auth, kalau udah punya auth gabisa kesini
     Route::get('/wanbo/login', [AuthController::class, 'loginPageUser']);
     Route::get('/wanboAdmin/login', [AuthController::class, 'loginPageAdmin']);
 
