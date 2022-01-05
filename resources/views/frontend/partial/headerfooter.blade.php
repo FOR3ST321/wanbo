@@ -12,7 +12,7 @@
     <title>Wanbo</title>
 
     <!-- Favicon -->
-    <link href="/admin/dist/img/icon.png" rel="icon" type="image/x-icon">
+    <link rel="icon" href="/frontend/img/core-img/favicon1.png">
 
     <!-- Core Stylesheet -->
     <link href="/frontend/style.css" rel="stylesheet">

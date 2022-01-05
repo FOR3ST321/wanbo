@@ -17,4 +17,5 @@ class StoreBranch extends Model
         ->join('accounts', 'store_branches.account_id', '=', 'accounts.id')
         ->get();
     }
+    protected $guarded = ['id'];
 }

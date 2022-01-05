@@ -1,10 +1,10 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/wanboAdmin" class="brand-link">
-        <img src="/admin/dist/img/icon.png" alt="AdminLTE Logo" class="brand-image"
-            style="opacity: .8">
-        <span class="brand-text font-weight-light">Wanbo Admin</span>
+    <a href="/wanboAdmin" class="brand-link d-flex justify-content-center">
+        <img src="/img/logoWanbo2.png" alt="AdminLTE Logo" class="brand-image"
+            style="opacity: .8; width: 150px;">
+        <span class="brand-text font-weight-light">&ensp;</span>
     </a>
 
     <!-- Sidebar -->
@@ -15,7 +15,7 @@
                 <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Cabang JKT</a>
+                <a href="/wanboAdmin/account/{{ auth()->user()->id }}" class="d-block">{{ auth()->user()->username }}</a>
             </div>
         </div>
 
