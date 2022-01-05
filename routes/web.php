@@ -44,6 +44,11 @@ Route::middleware(['is_admin'])->group(function () {
 
     Route::get('/wanboAdmin/logout', [AuthController::class, 'logoutAdmin']);
     
+    Route::get('/wanboAdmin/account/{account:id}', [BackEndController::class, 'profile']);
+    Route::post('/wanboAdmin/account/{account:id}', [BackEndController::class, 'updateProfile']);
+    Route::match(array('get','post'), '/wanboAdmin/account/{account:id}/edit', [BackEndController::class, 'editProfile']);
+    Route::get('/wanboAdmin/store_branch/{store_branch:id}/edit', [BackEndController::class, 'branch']);
+    Route::post('/wanboAdmin/store_branch/{store_branch:id}', [BackEndController::class, 'updateBranch']);
 
     // Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
     // Route::get('/wanboAdmin/foodList', [BeverageController::class, 'index']);

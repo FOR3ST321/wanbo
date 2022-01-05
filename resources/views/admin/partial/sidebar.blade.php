@@ -15,7 +15,7 @@
                 <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Cabang JKT</a>
+                <a href="/wanboAdmin/account/{{ auth()->user()->id }}" class="d-block">{{ auth()->user()->username }}</a>
             </div>
         </div>
 
