@@ -26,9 +26,27 @@
                     <h3 class="card-title">Icons</h3>
                 </div> <!-- /.card-body -->
                 <div class="card-body">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, dolor ullam! Quos
-                        consequatur neque aperiam quae molestiae, vero provident, nisi facilis illo beatae odio
-                        veniam nobis consectetur eum dolores sapiente?</p>
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($food_orders as $foodOrder)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $foodOrder->beverage->beverage_name }}</td>
+                                    <td>{{ $foodOrder->beverage->type }}</td>
+                                    <td>{{ $foodOrder->quantity }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div><!-- /.card-body -->
             </div>
         </div><!-- /.container-fluid -->
