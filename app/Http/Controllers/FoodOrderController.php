@@ -15,8 +15,16 @@ class FoodOrderController extends Controller
      */
     public function index()
     {
-        return view('/admin/page/foodOrderMainMenu', [
+        return view('/admin/page/foodOrder/foodOrderMainMenu', [
             'active' => ['food-order-list', false, null],
+            'food_orders' => FoodOrder::getData()
+        ]);
+    }
+
+    public function index2()
+    {
+        return view('/admin/page/foodOrder/foodOrderHistory', [
+            'active' => ['food-order-history', false, null],
             'food_orders' => FoodOrder::getData()
         ]);
     }
