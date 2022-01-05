@@ -1,10 +1,10 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/wanboAdmin" class="brand-link d-flex justify-content-center">
-        <img src="/img/logoWanbo2.png" alt="AdminLTE Logo" class="brand-image"
-            style="opacity: .8; width: 150px;">
-        <span class="brand-text font-weight-light">&ensp;</span>
+    <a href="/wanboAdmin" class="brand-link">
+        <img src="/frontend/img/core-img/favicon1.png" alt="AdminLTE Logo" class="brand-image"
+            style="opacity: .8;height:100%">
+        <span class="brand-text font-weight-bold">WANBO ADMIN</span>
     </a>
 
     <!-- Sidebar -->
