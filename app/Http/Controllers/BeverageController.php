@@ -17,7 +17,7 @@ class BeverageController extends Controller
     public function index()
     {
         return view('/admin/page/foodList/foodListMainMenu', [
-            'active' => ['food', true, 'food-list'],
+            'active' => ['beverage-list', true, null],
             'beverages' => Beverage::all()
         ]);
     }

@@ -33,7 +33,27 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="/wanboAdmin/foodOrder" class="nav-link <?= $active[0]=='food-order-list' ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-hamburger"></i>
+                        <p>
+                            Food Order List
+                        </p>
+                    </a>
+                </li>
+
+
+
                 <li class="nav-header">MANAGE</li>
+
+                <li class="nav-item">
+                    <a href="/wanboAdmin/beverages" class="nav-link <?= $active[0]=='beverage-list' ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-hamburger"></i>
+                        <p>
+                            Beverages
+                        </p>
+                    </a>
+                </li>
 
                 <li class="nav-item <?= $active[1] && $active[0]=='packages' ? 'menu-open' : '' ?>">
                     <a href="#" class="nav-link <?= $active[0]=='packages' ? 'active' : '' ?>">
@@ -54,30 +74,6 @@
                             <a href="/wanboAdmin/rooms" class="nav-link <?= $active[2]=='room-list' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Room List</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item <?= $active[1] && $active[0]=='food' ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= $active[0]=='food' ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-hamburger"></i>
-                        <p>
-                            Food
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/wanboAdmin/beverages" class="nav-link <?= $active[2]=='food-list' ? 'active' : '' ?>">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Food List</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/wanboAdmin/foodOrder" class="nav-link <?= $active[2]=='food-order' ? 'active' : '' ?>">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Food Order</p>
                             </a>
                         </li>
                     </ul>
@@ -110,6 +106,12 @@
                             <a href="/wanboAdmin/orderHistory" class="nav-link <?= $active[2]=='order-history' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Order History</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link <?= $active[2]=='order-history' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Food Order History</p>
                             </a>
                         </li>
                     </ul>

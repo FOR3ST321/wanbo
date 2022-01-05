@@ -25,8 +25,6 @@ class FoodOrder extends Model
         ->join('beverages', 'beverages.id', '=', 'food_orders.beverage_id')
         ->join('rooms', 'orders.room_id', '=', 'rooms.id')
         ->join('users', 'orders.user_id', '=', 'users.id')
-        // ->select('beverages.*', 'orders.*', 'food_orders.*', 'rooms.*', 'users.*')
-        // ga harus pake select juga bisa kalo emang mau pilih semua
         ->get();
     }
 }
