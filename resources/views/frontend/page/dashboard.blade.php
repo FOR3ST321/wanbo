@@ -13,8 +13,8 @@
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-12 col-md-10">
                     <div class="hero-content">
-                        <h2>Discover places near you</h2>
-                        <h4>This is the best guide of your city</h4>
+                        <h2>Seize your favourite PC!</h2>
+                        <h4>Make sure the other people don't use it at the same time.</h4>
                     </div>
                     <!-- Hero Search Form -->
                     <div class="hero-search-form">
@@ -99,57 +99,57 @@
                         <div class="row">
                             <!-- Single Catagory Area -->
                             <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.2s">
-                                    <div class="catagory-content">
-                                        <img src="/frontend/img/core-img/icon-1.png" alt="">
-                                        <a href="#">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.2s" style="background-color:white;">
+                                    {{-- <div class="catagory-content"> --}}
+                                        <img src="/frontend/img/core-img/w.png" alt="" style="width: 100px">
+                                        {{-- <a href="#">
                                             <h6>Hotels</h6>
-                                        </a>
-                                    </div>
+                                        </a> --}}
+                                    {{-- </div> --}}
                                 </div>
                             </div>
                             <!-- Single Catagory Area -->
                             <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.4s">
-                                    <div class="catagory-content">
-                                        <img src="/frontend/img/core-img/icon-2.png" alt="">
-                                        <a href="#">
-                                            <h6>Restaurants</h6>
-                                        </a>
-                                    </div>
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.4s" style="background-color:white;">
+                                    {{-- <div class="catagory-content"> --}}
+                                        <img src="/frontend/img/core-img/a.png" alt="" style="width: 100px">
+                                        {{-- <a href="#">
+                                            <h6>Hotels</h6>
+                                        </a> --}}
+                                    {{-- </div> --}}
                                 </div>
                             </div>
                             <!-- Single Catagory Area -->
                             <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.6s">
-                                    <div class="catagory-content">
-                                        <img src="/frontend/img/core-img/icon-3.png" alt="">
-                                        <a href="#">
-                                            <h6>Shopping</h6>
-                                        </a>
-                                    </div>
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.6s" style="background-color:white;">
+                                    {{-- <div class="catagory-content"> --}}
+                                        <img src="/frontend/img/core-img/n.png" alt="" style="width: 100px">
+                                        {{-- <a href="#">
+                                            <h6>Hotels</h6>
+                                        </a> --}}
+                                    {{-- </div> --}}
                                 </div>
                             </div>
                             <!-- Single Catagory Area -->
                             <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.8s">
-                                    <div class="catagory-content">
-                                        <img src="/frontend/img/core-img/icon-4.png" alt="">
-                                        <a href="#">
-                                            <h6>Beauty &amp; Spa</h6>
-                                        </a>
-                                    </div>
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.8s" style="background-color:white;">
+                                    {{-- <div class="catagory-content"> --}}
+                                        <img src="/frontend/img/core-img/b.png" alt="" style="width: 100px">
+                                        {{-- <a href="#">
+                                            <h6>Hotels</h6>
+                                        </a> --}}
+                                    {{-- </div> --}}
                                 </div>
                             </div>
                             <!-- Single Catagory Area -->
                             <div class="col-12 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="1s">
-                                    <div class="catagory-content">
-                                        <img src="/frontend/img/core-img/icon-5.png" alt="">
-                                        <a href="#">
-                                            <h6>Cinema</h6>
-                                        </a>
-                                    </div>
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="1s" style="background-color:white;">
+                                    {{-- <div class="catagory-content"> --}}
+                                        <img src="/frontend/img/core-img/o.png" alt="" style="width: 100px">
+                                        {{-- <a href="#">
+                                            <h6>Hotels</h6>
+                                        </a> --}}
+                                    {{-- </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -166,10 +166,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="about-content text-center">
-                        <h2>Discover your city with <br><span>Dorne</span></h2>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce
-                            quis tempus elit. Sed efficitur tortor neque, vitae aliquet urna varius sit amet. Ut rhoncus,
-                            nunc nec tincidunt volutpat, ex libero.</p>
+                        <h2>Book your warnet with <br><span>Wanbo</span></h2>
+                        <p>An application that allows people to order a PC or room at an internet cafe online and order food or drinks at the cafe easily and quickly. This application also helps internet cafe admin to get report, manage incoming orders, billings, packages, etc.</p>
                     </div>
                 </div>
             </div>
@@ -185,8 +183,8 @@
                 <div class="col-12">
                     <div class="section-heading text-center">
                         <span></span>
-                        <h4>Cities you must see</h4>
-                        <p>Editor’s pick</p>
+                        <h4>Packages you must consider</h4>
+                        <p>Choose your spec</p>
                     </div>
                 </div>
             </div>
@@ -196,15 +194,15 @@
                     <div class="features-slides owl-carousel">
                         <!-- Single Features Area -->
                         <div class="single-features-area">
-                            <img src="/frontend/img/bg-img/feature-1.jpg" alt="">
+                            <img src="https://media.gettyimages.com/photos/streaming-live-esport-event-on-computer-at-home-picture-id1190641416?k=20&m=1190641416&s=612x612&w=0&h=GDhOS17zD0Liylkf7j3Xhf7gl96J58id-LV3o5ah4ag=" alt="" style="height: 125px">
                             <!-- Price -->
                             <div class="price-start">
-                                <p>FROM $59/night</p>
+                                <p style="top: 125px;left:0">Rp. 5.000/hour</p>
                             </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
                                 <div class="feature-title">
-                                    <h5>Ibiza</h5>
-                                    <p>Party</p>
+                                    <h5>Package1</h5>
+                                    <p>Streaming</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -213,15 +211,15 @@
                         </div>
                         <!-- Single Features Area -->
                         <div class="single-features-area">
-                            <img src="/frontend/img/bg-img/feature-2.jpg" alt="">
+                            <img src="https://media.gettyimages.com/photos/classic-computer-classroom-picture-id1145371232?k=20&m=1145371232&s=612x612&w=0&h=pfcK32cfHzfuZNCokUdhiLbpijjQr4OwvXlpegEKV7g=" alt="" style="height: 125px">
                             <!-- Price -->
                             <div class="price-start">
-                                <p>FROM $59/night</p>
+                                <p style="top: 125px;left:0">Rp. 10.000/hour</p>
                             </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
                                 <div class="feature-title">
-                                    <h5>Paris</h5>
-                                    <p>Luxury</p>
+                                    <h5>Package2</h5>
+                                    <p>Classic</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -230,15 +228,15 @@
                         </div>
                         <!-- Single Features Area -->
                         <div class="single-features-area">
-                            <img src="/frontend/img/bg-img/feature-3.jpg" alt="">
+                            <img src="https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs=" alt="" style="height: 125px">
                             <!-- Price -->
                             <div class="price-start">
-                                <p>FROM $59/night</p>
+                                <p style="top: 125px;left:0">Rp. 12.000/hour</p>
                             </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
                                 <div class="feature-title">
-                                    <h5>Lake Como</h5>
-                                    <p>Spectacular</p>
+                                    <h5>Package3</h5>
+                                    <p>Gaming</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -247,15 +245,15 @@
                         </div>
                         <!-- Single Features Area -->
                         <div class="single-features-area">
-                            <img src="/frontend/img/bg-img/feature-4.jpg" alt="">
+                            <img src="https://media.gettyimages.com/photos/cozy-scandinavian-style-home-office-picture-id1043634192?k=20&m=1043634192&s=612x612&w=0&h=fHxeXZkN7gZqodcPbqTlsxQdOZ0gTtqNiJ7iuH1sd9c=" alt="" style="height: 125px">
                             <!-- Price -->
                             <div class="price-start">
-                                <p>FROM $59/night</p>
+                                <p style="top: 125px;left:0">Rp. 20.000/hour</p>
                             </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
                                 <div class="feature-title">
-                                    <h5>Greece</h5>
-                                    <p>Sunny</p>
+                                    <h5>Package4</h5>
+                                    <p>Private</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -264,15 +262,15 @@
                         </div>
                         <!-- Single Features Area -->
                         <div class="single-features-area">
-                            <img src="/frontend/img/bg-img/feature-5.jpg" alt="">
+                            <img src="https://media.gettyimages.com/photos/interior-of-modern-office-picture-id973712582?k=20&m=973712582&s=612x612&w=0&h=WMIUDLloWdFetm6hJQ5ehlSC1-pMqGizfEsxcGKyAWw=" alt="" style="height: 125px">
                             <!-- Price -->
                             <div class="price-start">
-                                <p>FROM $59/night</p>
+                                <p style="top: 125px;left:0">Rp. 50.000/hour</p>
                             </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
                                 <div class="feature-title">
-                                    <h5>Norway</h5>
-                                    <p>All Year round</p>
+                                    <h5>Package5</h5>
+                                    <p>Collaboration</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -293,8 +291,8 @@
                 <div class="col-12">
                     <div class="section-heading text-center">
                         <span></span>
-                        <h4>Featured Restaurants</h4>
-                        <p>Editor’s pick</p>
+                        <h4>Featured Menus</h4>
+                        <p>The taste that suits you</p>
                     </div>
                 </div>
             </div>
@@ -303,17 +301,17 @@
                 <div class="col-12">
                     <div class="features-slides owl-carousel">
                         <!-- Single Features Area -->
-                        <div class="single-features-area">
+                        <div class="single-features-area" style="height: 370px">
                             <img src="/frontend/img/bg-img/feature-6.jpg" alt="">
                             <!-- Rating & Map Area -->
                             <div class="ratings-map-area d-flex">
                                 <a href="#">8.5</a>
-                                <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
+                                {{-- <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a> --}}
                             </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 40px 20px">
                                 <div class="feature-title">
-                                    <h5>Martha’s bar</h5>
-                                    <p>Manhathan</p>
+                                    <h5>Tubruk Ice Coffee</h5>
+                                    <p>Cold and strong</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -321,17 +319,17 @@
                             </div>
                         </div>
                         <!-- Single Features Area -->
-                        <div class="single-features-area">
+                        <div class="single-features-area" style="height: 370px">
                             <img src="/frontend/img/bg-img/feature-7.jpg" alt="">
                             <!-- Rating & Map Area -->
                             <div class="ratings-map-area d-flex">
                                 <a href="#">9.5</a>
-                                <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
+                                {{-- <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a> --}}
                             </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 40px 20px">
                                 <div class="feature-title">
-                                    <h5>Delux Restaurant</h5>
-                                    <p>Paris</p>
+                                    <h5>Boiled pastels</h5>
+                                    <p>Hot and soft</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -339,17 +337,17 @@
                             </div>
                         </div>
                         <!-- Single Features Area -->
-                        <div class="single-features-area">
+                        <div class="single-features-area" style="height: 370px">
                             <img src="/frontend/img/bg-img/feature-8.jpg" alt="">
                             <!-- Rating & Map Area -->
                             <div class="ratings-map-area d-flex">
-                                <a href="#">8.2</a>
-                                <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
+                                <a href="#">2.2</a>
+                                {{-- <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a> --}}
                             </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 40px 20px">
                                 <div class="feature-title">
-                                    <h5>Jim’s corner Pub</h5>
-                                    <p>Madrid</p>
+                                    <h5>Green Chili Soto</h5>
+                                    <p>Too spicy</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -357,17 +355,17 @@
                             </div>
                         </div>
                         <!-- Single Features Area -->
-                        <div class="single-features-area">
+                        <div class="single-features-area" style="height: 370px">
                             <img src="/frontend/img/bg-img/feature-9.jpg" alt="">
                             <!-- Rating & Map Area -->
                             <div class="ratings-map-area d-flex">
                                 <a href="#">8.7</a>
-                                <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
+                                {{-- <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a> --}}
                             </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 40px 20px">
                                 <div class="feature-title">
-                                    <h5>tower Risto bar</h5>
-                                    <p>Sydney</p>
+                                    <h5>Bandrek</h5>
+                                    <p>Good for health</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -375,17 +373,17 @@
                             </div>
                         </div>
                         <!-- Single Features Area -->
-                        <div class="single-features-area">
+                        <div class="single-features-area" style="height: 370px">
                             <img src="/frontend/img/bg-img/feature-10.jpg" alt="">
                             <!-- Rating & Map Area -->
                             <div class="ratings-map-area d-flex">
                                 <a href="#">9.8</a>
-                                <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
+                                {{-- <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a> --}}
                             </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 40px 20px">
                                 <div class="feature-title">
-                                    <h5>Pizzeria venezia</h5>
-                                    <p>Hong Kong</p>
+                                    <h5>Pancakes</h5>
+                                    <p>Sweet</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -407,8 +405,8 @@
                 <div class="col-12">
                     <div class="section-heading text-center">
                         <span></span>
-                        <h4>Featured events</h4>
-                        <p>Editor’s pick</p>
+                        <h4>Other Features</h4>
+                        <p>Take a brief look at our features</p>
                     </div>
                 </div>
             </div>
@@ -418,120 +416,120 @@
                     <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
                         data-wow-delay="0.2s">
                         <div class="feature-events-thumb">
-                            <img src="/frontend/img/bg-img/event-1.jpg" alt="">
-                            <div class="date-map-area d-flex">
+                            <img src="https://media.gettyimages.com/photos/report-picture-id174628030?k=20&m=174628030&s=612x612&w=0&h=mwu8IZ9yQPaI5gc3fhCIBxUL1nf4U9YwpN8orsrMKlU=" alt="" style="height:155px">
+                            {{-- <div class="date-map-area d-flex">
                                 <a href="#">26 Nov</a>
                                 <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="feature-events-content">
-                            <h5>Jazz Concert</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                            <h5>Get Report</h5>
+                            <h6>Admin</h6>
+                            <p>Help to manage your business with periodically auto-generated report.</p>
                         </div>
-                        <div class="feature-events-details-btn">
+                        {{-- <div class="feature-events-details-btn">
                             <a href="#">+</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
                         data-wow-delay="0.3s">
                         <div class="feature-events-thumb">
-                            <img src="/frontend/img/bg-img/event-2.jpg" alt="">
-                            <div class="date-map-area d-flex">
+                            <img src="https://media.gettyimages.com/illustrations/nebula-cloud-and-planet-illustration-id548263227?k=20&m=548263227&s=612x612&w=0&h=naGjCGCgtDxZRAwdL_dI-1mRMNgvDFyEYCnRnPatb6Q=" alt="" style="height: 155px">
+                            {{-- <div class="date-map-area d-flex">
                                 <a href="#">26 Nov</a>
                                 <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="feature-events-content">
-                            <h5>DeeJay in the house</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                            <h5>One App For All Wanbo</h5>
+                            <h6>User</h6>
+                            <p>Use this one super app for all wanbo branch around the universe!</p>
                         </div>
-                        <div class="feature-events-details-btn">
+                        {{-- <div class="feature-events-details-btn">
                             <a href="#">+</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
                         data-wow-delay="0.4s">
                         <div class="feature-events-thumb">
-                            <img src="/frontend/img/bg-img/event-3.jpg" alt="">
-                            <div class="date-map-area d-flex">
+                            <img src="https://media.gettyimages.com/photos/close-up-of-mixed-race-man-reading-menu-in-restaurant-picture-id519517171?k=20&m=519517171&s=612x612&w=0&h=JrWjv57nA7S0DJaDpaq5481DD3vVG_fQG0WohUpq-vI=" alt="" style="height: 155px">
+                            {{-- <div class="date-map-area d-flex">
                                 <a href="#">26 Nov</a>
                                 <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="feature-events-content">
-                            <h5>Theatre Night outside</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                            <h5>Manage Your Own Menu</h5>
+                            <h6>Admin</h6>
+                            <p>Customize the menu according to what you have at the kitchen.</p>
                         </div>
-                        <div class="feature-events-details-btn">
+                        {{-- <div class="feature-events-details-btn">
                             <a href="#">+</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
                         data-wow-delay="0.5s">
                         <div class="feature-events-thumb">
-                            <img src="/frontend/img/bg-img/event-4.jpg" alt="">
-                            <div class="date-map-area d-flex">
+                            <img src="https://media.gettyimages.com/photos/just-in-time-picture-id1208739424?k=20&m=1208739424&s=612x612&w=0&h=sAm8AG6edS2VLUGa5W87NP8AnHaUwm2FcAdSLQEwD6s=" alt="" style="height: 155px">
+                            {{-- <div class="date-map-area d-flex">
                                 <a href="#">26 Nov</a>
                                 <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="feature-events-content">
-                            <h5>Wine tasting</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                            <h5>Save Billings</h5>
+                            <h6>User</h6>
+                            <p>Must to go home before the billing finished? Just save it for later.</p>
                         </div>
-                        <div class="feature-events-details-btn">
+                        {{-- <div class="feature-events-details-btn">
                             <a href="#">+</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
                         data-wow-delay="0.6s">
                         <div class="feature-events-thumb">
-                            <img src="/frontend/img/bg-img/event-5.jpg" alt="">
-                            <div class="date-map-area d-flex">
+                            <img src="https://media.gettyimages.com/photos/interior-of-open-office-picture-id1146500442?k=20&m=1146500442&s=612x612&w=0&h=d_W31jKIFIJA5fhR6AdTQo3Rl6L8UwHWDwIacJ29jrs=" alt="" style="height: 155px">
+                            {{-- <div class="date-map-area d-flex">
                                 <a href="#">26 Nov</a>
                                 <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="feature-events-content">
-                            <h5>New Moon Party</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                            <h5>Manage Packages and Rooms</h5>
+                            <h6>Admin</h6>
+                            <p>Customize it according to what you have at the building.</p>
                         </div>
-                        <div class="feature-events-details-btn">
+                        {{-- <div class="feature-events-details-btn">
                             <a href="#">+</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
                         data-wow-delay="0.7s">
                         <div class="feature-events-thumb">
-                            <img src="/frontend/img/bg-img/event-6.jpg" alt="">
-                            <div class="date-map-area d-flex">
+                            <img src="https://media.gettyimages.com/photos/customer-scanning-qr-code-making-a-quick-and-easy-contactless-payment-picture-id1177644546?k=20&m=1177644546&s=612x612&w=0&h=EtyvGWAeTnd753IPFp4mG6uA_Vd4Jw4-fcXM6vX1B5o=" alt="" style="height: 155px">
+                            {{-- <div class="date-map-area d-flex">
                                 <a href="#">26 Nov</a>
                                 <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="feature-events-content">
-                            <h5>Happy hour at pub</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                            <h5>Many Options for Payment</h5>
+                            <h6>User</h6>
+                            <p>Didn't bring cash? Chill and choose many other digital payment method.</p>
                         </div>
-                        <div class="feature-events-details-btn">
+                        {{-- <div class="feature-events-details-btn">
                             <a href="#">+</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
