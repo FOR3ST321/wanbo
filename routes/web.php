@@ -46,11 +46,11 @@ Route::middleware(['is_admin'])->group(function () {
 
     // Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
     // Route::get('/wanboAdmin/foodList', [BeverageController::class, 'index']);
-    Route::resource('/wanboAdmin/beverages', BeverageController::class);
+    Route::resource('/wanboAdmin/packages', PackageController::class);
     Route::resource('/wanboAdmin/rooms', RoomController::class);
 
     Route::get('/wanboAdmin', [OrderController::class, 'index']);
-    Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
+    // Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
     // Route::get('/wanboAdmin/foodList', [BeverageController::class, 'index']);
     Route::get('/wanboAdmin/foodOrder', [FoodOrderController::class, 'index']);
     Route::resource('/wanboAdmin/beverages', BeverageController::class);

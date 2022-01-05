@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/admin/dist/css/adminlte.min.css">
+
+    <link href="/admin/dist/img/icon.png" rel="icon" type="image/x-icon">
+
 </head>
 
 <body class="hold-transition sidebar-mini">
