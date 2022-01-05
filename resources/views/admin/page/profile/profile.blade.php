@@ -51,7 +51,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Insert Password</h5>
+                                    <h5 class="modal-title" id="staticBackdropLabel">Insert Password to Continue</h5>
                                     {{-- <button type="button" class="close-black" data-dismiss="modal" aria-label="Close"></button> --}}
                                 </div>
                                 <form action="/wanboAdmin/account/{{ $account->id }}/edit" method="post">
