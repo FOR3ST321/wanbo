@@ -15,7 +15,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('/admin/page/billingMainMenu', [
+        return view('/admin/page/billing/billingMainMenu', [
             'active' => ['billing', false, null],
         ]);
     }
