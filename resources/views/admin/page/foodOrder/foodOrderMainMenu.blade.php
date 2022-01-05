@@ -46,8 +46,9 @@
                                         <td>{{ $foodOrder->quantity }}</td>
                                         <td>{{ $foodOrder->food_status }}</td>
                                         <td>
+                                            {{-- ini coba coba --}}
+                                            {{-- <a href="{{ route('app\Http\Controllers\FoodOrderController@success', [$foodOrder]) }}" class="btn btn-success"><i class="fas fa-check-square"></i></a> --}}
                                             <a href="" class="btn btn-success"><i class="fas fa-check-square"></i></a>
-                                            {{-- /update/{{ $foodOrder->id }} --}}
                                             <a href="" class="btn btn-danger"><i class="fas fa-times"></i></a>
                                         </td>
                                         <?php $i++ ?>

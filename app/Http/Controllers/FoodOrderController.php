@@ -29,6 +29,17 @@ class FoodOrderController extends Controller
         ]);
     }
 
+    public function success(FoodOrder $foodOrder)
+    {
+        FoodOrder::where('id', $foodOrder->id)->update(['food_status'=>'success']);
+        return redirect('wanboAdmin/foodOrder');
+    }
+
+    public function canceled(FoodOrder $foodOrder)
+    {
+        FoodOrder::where('id', $foodOrder->id)->update(['food_status'=>'failed']);
+        return redirect('wanboAdmin/foodOrder');
+    }
     /**
      * Show the form for creating a new resource.
      *

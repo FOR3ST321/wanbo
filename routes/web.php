@@ -59,6 +59,9 @@ Route::middleware(['is_admin'])->group(function () {
     // Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
     // Route::get('/wanboAdmin/foodList', [BeverageController::class, 'index']);
     Route::get('/wanboAdmin/foodOrder', [FoodOrderController::class, 'index']);
+    // ini coba-coba
+    // Route::get('/wanboAdmin/foodOrder/{foodOrder}', [FoodOrderController::class, 'success']);
+    // Route::get('/wanboAdmin/foodOrder/{foodOrder}', [FoodOrderController::class, 'canceled']);
     Route::get('/wanboAdmin/foodOrderHistory', [FoodOrderController::class, 'index2']);
     Route::resource('/wanboAdmin/beverages', BeverageController::class);
 
