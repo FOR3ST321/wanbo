@@ -40,8 +40,8 @@
                             @foreach($food_orders as $foodOrder)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $foodOrder->beverage->beverage_name }}</td>
-                                    <td>{{ $foodOrder->beverage->type }}</td>
+                                    <td>{{ $foodOrder->beverage_name }}</td>
+                                    <td>{{ $foodOrder->type }}</td>
                                     <td>{{ $foodOrder->quantity }}</td>
                                 </tr>
                             @endforeach
