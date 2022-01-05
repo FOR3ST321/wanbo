@@ -36,6 +36,7 @@ Route::middleware(['guest'])->group(function () {
 
     //auth
     Route::post('/wanboAdmin/auth', [AuthController::class, 'authenticate']);
+    Route::post('/wanbo/auth', [AuthController::class, 'authenticateUser']);
 });
 
 Route::middleware(['is_admin'])->group(function () {
@@ -62,5 +63,6 @@ Route::middleware(['is_admin'])->group(function () {
 
 Route::middleware(['is_user'])->group(function () {
     //admin - buat wanbo user
-    Route::get('/wanbo/profile', [FrontEndController::class, 'profile'])->middleware('is_user');;
+    Route::get('/wanbo/profile', [FrontEndController::class, 'profile'])->middleware('is_user');
+    Route::get('/wanbo/logout', [AuthController::class, 'logoutUser']);
 });
