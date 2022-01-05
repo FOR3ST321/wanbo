@@ -11,10 +11,15 @@ class Room extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public static function getData(){
-        return DB::table('rooms')
-        ->join('packages', 'rooms.package_id', '=', 'packages.id')
-        ->join('store_branches', 'rooms.store_branch_id', '=', 'store_branches.id')
-        ->get();
+    // public static function package(){
+    //     return DB::table('rooms')
+    //     ->join('packages', 'rooms.package_id', '=', 'packages.id')
+    //     ->join('store_branches', 'rooms.store_branch_id', '=', 'store_branches.id')
+    //     ->select('packages.*', 'store_branches.*', 'rooms.*')
+    //     ->get();
+    // }
+
+    public function package(){
+        return $this->belongsTo(Package::class);
     }
 }

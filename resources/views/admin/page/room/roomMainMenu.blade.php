@@ -38,6 +38,7 @@
                             <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
+                            <th scope="col">Package</th>
                             <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -46,6 +47,8 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $room->room_name }}</td>
+                                    <td>{{ $room->package->package_name }}</td>
+
                                     <td>
                                         <a href="/wanboAdmin/rooms/{{ $room->id }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
                                         <a href="/wanboAdmin/rooms/{{ $room->id }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></a>
