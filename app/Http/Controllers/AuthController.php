@@ -35,6 +35,26 @@ class AuthController extends Controller
         return back()->with('loginError', 'Login Failed!');
     }
 
+    public function authenticateUser(Request $request){
+        $request->validate([
+            'username' => ['required'],
+            'password' => ['required'],
+        ]);
+
+        // dump($request->username);
+        
+        if(Auth::attempt([
+            'username' => $request->username,
+            'password' => $request->password,
+            'is_admin' => 0
+        ])){
+            $request->session()->regenerate();
+            return redirect()->intended('/wanbo');
+        }
+
+        return back()->with('loginError', 'Login Failed!');
+    }
+
     public function logoutAdmin(Request $request){
         Auth::logout();
         return redirect('/wanboAdmin/login');

@@ -36,6 +36,7 @@ Route::middleware(['guest'])->group(function () {
 
     //auth
     Route::post('/wanboAdmin/auth', [AuthController::class, 'authenticate']);
+    Route::post('/wanbo/auth', [AuthController::class, 'authenticateUser']);
 });
 
 Route::middleware(['is_admin'])->group(function () {

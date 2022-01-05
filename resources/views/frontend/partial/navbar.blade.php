@@ -23,9 +23,16 @@
                             </li>
                         </ul>
                         <!-- Add listings btn -->
-                        <div class="dorne-add-listings-btn">
-                            <a href="#" class="btn dorne-btn">Sign in  or Register</a>
-                        </div>
+                        @auth
+                            <div class="dorne-add-listings-btn">
+                                <a href="/wanbo/profile" class="btn dorne-btn">Hello, {{auth()->user()->username}}</a>
+                            </div>
+                        @else
+                            <div class="dorne-add-listings-btn">
+                                <a href="/wanbo/login" class="btn dorne-btn">Sign in  or Register</a>
+                            </div>
+                        @endauth
+                        
                     </div>
                 </nav>
             </div>
