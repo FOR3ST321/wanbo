@@ -8,7 +8,7 @@
     @endif
 
     <!-- ***** Welcome Area Start ***** -->
-    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(/frontend/img/bg-img/hero-1.jpg);">
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(https://media.gettyimages.com/photos/interior-of-la-bastille-internet-cafe-amsterdam-picture-idAA028564?k=20&m=AA028564&s=612x612&w=0&h=4cLUXImRnW0xR47HKekzB0Vlg1sGXD4VQPXuxSqrwyE=); height:500px">
         <div class="container h-100">
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-12 col-md-10">
@@ -17,7 +17,7 @@
                         <h4>Make sure the other people don't use it at the same time.</h4>
                     </div>
                     <!-- Hero Search Form -->
-                    <div class="hero-search-form">
+                    {{-- <div class="hero-search-form">
                         <!-- Tabs -->
                         <div class="nav nav-tabs" id="heroTab" role="tablist">
                             <a class="nav-item nav-link active" id="nav-places-tab" data-toggle="tab" href="#nav-places"
@@ -83,7 +83,7 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -99,7 +99,7 @@
                         <div class="row">
                             <!-- Single Catagory Area -->
                             <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.2s" style="background-color:white;">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="1.2s" style="background-color:white;">
                                     {{-- <div class="catagory-content"> --}}
                                         <img src="/frontend/img/core-img/w.png" alt="" style="width: 100px">
                                         {{-- <a href="#">
@@ -110,7 +110,7 @@
                             </div>
                             <!-- Single Catagory Area -->
                             <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.4s" style="background-color:white;">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="1.4s" style="background-color:white;">
                                     {{-- <div class="catagory-content"> --}}
                                         <img src="/frontend/img/core-img/a.png" alt="" style="width: 100px">
                                         {{-- <a href="#">
@@ -121,7 +121,7 @@
                             </div>
                             <!-- Single Catagory Area -->
                             <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.6s" style="background-color:white;">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="1.6s" style="background-color:white;">
                                     {{-- <div class="catagory-content"> --}}
                                         <img src="/frontend/img/core-img/n.png" alt="" style="width: 100px">
                                         {{-- <a href="#">
@@ -132,7 +132,7 @@
                             </div>
                             <!-- Single Catagory Area -->
                             <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.8s" style="background-color:white;">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="1.8s" style="background-color:white;">
                                     {{-- <div class="catagory-content"> --}}
                                         <img src="/frontend/img/core-img/b.png" alt="" style="width: 100px">
                                         {{-- <a href="#">
@@ -143,7 +143,7 @@
                             </div>
                             <!-- Single Catagory Area -->
                             <div class="col-12 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="1s" style="background-color:white;">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="2s" style="background-color:white;">
                                     {{-- <div class="catagory-content"> --}}
                                         <img src="/frontend/img/core-img/o.png" alt="" style="width: 100px">
                                         {{-- <a href="#">
