@@ -55,8 +55,13 @@ class AuthController extends Controller
         return back()->with('loginError', 'Login Failed!');
     }
 
-    public function logoutAdmin(Request $request){
+    public function logoutAdmin(){
         Auth::logout();
         return redirect('/wanboAdmin/login');
+    }
+
+    public function logoutUser(){
+        Auth::logout();
+        return redirect('/wanbo');
     }
 }
