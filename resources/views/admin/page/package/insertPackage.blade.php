@@ -20,7 +20,7 @@
                     <form method="POST" action="/wanboAdmin/packages" class="mb-5"> 
                         @csrf
                         <div class="mb-3">
-                            <label for="package_name" class="form-label">Name</label>
+                            <label for="package_name" class="form-label">Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control @error('package_name') is-invalid @enderror" id="package_name" name="package_name" autofocus value="{{ old('package_name') }}">
                             @error('package_name')
                                 <div class="invalid-feedback">
@@ -29,7 +29,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="price_per_hour" class="form-label">Price/hour</label>
+                            <label for="price_per_hour" class="form-label">Price/hour <span class="text-danger">*</span></label>
                             <input type="number" class="form-control @error('price_per_hour') is-invalid @enderror" id="price_per_hour" name="price_per_hour" value="{{ old('price_per_hour') }}">
                             @error('price_per_hour')
                                 <div class="invalid-feedback">
@@ -38,7 +38,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="computer_spec" class="form-label">Computer Spesification</label>
+                            <label for="computer_spec" class="form-label">Computer Specification</label>
                             <div class="form-floating">
                                 <textarea class="form-control @error('computer_spec') is-invalid @enderror" placeholder="Insert computer's spesification" name="computer_spec" id="computer_spec" >{{ old('computer_spec') }}</textarea>
                                 @error('computer_spec')
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="description" class="form-label">Description</label>
+                            <label for="description" class="form-label">Description <span class="text-danger">*</span></label>
                             <div class="form-floating">
                                 <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Insert package's description" name="description" id="description" >{{ old('description') }}</textarea>
                                 @error('description')

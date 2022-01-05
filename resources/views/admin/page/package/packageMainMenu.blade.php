@@ -30,16 +30,17 @@
         <div class="container-fluid">
             <div class="card card-primary card-outline">
                 <div class="card-header">
-                    <a href="/wanboAdmin/packages/create" class="btn btn-primary">Insert new package</a>
+                    <a href="/wanboAdmin/packages/create" class="btn btn-primary">
+                         + Insert new package</a>
                 </div> <!-- /.card-body -->
                 <div class="card-body">
-                    <table class="table table-striped table-sm">
+                    <table class="table table-striped table-md">
                         <thead>
                             <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Price/hour</th>
-                            <th scope="col">Action</th>
+                            <th scope="col" style="width: 10%">#</th>
+                            <th scope="col" style="width: 30%">Name</th>
+                            <th scope="col" style="width: 30%">Price/hour</th>
+                            <th scope="col" style="width: 30%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,13 +50,13 @@
                                     <td>{{ $package->package_name }}</td>
                                     <td>{{ $package->price_per_hour }}</td>
                                     <td>
-                                        <a href="/wanboAdmin/packages/{{ $package->id }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
-                                        <a href="/wanboAdmin/packages/{{ $package->id }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></a>
+                                        <a href="/wanboAdmin/packages/{{ $package->id }}" class="btn bg-info"><i class="fas fa-eye"></i> Detail</a>
+                                        <a href="/wanboAdmin/packages/{{ $package->id }}/edit" class="btn bg-warning"><i class="fas fa-edit"></i> Edit</a>
                                         <form action="/wanboAdmin/packages/{{ $package->id }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
-                                        <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
-                                            <i class="fas fa-trash-alt"></i>
+                                        <button class="btn bg-danger border-0" onclick="return confirm('Are you sure?')">
+                                            <i class="fas fa-trash-alt"></i> Delete
                                         </button>
                                         </form>
                                     </td>

@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Billing</h1>
+                    <h1>Welcome to Wanbo Admin, {{auth()->user()->username}}</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div class="card card-primary card-outline">
                 <div class="card-header">
-                    <h3 class="card-title">Icons</h3>
+                    <h3 class="card-title">Billing Info</h3>
                 </div> <!-- /.card-body -->
                 <div class="card-body">
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, dolor ullam! Quos

@@ -30,16 +30,16 @@
         <div class="container-fluid">
             <div class="card card-primary card-outline">
                 <div class="card-header">
-                    <a href="/wanboAdmin/rooms/create" class="btn btn-primary">Insert new room</a>
+                    <a href="/wanboAdmin/rooms/create" class="btn btn-primary">+ Insert new room</a>
                 </div> <!-- /.card-body -->
                 <div class="card-body">
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Package</th>
-                            <th scope="col">Action</th>
+                            <th scope="col" style="width:10%">#</th>
+                            <th scope="col" style="width:30%">Name</th>
+                            <th scope="col" style="width:30%">Package</th>
+                            <th scope="col" style="width:30%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,13 +50,13 @@
                                     <td>{{ $room->package->package_name }}</td>
 
                                     <td>
-                                        <a href="/wanboAdmin/rooms/{{ $room->id }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
-                                        <a href="/wanboAdmin/rooms/{{ $room->id }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></a>
+                                        <a href="/wanboAdmin/rooms/{{ $room->id }}" class="btn bg-info"><i class="fas fa-eye"></i> Detail</a>
+                                        <a href="/wanboAdmin/rooms/{{ $room->id }}/edit" class="btn bg-warning"><i class="fas fa-edit"></i> Edit</a>
                                         <form action="/wanboAdmin/rooms/{{ $room->id }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
-                                        <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
-                                            <i class="fas fa-trash-alt"></i>
+                                        <button class="btn bg-danger border-0" onclick="return confirm('Are you sure?')">
+                                            <i class="fas fa-trash-alt"></i> Delete
                                         </button>
                                         </form>
                                     </td>

@@ -20,7 +20,7 @@
                     <form method="POST" action="/wanboAdmin/rooms" class="mb-5"> 
                         @csrf
                         <div class="mb-3">
-                            <label for="room_name" class="form-label">Name</label>
+                            <label for="room_name" class="form-label">Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control @error('room_name') is-invalid @enderror" id="room_name" name="room_name" autofocus value="{{ old('room_name') }}">
                             @error('room_name')
                                 <div class="invalid-feedback">

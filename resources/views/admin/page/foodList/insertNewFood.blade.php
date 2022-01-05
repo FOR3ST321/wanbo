@@ -20,7 +20,7 @@
                     <form method="POST" action="/wanboAdmin/beverages" class="mb-5"> 
                         @csrf
                         <div class="mb-3">
-                            <label for="beverage_name" class="form-label">Name</label>
+                            <label for="beverage_name" class="form-label">Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control @error('beverage_name') is-invalid @enderror" id="beverage_name" name="beverage_name" autofocus value="{{ old('beverage_name') }}">
                             @error('beverage_name')
                                 <div class="invalid-feedback">
@@ -41,7 +41,7 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="price" class="form-label">Price</label>
+                            <label for="price" class="form-label">Price <span class="text-danger">*</span></label>
                             <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price') }}">
                             @error('price')
                                 <div class="invalid-feedback">
