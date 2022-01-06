@@ -17,12 +17,46 @@
         <div class="container-fluid">
             <div class="card card-primary card-outline">
                 <div class="card-header">
-                    <h3 class="card-title">Icons</h3>
+                    <h3 class="card-title"></h3>
                 </div> <!-- /.card-body -->
                 <div class="card-body">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, dolor ullam! Quos
-                        consequatur neque aperiam quae molestiae, vero provident, nisi facilis illo beatae odio
-                        veniam nobis consectetur eum dolores sapiente?</p>
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Room</th>
+                            <th scope="col">User</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Schedule</th>
+                            <th scope="col">Check In</th>
+                            <th scope="col">Check Out</th>
+                            <th scope="col">Total Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i = 1 ?>
+                            @foreach($orders as $order)
+                                @if($order->status !== 'pending' && $order->status !== 'paid' && $order->status !== 'booked')
+                                    <tr>
+                                        <td>{{ $i }}</td>
+                                        <td>{{ $order->room_name }}</td>
+                                        <td>{{ $order->name }}</td>
+                                        <td>{{ $order->status }}</td>
+                                        <td>{{ $order->schedule }}</td>
+                                        <td>{{ $order->checkin }}</td>
+                                        <td>{{ $order->checkout }}</td>
+                                        <td>{{ $order->total_price }}</td>
+                                        <?php $i++ ?>
+                                    </tr>
+                                @endif
+                            @endforeach
+                            @if ($i == 1) 
+                                <tr>
+                                    <td colspan="7" style="text-align: center">No Data!</td>
+                                </tr>
+                            @endif
+                        </tbody>
+                    </table>
                 </div><!-- /.card-body -->
             </div>
         </div><!-- /.container-fluid -->

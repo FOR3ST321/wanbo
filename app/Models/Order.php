@@ -12,10 +12,9 @@ class Order extends Model
 
     public static function getData(){
         return DB::table('orders')
-        ->join('food_orders', 'orders.id', '=', 'food_orders.order_id')
-        ->join('beverages', 'beverages.id', '=', 'food_orders.beverage_id')
         ->join('rooms', 'orders.room_id', '=', 'rooms.id')
         ->join('users', 'orders.user_id', '=', 'users.id')
+        ->orderBy('status', 'asc')
         ->get();
     }
 }

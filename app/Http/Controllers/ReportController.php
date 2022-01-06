@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -21,6 +22,7 @@ class ReportController extends Controller
     public function orderHistory(){
         return view('/admin/page/orderHistory', [
             'active' => ['report', true, 'order-history'],
+            'orders' => Order::getData()
         ]);
     }
 }
