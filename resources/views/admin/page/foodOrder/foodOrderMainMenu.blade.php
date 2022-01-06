@@ -65,6 +65,7 @@
                                                 </button>
                                             </form>
                                         </td>
+                                        <?php $i++ ?>
                                     </tr>
                                 @endif
                             @endforeach
