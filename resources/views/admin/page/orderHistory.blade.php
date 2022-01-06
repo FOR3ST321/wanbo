@@ -30,6 +30,7 @@
                             <th scope="col">Schedule</th>
                             <th scope="col">Check In</th>
                             <th scope="col">Check Out</th>
+                            <th scope="col">Total Time</th>
                             <th scope="col">Total Price</th>
                             </tr>
                         </thead>
@@ -45,6 +46,7 @@
                                         <td>{{ $order->schedule }}</td>
                                         <td>{{ $order->checkin }}</td>
                                         <td>{{ $order->checkout }}</td>
+                                        <td>{{ $order->total_time }}</td>
                                         <td>{{ $order->total_price }}</td>
                                         <?php $i++ ?>
                                     </tr>
