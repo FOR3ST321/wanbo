@@ -36,8 +36,8 @@
                         <tbody>
                             <?php $i = 1 ?>
                             @foreach($food_orders as $foodOrder)
-                                <tr>
-                                    @if($foodOrder->food_status === 'pending')
+                                @if($foodOrder->food_status == 'pending')
+                                    <tr>
                                         <td>{{ $i }}</td>
                                         <td>{{ $foodOrder->beverage_name }}</td>
                                         <td>{{ $foodOrder->type }}</td>
@@ -48,13 +48,32 @@
                                         <td>
                                             {{-- ini coba coba --}}
                                             {{-- <a href="{{ route('app\Http\Controllers\FoodOrderController@success', [$foodOrder]) }}" class="btn btn-success"><i class="fas fa-check-square"></i></a> --}}
-                                            <a href="" class="btn btn-success"><i class="fas fa-check-square"></i></a>
-                                            <a href="" class="btn btn-danger"><i class="fas fa-times"></i></a>
+                                            {{-- <a href="" class="btn btn-success"><i class="fas fa-check-square"></i></a> --}}
+                                            {{-- <a href="" class="btn btn-danger"><i class="fas fa-times"></i></a> --}}
+                                            <form action="/wanboAdmin/foodOrders/{{ $foodOrder->id }}" method="POST" class="d-inline">
+                                                @method('put')
+                                                @csrf
+                                                <button class="btn bg-success border-0">
+                                                    <i class="fas fa-check-square"></i>
+                                                </button>
+                                            </form>
+                                            <form action="/wanboAdmin/foodOrders/{{ $foodOrder->id }}" method="POST" class="d-inline">
+                                                @method('patch')
+                                                @csrf
+                                                <button class="btn bg-danger border-0">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </form>
                                         </td>
                                         <?php $i++ ?>
-                                    @endif
-                                </tr>
+                                    </tr>
+                                @endif
                             @endforeach
+                            @if ($i == 1) 
+                                <tr>
+                                    <td colspan="8" style="text-align: center">No Data!</td>
+                                </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div><!-- /.card-body -->

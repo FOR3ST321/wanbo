@@ -25,6 +25,7 @@ class FoodOrder extends Model
         ->join('beverages', 'beverages.id', '=', 'food_orders.beverage_id')
         ->join('rooms', 'orders.room_id', '=', 'rooms.id')
         ->join('users', 'orders.user_id', '=', 'users.id')
+        ->select('food_orders.*', 'users.name', 'beverages.beverage_name', 'beverages.type', 'rooms.room_name')
         ->get();
     }
 }

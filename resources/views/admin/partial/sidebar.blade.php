@@ -34,7 +34,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="/wanboAdmin/foodOrder" class="nav-link <?= $active[0]=='food-order-list' ? 'active' : '' ?>">
+                    <a href="/wanboAdmin/foodOrders" class="nav-link <?= $active[0]=='food-order-list' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-hamburger"></i>
                         <p>
                             Food Order List

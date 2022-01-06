@@ -35,8 +35,8 @@
                         <tbody>
                             <?php $i = 1 ?>
                             @foreach($food_orders as $foodOrder)
-                                <tr>
-                                    @if($foodOrder->food_status !== 'pending')
+                                @if($foodOrder->food_status !== 'pending')
+                                    <tr>
                                         <td>{{ $i }}</td>
                                         <td>{{ $foodOrder->beverage_name }}</td>
                                         <td>{{ $foodOrder->type }}</td>
@@ -45,12 +45,18 @@
                                         <td>{{ $foodOrder->quantity }}</td>
                                         <td>{{ $foodOrder->food_status }}</td>
                                         <?php $i++ ?>
-                                    @endif
-                                </tr>
+                                    </tr>
+                                @endif
                             @endforeach
+                            @if ($i == 1) 
+                                <tr>
+                                    <td colspan="7" style="text-align: center">No Data!</td>
+                                </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div><!-- /.card-body -->
+                
             </div>
         </div><!-- /.container-fluid -->
     </section>

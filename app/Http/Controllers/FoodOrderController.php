@@ -24,7 +24,7 @@ class FoodOrderController extends Controller
     public function index2()
     {
         return view('/admin/page/foodOrder/foodOrderHistory', [
-            'active' => ['food-order-history', false, null],
+            'active' => ['report',true, 'food-order-history'],
             'food_orders' => FoodOrder::getData()
         ]);
     }
@@ -32,13 +32,19 @@ class FoodOrderController extends Controller
     public function success(FoodOrder $foodOrder)
     {
         FoodOrder::where('id', $foodOrder->id)->update(['food_status'=>'success']);
-        return redirect('wanboAdmin/foodOrder');
+        return view('/admin/page/foodOrder/foodOrderMainMenu', [
+            'active' => ['food-order-list', false, null],
+            'food_orders' => FoodOrder::getData()
+        ]);
     }
 
     public function canceled(FoodOrder $foodOrder)
     {
-        FoodOrder::where('id', $foodOrder->id)->update(['food_status'=>'failed']);
-        return redirect('wanboAdmin/foodOrder');
+        FoodOrder::where('id', $foodOrder->id)->update(['food_status'=>'canceled']);
+        return view('/admin/page/foodOrder/foodOrderMainMenu', [
+            'active' => ['food-order-list', false, null],
+            'food_orders' => FoodOrder::getData()
+        ]);
     }
     /**
      * Show the form for creating a new resource.
