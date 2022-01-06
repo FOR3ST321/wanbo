@@ -42,4 +42,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function getUser ($id) {
+        return DB::table('users')
+        ->join('accounts', 'accounts.id','=','users.account_id')
+        ->where('users.account_id','=',$id)
+        ->select('users.*', 'accounts.username', 'accounts.password')
+        ->get();
+    }
 }
