@@ -18,7 +18,8 @@ class BeverageController extends Controller
     {
         return view('/admin/page/foodList/foodListMainMenu', [
             'active' => ['beverage-list', true, null],
-            'beverages' => Beverage::all()
+            'beverages' => Beverage::all(),
+            'js' => '/admin/js/deleteConfirm.js'
         ]);
     }
 
@@ -65,7 +66,8 @@ class BeverageController extends Controller
     {
         return view('/admin/page/foodList/showFoodDetail', [
             'active' => ['food', true, 'food-list'],
-            'beverage' => $beverage
+            'beverage' => $beverage,
+            'js' => '/admin/js/deleteConfirm.js'
         ]);
     }
 
