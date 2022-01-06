@@ -142,6 +142,11 @@
                                 </td>
                             </tr>
                             @endforeach
+                            @empty ($bookingData[0]) 
+                                <tr>
+                                    <td colspan="7" style="text-align: center">No Data!</td>
+                                </tr>
+                            @endempty
                         </tbody>
                     </table>
 
@@ -175,6 +180,11 @@
                                 </td>
                             </tr>
                             @endforeach
+                            @empty ($foodOrderData[0]) 
+                                <tr>
+                                    <td colspan="7" style="text-align: center">No Data!</td>
+                                </tr>
+                            @endempty
                         </tbody>
                     </table>
                 </div><!-- /.card-body -->

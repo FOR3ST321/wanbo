@@ -54,7 +54,7 @@
                             @endforeach
                             @if ($i == 1) 
                                 <tr>
-                                    <td colspan="7" style="text-align: center">No Data!</td>
+                                    <td colspan="9" style="text-align: center">No Data!</td>
                                 </tr>
                             @endif
                         </tbody>
