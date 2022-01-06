@@ -15,10 +15,11 @@
     <link rel="stylesheet" href="/admin/dist/css/adminlte.min.css">
     <!-- Favicon -->
     <link rel="icon" href="/frontend/img/core-img/favicon1.png">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
+    @include('sweetalert::alert')
     <div class="wrapper">
        @include('admin.partial.navbar')
        @include('admin.partial.sidebar')
@@ -42,7 +43,6 @@
 
     <!-- jQuery -->
     <script src="/admin/plugins/jquery/jquery.min.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Bootstrap 4 -->
     <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
@@ -50,13 +50,17 @@
     <!-- AdminLTE for demo purposes -->
     <script src="/admin/dist/js/demo.js"></script>
 
+    @if (isset($js))
+        <script src="{{$js}}"></script>
+    @endif
+
     <script type="text/javascript">
         $("#logout").click(function() {
-            swal({
+            Swal.fire({
                 title: `Are you sure want to logout ??`,
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
+                showDenyButton: true,
+                confirmButtonText: 'Logout',
+                denyButtonText: 'Cancel',
             }).then((result) => {
                 if (result) {
                     window.location.replace("/wanboAdmin/logout"); //redirect ke delete

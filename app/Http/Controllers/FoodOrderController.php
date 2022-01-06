@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FoodOrder;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\StoreFoodOrderRequest;
 use App\Http\Requests\UpdateFoodOrderRequest;
 
@@ -17,7 +18,8 @@ class FoodOrderController extends Controller
     {
         return view('/admin/page/foodOrder/foodOrderMainMenu', [
             'active' => ['food-order-list', false, null],
-            'food_orders' => FoodOrder::getData()
+            'food_orders' => FoodOrder::getData(),
+            'js' => "/admin/js/foodOrder.js"
         ]);
     }
 
@@ -32,19 +34,23 @@ class FoodOrderController extends Controller
     public function success(FoodOrder $foodOrder)
     {
         FoodOrder::where('id', $foodOrder->id)->update(['food_status'=>'success']);
-        return view('/admin/page/foodOrder/foodOrderMainMenu', [
-            'active' => ['food-order-list', false, null],
-            'food_orders' => FoodOrder::getData()
-        ]);
+        Alert::success('Congrats', 'Food order accepted!'); //sweetalert laravel
+        // return view('/admin/page/foodOrder/foodOrderMainMenu', [
+        //     'active' => ['food-order-list', false, null],
+        //     'food_orders' => FoodOrder::getData()
+        // ]);
+        return redirect('/wanboAdmin/foodOrders');
     }
 
     public function canceled(FoodOrder $foodOrder)
     {
         FoodOrder::where('id', $foodOrder->id)->update(['food_status'=>'canceled']);
-        return view('/admin/page/foodOrder/foodOrderMainMenu', [
-            'active' => ['food-order-list', false, null],
-            'food_orders' => FoodOrder::getData()
-        ]);
+        Alert::warning('Info', 'Food order Rejected!'); //sweetalert laravel
+        // return view('/admin/page/foodOrder/foodOrderMainMenu', [
+        //     'active' => ['food-order-list', false, null],
+        //     'food_orders' => FoodOrder::getData()
+        // ]);
+        return redirect('/wanboAdmin/foodOrders');
     }
     /**
      * Show the form for creating a new resource.
