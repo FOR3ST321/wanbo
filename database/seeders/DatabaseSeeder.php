@@ -231,7 +231,7 @@ class DatabaseSeeder extends Seeder
 
         FoodOrder::create([
             'order_id'=>1,
-            'beverage_id'=>2,
+            'beverage_id'=>5,
             'quantity'=>3,
             'food_status'=>'pending'
         ]);
@@ -240,14 +240,28 @@ class DatabaseSeeder extends Seeder
             'order_id'=>1,
             'beverage_id'=>3,
             'quantity'=>3,
-            'food_status'=>'canceled'
+            'food_status'=>'pending'
         ]);
 
         FoodOrder::create([
             'order_id'=>1,
             'beverage_id'=>1,
             'quantity'=>3,
-            'food_status'=>'canceled'
+            'food_status'=>'pending'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>1,
+            'beverage_id'=>9,
+            'quantity'=>3,
+            'food_status'=>'pending'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>1,
+            'beverage_id'=>8,
+            'quantity'=>3,
+            'food_status'=>'pending'
         ]);
     }
 }

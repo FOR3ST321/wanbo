@@ -20,6 +20,23 @@
     <!-- Responsive CSS -->
     <link href="/frontend/css/responsive/responsive.css" rel="stylesheet">
 
+    <style>
+        .dorne-welcome-area {
+            background-image: url(https://media.gettyimages.com/photos/interior-of-la-bastille-internet-cafe-amsterdam-picture-idAA028564?k=20&m=AA028564&s=612x612&w=0&h=4cLUXImRnW0xR47HKekzB0Vlg1sGXD4VQPXuxSqrwyE=); 
+            height:500px;
+        }
+        @media screen and (max-width: 480px) {
+            .dorne-welcome-area {
+                height: 300px;
+                padding-top: 100px;
+                margin-bottom: 75px;
+            }
+            .dorne-catagory-area {
+                display: none;
+            }
+        }
+    </style>
+
 </head>
 
 <body>

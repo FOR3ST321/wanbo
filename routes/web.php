@@ -44,25 +44,25 @@ Route::middleware(['is_admin'])->group(function () {
 
     Route::get('/wanboAdmin/logout', [AuthController::class, 'logoutAdmin']);
     
+    //backend
     Route::get('/wanboAdmin/account/{account:id}', [BackEndController::class, 'profile']);
     Route::post('/wanboAdmin/account/{account:id}', [BackEndController::class, 'updateProfile']);
     Route::match(array('get','post'), '/wanboAdmin/account/{account:id}/edit', [BackEndController::class, 'editProfile']);
     Route::get('/wanboAdmin/store_branch/{store_branch:id}/edit', [BackEndController::class, 'branch']);
     Route::post('/wanboAdmin/store_branch/{store_branch:id}', [BackEndController::class, 'updateBranch']);
 
-    // Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
-    // Route::get('/wanboAdmin/foodList', [BeverageController::class, 'index']);
+    //package
     Route::resource('/wanboAdmin/packages', PackageController::class);
     Route::resource('/wanboAdmin/rooms', RoomController::class);
 
+    //foodorder
     Route::get('/wanboAdmin', [OrderController::class, 'index']);
-    // Route::get('/wanboAdmin/packages', [PackageController::class, 'index']);
-    // Route::get('/wanboAdmin/foodList', [BeverageController::class, 'index']);
-    Route::get('/wanboAdmin/foodOrder', [FoodOrderController::class, 'index']);
-    // ini coba-coba
-    // Route::get('/wanboAdmin/foodOrder/{foodOrder}', [FoodOrderController::class, 'success']);
-    // Route::get('/wanboAdmin/foodOrder/{foodOrder}', [FoodOrderController::class, 'canceled']);
+    Route::get('/wanboAdmin/foodOrders', [FoodOrderController::class, 'index']);
+    Route::put('/wanboAdmin/foodOrders/{foodOrder}', [FoodOrderController::class, 'success']);
+    Route::patch('/wanboAdmin/foodOrders/{foodOrder}', [FoodOrderController::class, 'canceled']);
     Route::get('/wanboAdmin/foodOrderHistory', [FoodOrderController::class, 'index2']);
+    
+    //beverage
     Route::resource('/wanboAdmin/beverages', BeverageController::class);
 
     Route::get('/wanboAdmin/reportSummary', [ReportController::class, 'reportSummary']);
