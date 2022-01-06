@@ -11,7 +11,7 @@
                         <ul class="navbar-nav mr-auto" id="dorneMenu">
                             @auth
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/wanbo">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">Warnet</a>
