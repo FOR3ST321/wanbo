@@ -1,5 +1,5 @@
 @extends('admin.partial.headerfooter')
-
+{{-- @dump($foodOrderData) --}}
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -16,8 +16,10 @@
             <div class="form-group col-4">
                 <label>Select Summary Date:</label>
                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                    <input value="<?= date('Y-m-d') ?>" max="<?= date('Y-m-d') ?>" type="date"
-                        class="form-control datetimepicker-input" data-target="#reservationdate">
+                    <form action="/wanboAdmin/reportSummary/" method="GET">
+                        <input id='datepicker' value="<?= date('Y-m-d') ?>" max="<?= date('Y-m-d') ?>" type="date"
+                            class="form-control datetimepicker-input" data-target="#reservationdate" name="date">
+                    </form>
                 </div>
             </div>
         </div>
@@ -122,24 +124,24 @@
                                 <th scope="col" style="width:10%">Room</th>
                                 <th scope="col" style="width:10%">Schedule</th>
                                 <th scope="col" style="width:10%">Total Time</th>
-                                <th scope="col" style="width:10%">Food Order</th>
                                 <th scope="col" style="width:10%">Total Payment</th>
                                 <th scope="col" style="width:10%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($bookingData as $i)
                             <tr>
-                                <td>1</td>
-                                <td>Hidayat</td>
-                                <td>Room 3</td>
-                                <td>20.00</td>
-                                <td>90 min</td>
-                                <td>2 item(s)</td>
-                                <td>Rp:200.000</td>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$i->name}}</td>
+                                <td>{{$i->room_name}}</td>
+                                <td>{{date_format(date_create($i->schedule),"H:i:s")}}</td>
+                                <td>{{$i->total_time}} Min</td>
+                                <td>Rp: {{$i->total_price}}</td>
                                 <td>
                                     <button class="btn btn-primary">Detail</button>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
 
@@ -160,17 +162,19 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($foodOrderData as $i)
                             <tr>
-                                <td>1</td>
-                                <td>Hidayat</td>
-                                <td>Room 3</td>
-                                <td>Bakso</td>
-                                <td>3</td>
-                                <td>Rp:200.000</td>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$i->name}}</td>
+                                <td>{{$i->room_name}}</td>
+                                <td>{{$i->beverage_name}}</td>
+                                <td>{{$i->quantity}}</td>
+                                <td>{{$i->quantity*$i->price}}</td>
                                 <td>
                                     <button class="btn btn-primary">Detail</button>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div><!-- /.card-body -->

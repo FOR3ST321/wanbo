@@ -65,6 +65,8 @@ Route::middleware(['is_admin'])->group(function () {
     //beverage
     Route::resource('/wanboAdmin/beverages', BeverageController::class);
 
+
+    //report
     Route::get('/wanboAdmin/reportSummary', [ReportController::class, 'reportSummary']);
     Route::get('/wanboAdmin/paymentHistory', [ReportController::class, 'paymentHistory']);
     Route::get('/wanboAdmin/orderHistory', [ReportController::class, 'orderHistory']);
