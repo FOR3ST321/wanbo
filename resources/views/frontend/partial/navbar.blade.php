@@ -1,5 +1,9 @@
 <!-- ***** Header Area Start ***** -->
-<header class="header_area" id="header">
+@if (Route::is('login_admin'))
+    <header class="header_area" id="header" style="background-color: #15062c;opacity:0.9;height:100px">
+@else
+    <header class="header_area" id="header">
+@endif
     <div class="container-fluid h-100">
         <div class="row h-100">
             <div class="col-12 h-100">
@@ -30,16 +34,6 @@
                                 <a href="/wanbo/profile" class="btn dorne-btn">Hello, {{auth()->user()->username}}</a>
                             </div>
                         @else
-                            @if (Route::is('login_admin'))
-                                <div class="dorne-add-listings-btn">
-                                    <a href="/wanbo/login" class="btn dorne-btn">Sign in or Register as User</a>
-                                </div>
-                            @endif
-                            @if (Route::is('login_user'))
-                                <div class="dorne-add-listings-btn">
-                                    <a href="/wanboAdmin/login" class="btn dorne-btn">Sign in as Admin</a>
-                                </div>
-                            @endif
                             @if (Route::is('dashboard'))
                                 <div class="dorne-add-listings-btn">
                                     <a href="/wanbo/login" class="btn dorne-btn">Sign in or Register</a>

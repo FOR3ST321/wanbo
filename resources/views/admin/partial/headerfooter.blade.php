@@ -67,6 +67,11 @@
                 }
             })
         })
+
+        $("#preview").click( function() {
+            var url = $("#photo_url").val();
+            window.open(url);
+        });
     </script>
 </body>
 
