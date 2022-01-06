@@ -36,9 +36,9 @@
                         <tbody>
                             <?php $i = 1 ?>
                             @foreach($food_orders as $foodOrder)
-                                @if($foodOrder->food_status == 'pending')
-                                    <tr>
-                                        <td>{{ $i }}</td>
+                                <tr>
+                                    @if($foodOrder->food_status === 'pending')
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $foodOrder->beverage_name }}</td>
                                         <td>{{ $foodOrder->type }}</td>
                                         <td>{{ $foodOrder->name }}</td>
@@ -65,7 +65,6 @@
                                                 </button>
                                             </form>
                                         </td>
-                                        <?php $i++ ?>
                                     </tr>
                                 @endif
                             @endforeach

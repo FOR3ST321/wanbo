@@ -15,7 +15,8 @@
                 <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="/wanboAdmin/account/{{ auth()->user()->id }}" class="d-block">{{ auth()->user()->username }}</a>
+                <a href="/wanboAdmin/account/{{ auth()->user()->id }}"
+                    class="d-block">{{ auth()->user()->username }}</a>
             </div>
         </div>
 
@@ -25,7 +26,7 @@
                 <!-- Add icons to the links using the .nav-icon class
        with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="/wanboAdmin" class="nav-link <?= $active[0]=='billing' ? 'active' : '' ?>">
+                    <a href="/wanboAdmin" class="nav-link <?= $active[0] == 'billing' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Billing
@@ -47,16 +48,18 @@
                 <li class="nav-header">MANAGE</li>
 
                 <li class="nav-item">
-                    <a href="/wanboAdmin/beverages" class="nav-link <?= $active[0]=='beverage-list' ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-hamburger"></i>
+                    <a href="/wanboAdmin/beverages"
+                        class="nav-link <?= $active[0] == 'beverage-list' ? 'active' : '' ?>">
+
+                        <i class="nav-icon fas fa-shopping-basket"></i>
                         <p>
                             Beverages
                         </p>
                     </a>
                 </li>
 
-                <li class="nav-item <?= $active[1] && $active[0]=='packages' ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= $active[0]=='packages' ? 'active' : '' ?>">
+                <li class="nav-item <?= $active[1] && $active[0] == 'packages' ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= $active[0] == 'packages' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-box-open"></i>
                         <p>
                             Packages
@@ -65,13 +68,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/wanboAdmin/packages" class="nav-link <?= $active[2]=='package-list' ? 'active' : '' ?>">
+                            <a href="/wanboAdmin/packages"
+                                class="nav-link <?= $active[2] == 'package-list' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Package List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/wanboAdmin/rooms" class="nav-link <?= $active[2]=='room-list' ? 'active' : '' ?>">
+                            <a href="/wanboAdmin/rooms"
+                                class="nav-link <?= $active[2] == 'room-list' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Room List</p>
                             </a>
@@ -81,8 +86,8 @@
 
                 <li class="nav-header">OTHER</li>
 
-                <li class="nav-item <?= $active[1]==true && $active[0]=='report'  ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= $active[0]=='report' ? 'active' : '' ?>">
+                <li class="nav-item <?= $active[1] == true && $active[0] == 'report' ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= $active[0] == 'report' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-scroll"></i>
                         <p>
                             Report
@@ -91,25 +96,29 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/wanboAdmin/reportSummary" class="nav-link <?= $active[2]=='summary' ? 'active' : '' ?>">
+                            <a href="/wanboAdmin/reportSummary"
+                                class="nav-link <?= $active[2] == 'summary' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Summary</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/wanboAdmin/paymentHistory" class="nav-link <?= $active[2]=='payment-history' ? 'active' : '' ?>">
+                            <a href="/wanboAdmin/paymentHistory"
+                                class="nav-link <?= $active[2] == 'payment-history' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Payment History</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/wanboAdmin/orderHistory" class="nav-link <?= $active[2]=='order-history' ? 'active' : '' ?>">
+                            <a href="/wanboAdmin/orderHistory"
+                                class="nav-link <?= $active[2] == 'order-history' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Order History</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/wanboAdmin/foodOrderHistory" class="nav-link <?= $active[2]=='food-order-history' ? 'active' : '' ?>">
+                            <a href="/wanboAdmin/foodOrderHistory"
+                                class="nav-link <?= $active[2] == 'food-order-history' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Food Order History</p>
                             </a>
@@ -117,10 +126,10 @@
                     </ul>
                 </li>
 
-                
+
 
                 <li class="nav-item">
-                    <a href="/wanboAdmin/logout" class="nav-link">
+                    <a href="#" id="logout" class="nav-link">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>
                             Logout
@@ -133,3 +142,5 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+
+

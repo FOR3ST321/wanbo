@@ -15,13 +15,14 @@
         <div class="container-fluid">
             <div class="form-group col-4">
                 <label>Select Summary Date:</label>
-                  <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                      <input value="<?= date('Y-m-d'); ?>" max="<?= date('Y-m-d'); ?>" type="date" class="form-control datetimepicker-input" data-target="#reservationdate">
-                  </div>
-              </div>
+                <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                    <input value="<?= date('Y-m-d') ?>" max="<?= date('Y-m-d') ?>" type="date"
+                        class="form-control datetimepicker-input" data-target="#reservationdate">
+                </div>
+            </div>
         </div>
     </section>
-    
+
 
     <!-- Main content -->
     <section class="content">
@@ -32,59 +33,79 @@
                 </div> <!-- /.card-body -->
                 <div class="card-body">
                     <div class="container">
-                        <strong>Summaries</strong><br>
+                        <strong>Summaries</strong><br><br>
                         <div class="row">
-                            <div class="col-2">
-                                Total Order
-                            </div>
                             <div class="col-4">
-                                : x
-                            </div>
-                        </div>
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-info"><i class="fas fa-shopping-cart"></i></span>
 
-                        <div class="row">
-                            <div class="col-2">
-                                Total Booking Time
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Total order</span>
+                                        <span class="info-box-number">1,410</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
                             </div>
+                            
                             <div class="col-4">
-                                : xxx minute
-                            </div>
-                        </div>
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-info"><i class="fas fa-shopping-cart"></i></span>
 
-                        <div class="row">
-                            <div class="col-2">
-                                Total Food Order
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Total Food order</span>
+                                        <span class="info-box-number">1,410</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
                             </div>
-                            <div class="col-4">
-                                : x
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-2">
-                                Revenue from warnet
-                            </div>
                             <div class="col-4">
-                                : Rp.xxx.xxx
-                            </div>
-                        </div>
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-info"><i class="fas fa-clock"></i></span>
 
-                        <div class="row">
-                            <div class="col-2">
-                                Revenue from food
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Total Booking Time</span>
+                                        <span class="info-box-number">1,410</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
                             </div>
-                            <div class="col-4">
-                                : Rp.xxx.xxx
-                            </div>
-                        </div>
 
 
-                        <div class="row">
-                            <div class="col-2">
-                                Total Revenue
-                            </div>
                             <div class="col-4">
-                                : Rp.xxx.xxx
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-info"><i class="fas fa-dollar-sign"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Revenue from warnet</span>
+                                        <span class="info-box-number">1,410</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-info"><i class="fas fa-dollar-sign"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Revenue from food</span>
+                                        <span class="info-box-number">1,410</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-info"><i class="fas fa-file-invoice-dollar"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Total Revenue</span>
+                                        <span class="info-box-number">1,410</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -151,7 +172,7 @@
                                 </td>
                             </tr>
                         </tbody>
-                    </table>                    
+                    </table>
                 </div><!-- /.card-body -->
             </div>
         </div><!-- /.container-fluid -->
