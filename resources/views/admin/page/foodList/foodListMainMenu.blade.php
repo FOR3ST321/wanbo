@@ -38,8 +38,9 @@
                         <thead>
                             <tr>
                             <th scope="col" style="width:10%">#</th>
-                            <th scope="col" style="width:30%">Name</th>
-                            <th scope="col" style="width:30%">Type</th>
+                            <th scope="col" style="width:20%">Name</th>
+                            <th scope="col" style="width:20%">Type</th>
+                            <th scope="col" style="width:20%">Price</th>
                             <th scope="col" style="width:30%">Action</th>
                             </tr>
                         </thead>
@@ -49,13 +50,14 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $beverage->beverage_name }}</td>
                                     <td>{{ $beverage->type }}</td>
+                                    <td>{{ $beverage->price }}</td>
                                     <td>
                                         <a href="/wanboAdmin/beverages/{{ $beverage->id }}" class="btn bg-info"><i class="fas fa-eye"></i> Detail</a>
                                         <a href="/wanboAdmin/beverages/{{ $beverage->id }}/edit" class="btn bg-warning"><i class="fas fa-edit"></i> Edit</a>
                                         <form action="/wanboAdmin/beverages/{{ $beverage->id }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn bg-danger border-0" onclick="return confirm('Are you sure?')">
+                                        <button class="btn bg-danger border-0 formBtn"  value="{{$beverage->beverage_name}}">
                                             <i class="fas fa-trash-alt"></i> Delete
                                         </button>
                                         </form>

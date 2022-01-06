@@ -22,12 +22,15 @@
 
                 <div class="card-body">
 
-                    <a href="/wanboAdmin/rooms" class="btn btn-success"><span data-feather="arrow-left"></span> Back to room list</a>
+                    <a href="/wanboAdmin/rooms" class="btn btn-success">
+                        <i class="fas fa-chevron-left" style="margin-right: 5px"></i>
+                        Back to room list
+                    </a>
                     <a href="/wanboAdmin/rooms/{{ $room->id }}/edit" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
                     <form action="/wanboAdmin/rooms/{{ $room->id }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
-                        <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
+                        <button class="btn btn-danger formBtn" value="{{$room->room_name}}">
                             <i class="fas fa-trash-alt"></i> Delete
                         </button>
                     </form>

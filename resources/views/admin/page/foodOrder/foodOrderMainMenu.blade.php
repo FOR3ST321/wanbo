@@ -53,14 +53,14 @@
                                             <form action="/wanboAdmin/foodOrders/{{ $foodOrder->id }}" method="POST" class="d-inline">
                                                 @method('put')
                                                 @csrf
-                                                <button class="btn bg-success border-0 formBtn">
+                                                <button class="btn bg-success border-0 formBtn" value="Accept the order ?">
                                                     <i class="fas fa-check-square"></i>
                                                 </button>
                                             </form>
                                             <form action="/wanboAdmin/foodOrders/{{ $foodOrder->id }}" method="POST" class="d-inline">
                                                 @method('patch')
                                                 @csrf
-                                                <button class="btn bg-danger border-0 formBtn">
+                                                <button class="btn bg-danger border-0 formBtn" value="Reject this order ?">
                                                     <i class="fas fa-times"></i>
                                                 </button>
                                             </form>

@@ -15,7 +15,7 @@ class Room extends Model
     //     return DB::table('rooms')
     //     ->join('packages', 'rooms.package_id', '=', 'packages.id')
     //     ->join('store_branches', 'rooms.store_branch_id', '=', 'store_branches.id')
-    //     ->select('packages.*', 'store_branches.*', 'rooms.*')
+    //     ->select('packages.package_name', 'store_branches.*', 'rooms.*')
     //     ->get();
     // }
 

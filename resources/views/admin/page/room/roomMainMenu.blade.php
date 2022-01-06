@@ -55,7 +55,7 @@
                                         <form action="/wanboAdmin/rooms/{{ $room->id }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn bg-danger border-0" onclick="return confirm('Are you sure?')">
+                                        <button class="btn bg-danger border-0 formBtn" value="{{$room->room_name}}">
                                             <i class="fas fa-trash-alt"></i> Delete
                                         </button>
                                         </form>
