@@ -69,12 +69,13 @@
                         </div>
                         <div class="mb-3">
                             <label for="photo_url" class="form-label">Photo url</label>
-                            <input type="text" class="form-control @error('photo_url') is-invalid @enderror" id="photo_url" name="photo_url" autofocus value="{{ old('photo_url', $package->photo_url) }}">
+                            <input type="url" class="form-control @error('photo_url') is-invalid @enderror" id="photo_url" name="photo_url" autofocus value="{{ old('photo_url', $package->photo_url) }}">
                             @error('photo_url')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
+                            <button type="button" class="btn btn-secondary btn-sm mt-2" id="preview">Preview url</button>
                         </div>
                         <button type="submit" class="btn btn-primary">Update Package</button>
                     </form>

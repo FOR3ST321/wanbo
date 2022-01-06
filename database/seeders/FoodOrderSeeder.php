@@ -22,21 +22,21 @@ class FoodOrderSeeder extends Seeder
         ]);
 
         FoodOrder::create([
-            'order_id'=>1,
+            'order_id'=>2,
             'beverage_id'=>2,
             'quantity'=>3,
             'food_status'=>'pending'
         ]);
 
         FoodOrder::create([
-            'order_id'=>1,
+            'order_id'=>3,
             'beverage_id'=>3,
             'quantity'=>3,
             'food_status'=>'pending'
         ]);
 
         FoodOrder::create([
-            'order_id'=>1,
+            'order_id'=>4,
             'beverage_id'=>2,
             'quantity'=>3,
             'food_status'=>'canceled'
