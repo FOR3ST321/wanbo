@@ -14,6 +14,13 @@
 
     <!-- Main content -->
     <section class="content">
+        <div class="container-fluid" style="margin-bottom:20px">
+            <a href="/wanboAdmin/rooms" class="btn btn-success">
+                <i class="fas fa-chevron-left" style="margin-right: 5px"></i>
+                Back to room list
+            </a>
+        </div>
+
         <div class="container-fluid">
             <div class="card card-primary card-outline">
                 <div class="card-body">

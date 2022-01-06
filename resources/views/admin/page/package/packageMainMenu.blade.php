@@ -53,11 +53,11 @@
                                         <a href="/wanboAdmin/packages/{{ $package->id }}" class="btn bg-info"><i class="fas fa-eye"></i> Detail</a>
                                         <a href="/wanboAdmin/packages/{{ $package->id }}/edit" class="btn bg-warning"><i class="fas fa-edit"></i> Edit</a>
                                         <form action="/wanboAdmin/packages/{{ $package->id }}" method="POST" class="d-inline">
-                                        @method('delete')
-                                        @csrf
-                                        <button class="btn bg-danger border-0" onclick="return confirm('Are you sure?')">
-                                            <i class="fas fa-trash-alt"></i> Delete
-                                        </button>
+                                            @method('delete')
+                                            @csrf
+                                            <button class="btn bg-danger border-0  formBtn" value="{{$package->package_name}}">
+                                                <i class="fas fa-trash-alt"></i> Delete
+                                            </button>
                                         </form>
                                     </td>
                                 </tr>

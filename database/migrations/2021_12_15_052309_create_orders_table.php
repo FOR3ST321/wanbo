@@ -19,6 +19,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->enum('status', ['pending', 'canceled', 'failed', 'paid', 'booked', 'done']);
             $table->integer('total_price');
+            $table->integer('total_time');
             $table->dateTime('schedule');
             $table->dateTime('checkin');
             $table->dateTime('checkout');

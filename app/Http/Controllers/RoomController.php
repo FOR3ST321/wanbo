@@ -20,7 +20,8 @@ class RoomController extends Controller
     {
         return view('admin/page/room/roomMainMenu',[
             'active' => ['packages', true, 'room-list'],
-            'rooms' => Room::all()
+            'rooms' => Room::all(),
+            'js' => '/admin/js/deleteConfirm.js'
         ]);
     }
 
@@ -69,7 +70,8 @@ class RoomController extends Controller
             'active' => ['packages', true, 'room-list'],
             'room' => $room,
             'packages' => Package::all(),
-            'branches' => StoreBranch::all()
+            'branches' => StoreBranch::all(),
+            'js' => '/admin/js/deleteConfirm.js'
         ]);
     }
 
@@ -117,6 +119,7 @@ class RoomController extends Controller
      */
     public function destroy(Room $room)
     {
-        //
+        Room::destroy($room->id);
+        return redirect('/wanboAdmin/rooms')->with('success', 'Room has been deleted!');
     }
 }

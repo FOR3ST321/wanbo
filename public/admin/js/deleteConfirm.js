@@ -2,7 +2,8 @@ $(".formBtn").on("click", function (e) {
     e.preventDefault();
     var form = $(this).parents('form');
     Swal.fire({
-        title: $(this).attr("value"),
+        title: 'Delete Data : ' + $(this).attr("value") + ' ?',
+        text: 'This action cannot be undone!',
         icon: 'question',
         showDenyButton: true,
         confirmButtonText: "yes",

@@ -65,13 +65,19 @@ Route::middleware(['is_admin'])->group(function () {
     //beverage
     Route::resource('/wanboAdmin/beverages', BeverageController::class);
 
+
+    //report
     Route::get('/wanboAdmin/reportSummary', [ReportController::class, 'reportSummary']);
     Route::get('/wanboAdmin/paymentHistory', [ReportController::class, 'paymentHistory']);
     Route::get('/wanboAdmin/orderHistory', [ReportController::class, 'orderHistory']);
 });
 
 Route::middleware(['is_user'])->group(function () {
-    //admin - buat wanbo user
+    //buat wanbo user
     Route::get('/wanbo/profile', [FrontEndController::class, 'profile'])->middleware('is_user');
+    Route::get('/wanbo/users/{user}/edit', [FrontEndController::class, 'editProfile']);
+    Route::match(array('get','post'),'/wanbo/accounts/{account}/edit', [FrontEndController::class, 'editPass']);
+    Route::post('/wanbo/accounts/{account}', [FrontEndController::class, 'updatePass']);
+    Route::post('/wanbo/users/{user}', [FrontEndController::class, 'updateProfile']);
     Route::get('/wanbo/logout', [AuthController::class, 'logoutUser']);
 });
