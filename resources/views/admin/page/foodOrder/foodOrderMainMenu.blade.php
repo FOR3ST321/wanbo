@@ -38,7 +38,7 @@
                             @foreach($food_orders as $foodOrder)
                                 <tr>
                                     @if($foodOrder->food_status === 'pending')
-                                        <td>{{ $i }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $foodOrder->beverage_name }}</td>
                                         <td>{{ $foodOrder->type }}</td>
                                         <td>{{ $foodOrder->name }}</td>
@@ -48,10 +48,9 @@
                                         <td>
                                             {{-- ini coba coba --}}
                                             {{-- <a href="{{ route('app\Http\Controllers\FoodOrderController@success', [$foodOrder]) }}" class="btn btn-success"><i class="fas fa-check-square"></i></a> --}}
-                                            <a href="" class="btn btn-success"><i class="fas fa-check-square"></i></a>
-                                            <a href="" class="btn btn-danger"><i class="fas fa-times"></i></a>
+                                            <a  data-toggle="tooltip" data-placement="top" title="Accept Order" href="" class="btn btn-success"><i class="fas fa-check-square"></i></a>
+                                            <a  data-toggle="tooltip" data-placement="top" title="Reject Order" href="" class="btn btn-danger"><i class="fas fa-times"></i></a>
                                         </td>
-                                        <?php $i++ ?>
                                     @endif
                                 </tr>
                             @endforeach

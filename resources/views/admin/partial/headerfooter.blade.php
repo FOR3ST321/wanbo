@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/admin/dist/css/adminlte.min.css">
     <!-- Favicon -->
     <link rel="icon" href="/frontend/img/core-img/favicon1.png">
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -42,12 +42,28 @@
 
     <!-- jQuery -->
     <script src="/admin/plugins/jquery/jquery.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Bootstrap 4 -->
     <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="/admin/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="/admin/dist/js/demo.js"></script>
+
+    <script type="text/javascript">
+        $("#logout").click(function() {
+            swal({
+                title: `Are you sure want to logout ??`,
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((result) => {
+                if (result) {
+                    window.location.replace("/wanboAdmin/logout"); //redirect ke delete
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>

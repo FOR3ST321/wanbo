@@ -79,15 +79,15 @@
                         </thead> --}}
                         <tbody>
                             <tr>
-                                <td>Username</td>
+                                <td class="text-bold" style="width: 30%">Username</td>
                                 <td>{{ $account->username }}</td>
                             </tr>
                             <tr>
-                                <td>Password</td>
+                                <td class="text-bold">Password</td>
                                 <td>************</td>
                             </tr>
                             <tr>
-                                <td>Associated Branch</td>
+                                <td class="text-bold">Associated Branch</td>
                                 <td>
                                     <table>
                                     @foreach ($store_branches as $branch)
