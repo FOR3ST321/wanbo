@@ -37,10 +37,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Wanbo',
             'email' => 'wanbo@gmail.com',
             'membership_type' => 'platinum',
-            'account_id' => 1
+            'account_id' => 2
         ]);
 
-        User::factory(50)->create();
+        // User::factory(50)->create();
 
         Package::create([
             'package_name' => 'Package1',

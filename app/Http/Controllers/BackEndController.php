@@ -29,11 +29,17 @@ class BackEndController extends Controller
     }
 
     public function updateProfile (Request $request, Account $account) {
-        $validatedData = $request->validate([
+        $rules = [
             'username' => 'required|max:64',
             'password' => 'required|confirmed|min:6',
             'is_admin' => 'required'
-        ]);
+        ];
+
+        if ($request->username != $account->username) {
+            $rules['username'] = 'required|max:64|unique:accounts';
+        }
+
+        $validatedData = $request->validate($rules);
 
         $validatedData['password'] = bcrypt($validatedData['password']);
 

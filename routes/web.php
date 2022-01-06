@@ -71,7 +71,11 @@ Route::middleware(['is_admin'])->group(function () {
 });
 
 Route::middleware(['is_user'])->group(function () {
-    //admin - buat wanbo user
+    //buat wanbo user
     Route::get('/wanbo/profile', [FrontEndController::class, 'profile'])->middleware('is_user');
+    Route::get('/wanbo/users/{user}/edit', [FrontEndController::class, 'editProfile']);
+    Route::match(array('get','post'),'/wanbo/accounts/{account}/edit', [FrontEndController::class, 'editPass']);
+    Route::post('/wanbo/accounts/{account}', [FrontEndController::class, 'updatePass']);
+    Route::post('/wanbo/users/{user}', [FrontEndController::class, 'updateProfile']);
     Route::get('/wanbo/logout', [AuthController::class, 'logoutUser']);
 });
