@@ -16,6 +16,7 @@ class OrderController extends Controller
     public function index()
     {
         $billingData = Order::getActiveBilling(date('Y-m-d H:i:s'));
+
         return view('/admin/page/billing/billingMainMenu', [
             'active' => ['billing', false, null],
             'billingData' => $billingData

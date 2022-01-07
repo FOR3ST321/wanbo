@@ -29,8 +29,9 @@
                                 <th scope="col" style="width:10%">Room name</th>
                                 <th scope="col" style="width:7%">Type</th>
                                 <th scope="col" style="width:18%">Status</th>
-                                <th scope="col" style="width:15%">Schedule</th>
-                                <th scope="col" style="width:15%">Total Time</th>
+                                <th scope="col" style="width:10%">Schedule</th>
+                                <th scope="col" style="width:10%">Total Time</th>
+                                <th scope="col" style="width:10%">Done Time</th>
                                 <th scope="col" style="width:10%">Time left</th>
                                 <th scope="col" style="width:15%">Action</th>
                             </tr>
@@ -42,13 +43,22 @@
                                     <td>{{$item->room_name}}</td>
                                     <td>{{$item->package_name}}</td>
                                     @if ($item->status == null)
-                                        <td class="text-bold">Empty</td>
-                                        <td colspan="4" style="text-align:center;background-color:#a89999">-</td>
+                                        <td class="text-bold text-danger">Empty</td>
+                                        <td colspan="5" style="text-align:center;background-color:#a89999">-</td>
                                     @else
                                         <td>Used - [{{$item->name}}]</td>
                                         <td>{{date_format(date_create($item->schedule), 'H:i')}}</td>
                                         <td>{{$item->total_time}} Min</td>
-                                        <td>33 min</td>
+                                        <?php
+                                        $doneTime = new DateTime($item->schedule);
+                                        $doneTime->modify("+$item->total_time minutes");
+
+                                        $secondsDiff = abs(strtotime(date('Y-m-d H:i:s'))-strtotime($doneTime->format('Y-m-d H:i:s')));
+                                        $minDiff = floor($secondsDiff/60);
+                                        $secondsDiff -= ($minDiff*60);
+                                        ?>
+                                        <td>{{$doneTime->format('H:i')}}</td>
+                                        <td>{{$minDiff}} Min {{$secondsDiff}} Sec</td>
                                         <td>
                                             <button class="btn btn-primary">Detail</button>
                                         </td>
