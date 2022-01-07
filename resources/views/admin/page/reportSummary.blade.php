@@ -81,7 +81,7 @@
 
                                         <div class="info-box-content">
                                             <span class="info-box-text">Revenue from warnet</span>
-                                            <span class="info-box-number">RP: {{$summary['warnetRevenue']}}</span>
+                                            <span class="info-box-number">Rp {{$summary['warnetRevenue']}}</span>
                                         </div>
                                         <!-- /.info-box-content -->
                                     </div>
@@ -93,7 +93,7 @@
 
                                         <div class="info-box-content">
                                             <span class="info-box-text">Revenue from food</span>
-                                            <span class="info-box-number">RP: {{$summary['foodRevenue']}}</span>
+                                            <span class="info-box-number">Rp {{$summary['foodRevenue']}}</span>
                                         </div>
                                         <!-- /.info-box-content -->
                                     </div>
@@ -106,7 +106,7 @@
 
                                         <div class="info-box-content">
                                             <span class="info-box-text">Total Revenue</span>
-                                            <span class="info-box-number">RP: {{$summary['warnetRevenue'] + $summary['foodRevenue']}}</span>
+                                            <span class="info-box-number">Rp {{$summary['warnetRevenue'] + $summary['foodRevenue']}}</span>
                                         </div>
                                         <!-- /.info-box-content -->
                                     </div>
@@ -139,8 +139,8 @@
                                         <td>{{ $i->name }}</td>
                                         <td>{{ $i->room_name }}</td>
                                         <td>{{ date_format(date_create($i->schedule), 'H:i:s') }}</td>
-                                        <td>{{ $i->total_time }} Min</td>
-                                        <td>Rp: {{ $i->total_price }}</td>
+                                        <td>{{ $i->total_time }} min</td>
+                                        <td>Rp {{ $i->total_price }}</td>
                                         <td>
                                             <button class="btn btn-primary">Detail</button>
                                         </td>
@@ -173,7 +173,7 @@
                                         <td>{{ $i->room_name }}</td>
                                         <td>{{ $i->beverage_name }}</td>
                                         <td>{{ $i->quantity }}</td>
-                                        <td>Rp : {{ $i->quantity * $i->price }}</td>
+                                        <td>Rp {{ $i->quantity * $i->price }}</td>
                                         <td>
                                             <button class="btn btn-primary">Detail</button>
                                         </td>
