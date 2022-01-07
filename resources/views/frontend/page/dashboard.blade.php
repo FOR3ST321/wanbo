@@ -416,16 +416,16 @@
                     <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
                         data-wow-delay="0.2s">
                         <div class="feature-events-thumb">
-                            <img src="https://media.gettyimages.com/photos/report-picture-id174628030?k=20&m=174628030&s=612x612&w=0&h=mwu8IZ9yQPaI5gc3fhCIBxUL1nf4U9YwpN8orsrMKlU=" alt="" style="height:155px">
+                            <img src="https://media.gettyimages.com/photos/computers-picture-id182514528?k=20&m=182514528&s=612x612&w=0&h=C-YXjR5KOk5_QUoRKRZ5TdbXcZWQlBu5SAVXDrs7cJU=" alt="" style="height:155px">
                             {{-- <div class="date-map-area d-flex">
                                 <a href="#">26 Nov</a>
                                 <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
                             </div> --}}
                         </div>
                         <div class="feature-events-content">
-                            <h5>Get Report</h5>
-                            <h6>Admin</h6>
-                            <p>Help to manage your business with periodically auto-generated report.</p>
+                            <h5>Book Your PC</h5>
+                            <h6>User</h6>
+                            <p>Don't let the others use your favourite PC before you arrive.</p>
                         </div>
                         {{-- <div class="feature-events-details-btn">
                             <a href="#">+</a>
@@ -454,58 +454,18 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
-                        data-wow-delay="0.4s">
-                        <div class="feature-events-thumb">
-                            <img src="https://media.gettyimages.com/photos/close-up-of-mixed-race-man-reading-menu-in-restaurant-picture-id519517171?k=20&m=519517171&s=612x612&w=0&h=JrWjv57nA7S0DJaDpaq5481DD3vVG_fQG0WohUpq-vI=" alt="" style="height: 155px">
-                            {{-- <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
-                            </div> --}}
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>Manage Your Own Menu</h5>
-                            <h6>Admin</h6>
-                            <p>Customize the menu according to what you have at the kitchen.</p>
-                        </div>
-                        {{-- <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
                         data-wow-delay="0.5s">
                         <div class="feature-events-thumb">
-                            <img src="https://media.gettyimages.com/photos/just-in-time-picture-id1208739424?k=20&m=1208739424&s=612x612&w=0&h=sAm8AG6edS2VLUGa5W87NP8AnHaUwm2FcAdSLQEwD6s=" alt="" style="height: 155px">
+                            <img src="https://media.gettyimages.com/photos/report-picture-id174628030?k=20&m=174628030&s=612x612&w=0&h=mwu8IZ9yQPaI5gc3fhCIBxUL1nf4U9YwpN8orsrMKlU=" alt="" style="height: 155px">
                             {{-- <div class="date-map-area d-flex">
                                 <a href="#">26 Nov</a>
                                 <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
                             </div> --}}
                         </div>
                         <div class="feature-events-content">
-                            <h5>Save Billings</h5>
+                            <h5>See Your History</h5>
                             <h6>User</h6>
-                            <p>Must to go home before the billing finished? Just save it for later.</p>
-                        </div>
-                        {{-- <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
-                        data-wow-delay="0.6s">
-                        <div class="feature-events-thumb">
-                            <img src="https://media.gettyimages.com/photos/interior-of-open-office-picture-id1146500442?k=20&m=1146500442&s=612x612&w=0&h=d_W31jKIFIJA5fhR6AdTQo3Rl6L8UwHWDwIacJ29jrs=" alt="" style="height: 155px">
-                            {{-- <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a>
-                            </div> --}}
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>Manage Packages and Rooms</h5>
-                            <h6>Admin</h6>
-                            <p>Customize it according to what you have at the building.</p>
+                            <p>Want to track back your past? We will save all of your activity.</p>
                         </div>
                         {{-- <div class="feature-events-details-btn">
                             <a href="#">+</a>

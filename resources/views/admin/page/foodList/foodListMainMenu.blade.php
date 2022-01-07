@@ -64,6 +64,11 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            @empty ($beverages[0]) 
+                                <tr>
+                                    <td colspan="5" style="text-align: center">No Data!</td>
+                                </tr>
+                            @endempty
                         </tbody>
                     </table>
                 </div><!-- /.card-body -->
