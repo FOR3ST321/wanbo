@@ -1,5 +1,5 @@
 @extends('admin.partial.headerfooter')
-{{-- @dump(auth()->user()); --}}
+{{-- @dump($billingData); --}}
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -20,13 +20,15 @@
                     <h3 class="card-title"> Billing Info</h3>
                 </div> <!-- /.card-body -->
                 <div class="card-body">
-                    <table class="table table-bordered table-hover table-sm">
+                    <h5 style="margin-bottom: 20px">Server Time : {{date('d-m-Y H:i:s')}}</h5>
+
+                    <table class="table table-bordered table-hover table-sm text-center">
                         <thead>
                             <tr>
-                                <th scope="col" style="width:8%">Room ID</th>
-                                <th scope="col" style="width:10%">Name</th>
-                                <th scope="col" style="width:10%">Type</th>
-                                <th scope="col" style="width:15%">Status</th>
+                                <th scope="col" style="width:4%">No</th>
+                                <th scope="col" style="width:10%">Room name</th>
+                                <th scope="col" style="width:7%">Type</th>
+                                <th scope="col" style="width:18%">Status</th>
                                 <th scope="col" style="width:15%">Schedule</th>
                                 <th scope="col" style="width:15%">Total Time</th>
                                 <th scope="col" style="width:10%">Time left</th>
@@ -34,32 +36,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>room 1</td>
-                                <td>VIP</td>
-                                <td>Empty</td>
-                                <td colspan="4" style="text-align:center" class="bg-red">-</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>room 2</td>
-                                <td>VIP</td>
-                                <td>used - [name]</td>
-                                <td>17.00</td>
-                                <td>120 min</td>
-                                <td>33 min</td>
-                                <td>
-                                    <button class="btn btn-primary">Detail</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>room 3</td>
-                                <td>Package 1</td>
-                                <td>Empty</td>
-                                <td colspan="4" style="text-align:center" class="bg-red">-</td>
-                            </tr>
+                            @foreach ($billingData as $item)
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$item->room_name}}</td>
+                                    <td>{{$item->package_name}}</td>
+                                    @if ($item->status == null)
+                                        <td class="text-bold">Empty</td>
+                                        <td colspan="4" style="text-align:center;background-color:#a89999">-</td>
+                                    @else
+                                        <td>Used - [{{$item->name}}]</td>
+                                        <td>{{date_format(date_create($item->schedule), 'H:i')}}</td>
+                                        <td>{{$item->total_time}} Min</td>
+                                        <td>33 min</td>
+                                        <td>
+                                            <button class="btn btn-primary">Detail</button>
+                                        </td>
+                                    @endif
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
 

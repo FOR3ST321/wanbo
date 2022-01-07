@@ -17,11 +17,29 @@ class ReportController extends Controller
         $bookingData = Order::getTodayData($date);
         $foodOrderData = FoodOrder::getTodayData($date);
 
+        $totalBookTime=0;
+        $warnetRevenue=0;
+        $foodRevenue=0;
+
+        foreach($bookingData as $i){
+            $totalBookTime += $i->total_time;
+            $warnetRevenue += $i->total_price;
+        }
+
+        foreach($foodOrderData as $i){
+            $foodRevenue += ($i->quantity * $i->price);
+        }
+
         return view('/admin/page/reportSummary', [
             'active' => ['report', true, 'summary'],
             'date' => $date,
             'bookingData' => $bookingData,
             'foodOrderData' => $foodOrderData,
+            'summary' => [
+                'totalBookTime' => $totalBookTime,
+                'warnetRevenue' => $warnetRevenue,
+                'foodRevenue' => $foodRevenue
+            ],
             'js' => '/admin/js/reportSummary.js'
         ]);
     }

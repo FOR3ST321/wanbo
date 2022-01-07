@@ -1,5 +1,5 @@
 @extends('admin.partial.headerfooter')
-
+{{-- @dump($food_orders) --}}
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -20,10 +20,11 @@
                     <h3 class="card-title"></h3>
                 </div> <!-- /.card-body -->
                 <div class="card-body">
-                    <table class="table table-striped table-sm">
+                    <table class="table table-striped table-sm table-hover text-center">
                         <thead>
                             <tr>
                             <th scope="col">#</th>
+                            <th scope="col" style="width:15%">Date Time</th>
                             <th scope="col">Name</th>
                             <th scope="col">Type</th>
                             <th scope="col">User</th>
@@ -38,11 +39,12 @@
                                 @if($foodOrder->food_status !== 'pending')
                                     <tr>
                                         <td>{{ $i }}</td>
+                                        <td>{{ $foodOrder->created_at }}</td>
                                         <td>{{ $foodOrder->beverage_name }}</td>
-                                        <td>{{ $foodOrder->type }}</td>
+                                        <td>{{ ucwords($foodOrder->type) }}</td>
                                         <td>{{ $foodOrder->name }}</td>
                                         <td>{{ $foodOrder->room_name }}</td>
-                                        <td>{{ $foodOrder->quantity }}</td>
+                                        <td>{{ $foodOrder->quantity }} Item(s)</td>
                                         <td>{{ $foodOrder->food_status }}</td>
                                         <?php $i++ ?>
                                     </tr>

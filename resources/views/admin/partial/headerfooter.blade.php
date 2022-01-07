@@ -62,7 +62,7 @@
                 confirmButtonText: 'Logout',
                 denyButtonText: 'Cancel',
             }).then((result) => {
-                if (result) {
+                if (result.isConfirmed) {
                     window.location.replace("/wanboAdmin/logout"); //redirect ke delete
                 }
             })

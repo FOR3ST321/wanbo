@@ -99,7 +99,7 @@
                             <a href="/wanboAdmin/reportSummary"
                                 class="nav-link <?= $active[2] == 'summary' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Summary</p>
+                                <p>Daily Report</p>
                             </a>
                         </li>
                         <li class="nav-item">

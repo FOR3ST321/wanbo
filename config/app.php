@@ -233,6 +233,11 @@ return [
 
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
 
+        //ubah timezone
+        'timezone' => 'Asia/Jakarta',
+        'locale' => 'id',
+        'faker_locale' => 'id_ID',
+
     ],
 
 ];
