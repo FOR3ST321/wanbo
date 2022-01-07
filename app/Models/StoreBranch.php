@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 class StoreBranch extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+
 
     public static function getData(){
         return DB::table('store_branches')
@@ -17,5 +19,21 @@ class StoreBranch extends Model
         ->join('accounts', 'store_branches.account_id', '=', 'accounts.id')
         ->get();
     }
-    protected $guarded = ['id'];
+
+    public static function getStoreById ($id) {
+        return DB::table('store_branches')
+        ->where('id','=',$id)
+        ->first();
+    }
+
+    
+    public static function getPackageInBranch ($id) {
+        return DB::table('store_branches')
+        ->join('rooms', 'store_branches.id', '=', 'rooms.store_branch_id')
+        ->join('packages', 'packages.id', '=', 'rooms.package_id')
+        ->where('store_branches.id','=',$id)
+        ->select('packages.*')
+        ->distinct()
+        ->get();
+    }
 }

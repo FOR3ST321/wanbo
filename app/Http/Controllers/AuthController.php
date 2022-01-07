@@ -55,7 +55,7 @@ class AuthController extends Controller
             'is_admin' => 0
         ])){
             $request->session()->regenerate();
-            return redirect()->intended('/wanbo');
+            return redirect()->intended('/wanbo/dashboard');
         }
 
         return back()->with('loginError', 'Login Failed!');

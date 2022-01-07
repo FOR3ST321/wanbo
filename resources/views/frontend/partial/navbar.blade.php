@@ -14,7 +14,7 @@
                     <div class="collapse navbar-collapse" id="dorneNav">
                         <ul class="navbar-nav mr-auto" id="dorneMenu">
                             @auth
-                                <li class="nav-item {{ Route::is('dashboard') ? 'active' : '' }}">
+                                <li class="nav-item {{ Route::is('dashboard')||Route::is('dashboardBranch') ? 'active' : '' }}">
                                     <a class="nav-link" href="/wanbo/dashboard">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">

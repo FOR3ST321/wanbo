@@ -65,6 +65,27 @@ class DatabaseSeeder extends Seeder
             'description' => 'this is the package3',
             'photo_url' => 'https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs='
         ]);
+        Package::create([
+            'package_name' => 'Package4',
+            'price_per_hour' => 12000,
+            'computer_spec' => 'Intel Core i5-1135G7 Processor - 8GB DDR4 2666 RAM - 250 GB M.2 NVMe Solid State Drive - 15.6″ Wide Screen Display - Microsoft Windows 10',
+            'description' => 'this is the package3',
+            'photo_url' => 'https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs='
+        ]);
+        Package::create([
+            'package_name' => 'Package5',
+            'price_per_hour' => 12000,
+            'computer_spec' => 'Intel Core i5-1135G7 Processor - 8GB DDR4 2666 RAM - 250 GB M.2 NVMe Solid State Drive - 15.6″ Wide Screen Display - Microsoft Windows 10',
+            'description' => 'this is the package3',
+            'photo_url' => 'https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs='
+        ]);
+        Package::create([
+            'package_name' => 'Package6',
+            'price_per_hour' => 12000,
+            'computer_spec' => 'Intel Core i5-1135G7 Processor - 8GB DDR4 2666 RAM - 250 GB M.2 NVMe Solid State Drive - 15.6″ Wide Screen Display - Microsoft Windows 10',
+            'description' => 'this is the package3',
+            'photo_url' => 'https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs='
+        ]);
         
         StoreBranch::create([
             'store_name' => 'Wanbo Branch',
@@ -75,70 +96,70 @@ class DatabaseSeeder extends Seeder
         Room::create([
             'room_name' => 'Rose',
             'description' => 'go straight, turn right, the farthest room on the left side',
-            'package_id' => mt_rand(1,3),
+            'package_id' => mt_rand(1,6),
             'store_branch_id' => 1
         ]);
         
         Room::create([
             'room_name' => 'Orchid',
             'description' => 'go straight, turn right, the second room from the far end on the left side',
-            'package_id' => mt_rand(1,3),
+            'package_id' => mt_rand(1,6),
             'store_branch_id' => 1
         ]);
         
         Room::create([
             'room_name' => 'Daisy',
             'description' => 'go straight, turn right, the third room from the far end on the left side',
-            'package_id' => mt_rand(1,3),
+            'package_id' => mt_rand(1,6),
             'store_branch_id' => 1
         ]);
 
         Room::create([
             'room_name' => 'Lily',
             'description' => 'go straight, turn right, second room on the left',
-            'package_id' => mt_rand(1,3),
+            'package_id' => mt_rand(1,6),
             'store_branch_id' => 1
         ]);
 
         Room::create([
             'room_name' => 'Iris',
             'description' => 'go straight, turn right, first room on the left',
-            'package_id' => mt_rand(1,3),
+            'package_id' => mt_rand(1,6),
             'store_branch_id' => 1
         ]);
 
         Room::create([
             'room_name' => 'Tulip',
             'description' => 'go straight, turn left, the farthest room on the right side',
-            'package_id' => mt_rand(1,3),
+            'package_id' => mt_rand(1,6),
             'store_branch_id' => 1
         ]);
 
         Room::create([
             'room_name' => 'Sunflower',
             'description' => 'go straight, turn left, the second room from the far end on the right side',
-            'package_id' => mt_rand(1,3),
+            'package_id' => mt_rand(1,6),
             'store_branch_id' => 1
         ]);
 
         Room::create([
             'room_name' => 'Camellia',
             'description' => 'go straight, turn left, the third room from the far end on the right side',
-            'package_id' => mt_rand(1,3),
+            'package_id' => mt_rand(1,6),
             'store_branch_id' => 1
         ]);
 
         Room::create([
             'room_name' => 'Lavender',
             'description' => 'go straight, turn left, second room on the right',
-            'package_id' => mt_rand(1,3),
+            'package_id' => mt_rand(1,6),
             'store_branch_id' => 1
         ]);
 
         Room::create([
             'room_name' => 'Jasmine',
             'description' => 'go straight, turn left, first room on the right',
-            'package_id' => mt_rand(1,3),
+            'package_id' => mt_rand(1,6),
             'store_branch_id' => 1
         ]);
 

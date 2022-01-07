@@ -16,74 +16,6 @@
                         <h2>Seize your favourite PC!</h2>
                         <h4>Make sure the other people don't use it at the same time.</h4>
                     </div>
-                    <!-- Hero Search Form -->
-                    {{-- <div class="hero-search-form">
-                        <!-- Tabs -->
-                        <div class="nav nav-tabs" id="heroTab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-places-tab" data-toggle="tab" href="#nav-places"
-                                role="tab" aria-controls="nav-places" aria-selected="true">Places</a>
-                            <a class="nav-item nav-link" id="nav-events-tab" data-toggle="tab" href="#nav-events" role="tab"
-                                aria-controls="nav-events" aria-selected="false">Events</a>
-                        </div>
-                        <!-- Tabs Content -->
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-places" role="tabpanel"
-                                aria-labelledby="nav-places-tab">
-                                <h6>What are you looking for?</h6>
-                                <form action="#" method="get">
-                                    <select class="custom-select">
-                                        <option selected>Your Destinations</option>
-                                        <option value="1">New York</option>
-                                        <option value="2">Latvia</option>
-                                        <option value="3">Dhaka</option>
-                                        <option value="4">Melbourne</option>
-                                        <option value="5">London</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected>All Catagories</option>
-                                        <option value="1">Catagories 1</option>
-                                        <option value="2">Catagories 2</option>
-                                        <option value="3">Catagories 3</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected>Price Range</option>
-                                        <option value="1">$100 - $499</option>
-                                        <option value="2">$500 - $999</option>
-                                        <option value="3">$1000 - $4999</option>
-                                    </select>
-                                    <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2"
-                                            aria-hidden="true"></i> Search</button>
-                                </form>
-                            </div>
-                            <div class="tab-pane fade" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
-                                <h6>What are you looking for?</h6>
-                                <form action="#" method="get">
-                                    <select class="custom-select">
-                                        <option selected>Your Destinations</option>
-                                        <option value="1">New York</option>
-                                        <option value="2">Latvia</option>
-                                        <option value="3">Dhaka</option>
-                                        <option value="4">Melbourne</option>
-                                        <option value="5">London</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected>All Catagories</option>
-                                        <option value="1">Catagories 1</option>
-                                        <option value="2">Catagories 2</option>
-                                        <option value="3">Catagories 3</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected>Price Range</option>
-                                        <option value="1">$100 - $499</option>
-                                        <option value="2">$500 - $999</option>
-                                        <option value="3">$1000 - $4999</option>
-                                    </select>
-                                    <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2"
-                                            aria-hidden="true"></i> Search</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div>
@@ -162,21 +94,33 @@
 
     <!-- ***** About Area Start ***** -->
     <section class="dorne-about-area section-padding-0-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="about-content text-center">
-                        <h2>Book your warnet with <br><span>Wanbo</span></h2>
-                        <p>An application that allows people to order a PC or room at an internet cafe online and order food or drinks at the cafe easily and quickly. This application also helps internet cafe admin to get report, manage incoming orders, billings, packages, etc.</p>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12 col-md-10">
+                    <div class="hero-search-form mt-1 d-flex justify-content-center" style="background-color: #130929;padding:20px;">
+                        <div class="tab-pane fade show active" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
+                            <h6 style="color:white;text-align:center">Choose your Wanbo branch</h6>
+                            <form action="/wanbo/dashboard/branch" method="post">
+                                @csrf
+                                <select class="custom-select" name="id">
+                                    <option selected >Select Branch</option>
+                                    @foreach ($branches as $branch)
+                                        <option value="{{ $branch->id }}">{{ $branch->store_name }}</option>
+                                    @endforeach
+                                </select>
+                                <button type="submit" class="btn dorne-btn" style="height: 40px;line-height:0;border-radius:5px"><i class="fa fa-search pr-2"
+                                        aria-hidden="true"></i> Discover</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>    
     </section>
     <!-- ***** About Area End ***** -->
 
     <!-- ***** Editor Pick Area Start ***** -->
-    <section class="dorne-editors-pick-area bg-img bg-overlay-9 section-padding-100"
+    {{-- <section class="dorne-editors-pick-area bg-img bg-overlay-9 section-padding-100 "
         style="background-image: url(img/bg-img/hero-2.jpg);">
         <div class="container">
             <div class="row">
@@ -281,7 +225,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- ***** Editor Pick Area End ***** -->
 
     <!-- ***** Features Restaurant Area Start ***** -->
@@ -304,11 +248,12 @@
                         <table class="table table-striped table-hover" style="color: white">
                             <thead>
                             <tr>
-                            <th scope="col" style="width:10%">#</th>
+                            <th scope="col" style="width:5%">#</th>
                             <th scope="col" style="width:20%">Name</th>
-                            <th scope="col" style="width:20%">Type</th>
-                            <th scope="col" style="width:20%">Price</th>
-                            <th scope="col" style="width:30%">Description</th>
+                            <th scope="col" style="width:10%">Type</th>
+                            <th scope="col" style="width:15%">Price</th>
+                            <th scope="col" style="width:40%">Description</th>
+                            <th scope="col" style="width:10%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -319,11 +264,14 @@
                                     <td>{{ ucwords($beverage->type) }}</td>
                                     <td>Rp. {{ $beverage->price }}</td>
                                     <td>{{ ucwords($beverage->description) }}</td>
+                                    <td>
+                                        <a href="#" class="btn bg-info" style="color: white">+ Order</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             @empty ($beverages[0]) 
                                 <tr>
-                                    <td colspan="5" style="text-align: center">No Data!</td>
+                                    <td colspan="6" style="text-align: center">No Data!</td>
                                 </tr>
                             @endempty
                         </tbody>

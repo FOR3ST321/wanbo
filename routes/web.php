@@ -77,6 +77,7 @@ Route::middleware(['is_admin'])->group(function () {
 Route::middleware(['is_user'])->group(function () {
     //buat wanbo user
     Route::get('/wanbo/dashboard', [FrontEndController::class, 'dashboard'])->name('dashboard');
+    Route::post('/wanbo/dashboard/branch', [FrontEndController::class, 'dashboardBranch'])->name('dashboardBranch');
     Route::get('/wanbo/profile', [FrontEndController::class, 'profile'])->middleware('is_user');
     Route::get('/wanbo/users/{user}/edit', [FrontEndController::class, 'editProfile']);
     Route::match(array('get','post'),'/wanbo/accounts/{account}/edit', [FrontEndController::class, 'editPass']);

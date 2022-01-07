@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Account;
 use App\Models\Beverage;
+use App\Models\Package;
+use App\Models\StoreBranch;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -16,8 +19,18 @@ class FrontEndController extends Controller
     }
 
     public function dashboard(){
-        return view('/frontend/page/dashboard',[
-            'beverages' => Beverage::all()
+        return view('/frontend/page/dashboard/dashboard',[
+            'beverages' => Beverage::all(),
+            'branches' => StoreBranch::all()
+        ]);
+    }
+
+    public function dashboardBranch(Request $request){
+        return view('/frontend/page/dashboard/dashboardBranch',[
+            'beverages' => Beverage::all(),
+            'store' => StoreBranch::getStoreById($request->id),
+            'branches' => StoreBranch::all(),
+            'packages' => StoreBranch::getPackageInBranch($request->id)
         ]);
     }
 
