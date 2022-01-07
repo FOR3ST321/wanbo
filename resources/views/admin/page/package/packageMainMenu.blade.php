@@ -48,7 +48,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $package->package_name }}</td>
-                                    <td>{{ $package->price_per_hour }}</td>
+                                    <td>Rp {{ $package->price_per_hour }}</td>
                                     <td>
                                         <a href="/wanboAdmin/packages/{{ $package->id }}" class="btn bg-info"><i class="fas fa-eye"></i> Detail</a>
                                         <a href="/wanboAdmin/packages/{{ $package->id }}/edit" class="btn bg-warning"><i class="fas fa-edit"></i> Edit</a>

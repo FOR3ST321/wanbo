@@ -49,7 +49,7 @@
                             </tr>
                             <tr>
                                 <td>Price/hour</td>
-                                <td>Rp. {{ $package->price_per_hour }}</td>
+                                <td>Rp {{ $package->price_per_hour }}</td>
                             </tr>
                             <tr>
                                 <td>Computer Spec</td>

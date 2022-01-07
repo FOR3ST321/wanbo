@@ -46,8 +46,8 @@
                                         <td>{{ $order->schedule }}</td>
                                         <td>{{ $order->checkin }}</td>
                                         <td>{{ $order->checkout }}</td>
-                                        <td>{{ $order->total_time }} Min</td>
-                                        <td>RP: {{ $order->total_price }}</td>
+                                        <td>{{ $order->total_time }} min</td>
+                                        <td>Rp {{ $order->total_price }}</td>
                                         <?php $i++ ?>
                                     </tr>
                                 @endif
