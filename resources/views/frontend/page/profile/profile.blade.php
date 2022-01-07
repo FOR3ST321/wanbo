@@ -90,6 +90,13 @@
                                 <td>{{ $user[0]->membership_type }}</td>
                             </tr>
                             <tr>
+                                <th scope="row">Member Since</th>
+                                <?php  $monthNum  = Str::substr($user[0]->created_at, 5, 2);
+                                    $dateObj   = DateTime::createFromFormat('!m', $monthNum);
+                                    $monthName = $dateObj->format('F');  ?>
+                                <td>{{ $monthName.' '.substr($user[0]->created_at,0,4) }}</td>
+                            </tr>
+                            <tr>
                                 <td>
                                     <a href="/wanbo/users/{{ $user[0]->id }}/edit" class="btn btn-warning">Edit profile</a>
                                 </td>
