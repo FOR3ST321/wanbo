@@ -41,4 +41,15 @@ class Order extends Model
         ->orderBy('rooms.id')
         ->get();
     }   
+
+    public static function upcomingBooking($date){
+        return DB::table('orders')
+        ->join('rooms', 'orders.room_id', '=', 'rooms.id')
+        ->join('users', 'orders.user_id', '=', 'users.id')
+        ->where('status', '=', 'paid')
+        ->where('schedule', '>=', $date)
+        ->orderBy('schedule')
+        ->select('orders.id as order_id', 'orders.*', 'rooms.room_name', 'users.name')
+        ->get();
+    }
 }

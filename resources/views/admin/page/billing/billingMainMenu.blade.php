@@ -1,5 +1,5 @@
 @extends('admin.partial.headerfooter')
-{{-- @dump($billingData); --}}
+{{-- @dump($upcomingBilling); --}}
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -76,10 +76,10 @@
                     <h3 class="card-title"> Upcoming Booking Today</h3>
                 </div> <!-- /.card-body -->
                 <div class="card-body">
-                    <table class="table table-bordered table-hover table-sm">
+                    <table class="table table-bordered table-hover table-sm text-center">
                         <thead>
                             <tr>
-                                <th scope="col" style="width:8%">No</th>
+                                <th scope="col" style="width:3%">No</th>
                                 <th scope="col" style="width:10%">Cust Name</th>
                                 <th scope="col" style="width:10%">Room</th>
                                 <th scope="col" style="width:15%">Schedule</th>
@@ -88,16 +88,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($upcomingBilling as $item)
                             <tr>
-                                <td>1</td>
-                                <td>Hidayat</td>
-                                <td>Room 3</td>
-                                <td>20.00</td>
-                                <td>90 min</td>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$item->name}}</td>
+                                <td>{{$item->room_name}}</td>
+                                <td>{{date_format(date_create($item->schedule), 'H:i')}}</td>
+                                <td>{{$item->total_time}} Min</td>
                                 <td>
                                     <button class="btn btn-primary">Detail</button>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div><!-- /.card-body -->
