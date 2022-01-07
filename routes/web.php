@@ -31,7 +31,9 @@ Route::get('/wanbo', [FrontEndController::class, 'index'])->name('dashboard');
 
 Route::middleware(['guest'])->group(function () {
     //guest - bisa diakses tanpa auth, kalau udah punya auth gabisa kesini
-    Route::get('/wanbo/login', [AuthController::class, 'loginPageUser'])->name('login_user');
+    Route::get('/wanbo/login', [AuthController::class, 'loginPageUser']);
+    Route::post('/wanbo/register', [AuthController::class, 'registerUser']);
+    Route::get('/wanbo/register', [AuthController::class, 'registerPageUser']);
     Route::get('/wanboAdmin/login', [AuthController::class, 'loginPageAdmin'])->name('login_admin');
 
     //auth

@@ -26,4 +26,10 @@ class Account extends Model
         ->select('accounts.*')
         ->get();
     }
+
+    public static function getLastAcc () {
+        return DB::table('accounts')
+        ->orderByDesc('accounts.id')
+        ->first();
+    }
 }
