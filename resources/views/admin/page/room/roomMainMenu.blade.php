@@ -62,6 +62,11 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            @empty ($rooms[0]) 
+                                <tr>
+                                    <td colspan="4" style="text-align: center">No Data!</td>
+                                </tr>
+                            @endempty
                         </tbody>
                     </table>
                 </div><!-- /.card-body -->
