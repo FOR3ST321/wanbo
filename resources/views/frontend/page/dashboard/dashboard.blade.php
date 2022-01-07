@@ -252,8 +252,7 @@
                             <th scope="col" style="width:20%">Name</th>
                             <th scope="col" style="width:10%">Type</th>
                             <th scope="col" style="width:15%">Price</th>
-                            <th scope="col" style="width:40%">Description</th>
-                            <th scope="col" style="width:10%">Action</th>
+                            <th scope="col" style="width:45%">Description</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -264,9 +263,6 @@
                                     <td>{{ ucwords($beverage->type) }}</td>
                                     <td>Rp. {{ $beverage->price }}</td>
                                     <td>{{ ucwords($beverage->description) }}</td>
-                                    <td>
-                                        <a href="#" class="btn bg-info" style="color: white">+ Order</a>
-                                    </td>
                                 </tr>
                             @endforeach
                             @empty ($beverages[0]) 
