@@ -17,15 +17,39 @@
                                 <li class="nav-item {{ Route::is('dashboard')||Route::is('dashboardBranch') ? 'active' : '' }}">
                                     <a class="nav-link" href="/wanbo/dashboard">Home <span class="sr-only">(current)</span></a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Warnet</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Reserve</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">My Booking</a>
-                                </li>
+                                @if (Route::is('home'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/wanbo/dashboard">Warnet</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/wanbo/dashboard">Reserve</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/wanbo/dashboard">My Booking</a>
+                                    </li>
+                                @else
+                                    @if (Route::is('dashboard'))
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#category-area">Warnet</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#category-area">Reserve</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#category-area">My Booking</a>
+                                        </li>
+                                    @else
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Warnet</a> {{-- mungkin nanti buat ke profil warnet --}}
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Reserve</a> {{-- mungkin form buat bookingan --}}
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">My Booking</a> {{-- ini mungkin history booking --}}
+                                        </li>
+                                    @endif
+                                @endif
                             @endauth
                         </ul>
                         <!-- Add listings btn -->

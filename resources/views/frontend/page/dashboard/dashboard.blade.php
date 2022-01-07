@@ -23,7 +23,7 @@
     <!-- ***** Welcome Area End ***** -->
 
     <!-- ***** Catagory Area Start ***** -->
-    <section class="dorne-catagory-area">
+    <section class="dorne-catagory-area" id="category-area">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -97,9 +97,9 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-12 col-md-10">
-                    <div class="hero-search-form mt-1 d-flex justify-content-center" style="background-color: #130929;padding:20px;">
+                    <div class="hero-search-form mt-3 mb-3 d-flex justify-content-center" style="background-color: #130929;padding:50px 20px;border-radius:5px">
                         <div class="tab-pane fade show active" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
-                            <h6 style="color:white;text-align:center">Choose your Wanbo branch</h6>
+                            <h4 style="color:white;text-align:center;margin-bottom:30px">Choose your Wanbo branch</h4>
                             <form action="/wanbo/dashboard/branch" method="post">
                                 @csrf
                                 <select class="custom-select" name="id">

@@ -97,7 +97,7 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-12 col-md-10">
-                    <div class="hero-search-form mt-1 d-flex justify-content-center" style="background-color: #341a79;padding:20px;">
+                    <div class="hero-search-form mt-1 d-flex justify-content-center" style="background-color: #341a79;padding:20px;border-radius:5px">
                         <div class="tab-pane fade show active" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
                             <h6 style="color:white;text-align:center">Choose your Wanbo branch</h6>
                             <form action="/wanbo/dashboard/branch" method="post">
