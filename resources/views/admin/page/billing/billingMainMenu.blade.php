@@ -58,7 +58,7 @@
                                         $secondsDiff -= ($minDiff*60);
                                         ?>
                                         <td>{{$doneTime->format('H:i')}}</td>
-                                        <td>{{$minDiff}} Min {{$secondsDiff}} Sec</td>
+                                        <td>{{$minDiff}} min {{$secondsDiff}} sec</td>
                                         <td>
                                             <button class="btn btn-primary">Detail</button>
                                         </td>
