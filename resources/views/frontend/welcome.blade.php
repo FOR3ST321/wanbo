@@ -289,7 +289,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading text-center mb-5">
+                    <div class="section-heading text-center">
                         <span></span>
                         <h4>Featured Menus</h4>
                         <p>The taste that suits you</p>
@@ -299,36 +299,98 @@
 
             <div class="row">
                 <div class="col-12">
-                    {{-- <div class="features-slides owl-carousel"> --}}
+                    <div class="features-slides owl-carousel">
                         <!-- Single Features Area -->
-                        <table class="table table-striped table-hover" style="color: white">
-                            <thead>
-                            <tr>
-                            <th scope="col" style="width:10%">#</th>
-                            <th scope="col" style="width:20%">Name</th>
-                            <th scope="col" style="width:20%">Type</th>
-                            <th scope="col" style="width:20%">Price</th>
-                            <th scope="col" style="width:30%">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($beverages as $beverage)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $beverage->beverage_name }}</td>
-                                    <td>{{ ucwords($beverage->type) }}</td>
-                                    <td>Rp. {{ $beverage->price }}</td>
-                                    <td>{{ ucwords($beverage->description) }}</td>
-                                </tr>
-                            @endforeach
-                            @empty ($beverages[0]) 
-                                <tr>
-                                    <td colspan="5" style="text-align: center">No Data!</td>
-                                </tr>
-                            @endempty
-                        </tbody>
-                        </table>
-                    {{-- </div> --}}
+                        <div class="single-features-area" style="height: 370px">
+                            <img src="/frontend/img/bg-img/feature-6.jpg" alt="">
+                            <!-- Rating & Map Area -->
+                            <div class="ratings-map-area d-flex">
+                                <a href="#">8.5</a>
+                                {{-- <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a> --}}
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 40px 20px">
+                                <div class="feature-title">
+                                    <h5>Tubruk Ice Coffee</h5>
+                                    <p>Cold and strong</p>
+                                </div>
+                                <div class="feature-favourite">
+                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area" style="height: 370px">
+                            <img src="/frontend/img/bg-img/feature-7.jpg" alt="">
+                            <!-- Rating & Map Area -->
+                            <div class="ratings-map-area d-flex">
+                                <a href="#">9.5</a>
+                                {{-- <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a> --}}
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 40px 20px">
+                                <div class="feature-title">
+                                    <h5>Boiled pastels</h5>
+                                    <p>Hot and soft</p>
+                                </div>
+                                <div class="feature-favourite">
+                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area" style="height: 370px">
+                            <img src="/frontend/img/bg-img/feature-8.jpg" alt="">
+                            <!-- Rating & Map Area -->
+                            <div class="ratings-map-area d-flex">
+                                <a href="#">2.2</a>
+                                {{-- <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a> --}}
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 40px 20px">
+                                <div class="feature-title">
+                                    <h5>Green Chili Soto</h5>
+                                    <p>Too spicy</p>
+                                </div>
+                                <div class="feature-favourite">
+                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area" style="height: 370px">
+                            <img src="/frontend/img/bg-img/feature-9.jpg" alt="">
+                            <!-- Rating & Map Area -->
+                            <div class="ratings-map-area d-flex">
+                                <a href="#">8.7</a>
+                                {{-- <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a> --}}
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 40px 20px">
+                                <div class="feature-title">
+                                    <h5>Bandrek</h5>
+                                    <p>Good for health</p>
+                                </div>
+                                <div class="feature-favourite">
+                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area" style="height: 370px">
+                            <img src="/frontend/img/bg-img/feature-10.jpg" alt="">
+                            <!-- Rating & Map Area -->
+                            <div class="ratings-map-area d-flex">
+                                <a href="#">9.8</a>
+                                {{-- <a href="#"><img src="/frontend/img/core-img/map.png" alt=""></a> --}}
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 40px 20px">
+                                <div class="feature-title">
+                                    <h5>Pancakes</h5>
+                                    <p>Sweet</p>
+                                </div>
+                                <div class="feature-favourite">
+                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

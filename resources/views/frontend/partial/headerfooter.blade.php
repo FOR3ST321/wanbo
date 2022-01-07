@@ -79,6 +79,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="/frontend/js/others/plugins.js"></script>
     <!-- Active JS -->
     <script src="/frontend/js/active.js"></script>
+
+    <script type="text/javascript">
+        $('#show_desc').click(function() {
+            var str = $('#bevdesc').html();
+            $('.modal_body').html(str);
+        });
+    </script>
 </body>
 
 </html>

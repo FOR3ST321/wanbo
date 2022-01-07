@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Account;
+use App\Models\Beverage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -11,7 +12,13 @@ use Illuminate\Support\Facades\Validator;
 class FrontEndController extends Controller
 {
     public function index(){
-        return view('/frontend/page/dashboard');
+        return view('/frontend/welcome');
+    }
+
+    public function dashboard(){
+        return view('/frontend/page/dashboard',[
+            'beverages' => Beverage::all()
+        ]);
     }
 
     public function profile(){

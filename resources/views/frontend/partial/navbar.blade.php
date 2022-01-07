@@ -14,8 +14,8 @@
                     <div class="collapse navbar-collapse" id="dorneNav">
                         <ul class="navbar-nav mr-auto" id="dorneMenu">
                             @auth
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="/wanbo">Home <span class="sr-only">(current)</span></a>
+                                <li class="nav-item {{ Route::is('dashboard') ? 'active' : '' }}">
+                                    <a class="nav-link" href="/wanbo/dashboard">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">Warnet</a>
@@ -34,7 +34,7 @@
                                 <a href="/wanbo/profile" class="btn dorne-btn">Hello, {{auth()->user()->username}}</a>
                             </div>
                         @else
-                            @if (Route::is('dashboard'))
+                            @if (Route::is('home'))
                                 <div class="dorne-add-listings-btn">
                                     <a href="/wanbo/login" class="btn dorne-btn">Sign in or Register</a>
                                 </div>
