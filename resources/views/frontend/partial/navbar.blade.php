@@ -40,7 +40,7 @@
                                         </li>
                                     @else
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Warnet</a> {{-- mungkin nanti buat ke profil warnet --}}
+                                            <a class="nav-link" href="#">Warnet</a> {{-- ini buat apa? --}}
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Reserve</a> {{-- mungkin form buat bookingan --}}
