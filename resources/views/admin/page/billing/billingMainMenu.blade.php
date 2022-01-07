@@ -48,7 +48,7 @@
                                     @else
                                         <td>Used - [{{$item->name}}]</td>
                                         <td>{{date_format(date_create($item->schedule), 'H:i')}}</td>
-                                        <td>{{$item->total_time}} Min</td>
+                                        <td>{{$item->total_time}} min</td>
                                         <?php
                                         $doneTime = new DateTime($item->schedule);
                                         $doneTime->modify("+$item->total_time minutes");
