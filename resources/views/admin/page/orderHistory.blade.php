@@ -20,7 +20,7 @@
                     <h3 class="card-title"></h3>
                 </div> <!-- /.card-body -->
                 <div class="card-body">
-                    <table class="table table-striped table-sm">
+                    <table class="table table-striped table-hover table-sm text-center">
                         <thead>
                             <tr>
                             <th scope="col">#</th>
@@ -42,12 +42,12 @@
                                         <td>{{ $i }}</td>
                                         <td>{{ $order->room_name }}</td>
                                         <td>{{ $order->name }}</td>
-                                        <td>{{ $order->status }}</td>
+                                        <td>{{ ucwords($order->status) }}</td>
                                         <td>{{ $order->schedule }}</td>
                                         <td>{{ $order->checkin }}</td>
                                         <td>{{ $order->checkout }}</td>
-                                        <td>{{ $order->total_time }}</td>
-                                        <td>{{ $order->total_price }}</td>
+                                        <td>{{ $order->total_time }} Min</td>
+                                        <td>RP: {{ $order->total_price }}</td>
                                         <?php $i++ ?>
                                     </tr>
                                 @endif
