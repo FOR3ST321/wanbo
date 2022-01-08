@@ -14,10 +14,10 @@
                     <div class="collapse navbar-collapse" id="dorneNav">
                         <ul class="navbar-nav mr-auto" id="dorneMenu">
                             @auth
-                                <li class="nav-item {{ Route::is('dashboard')||Route::is('dashboardBranch') ? 'active' : '' }}">
-                                    <a class="nav-link" href="/wanbo/dashboard">Home <span class="sr-only">(current)</span></a>
-                                </li>
                                 @if (Route::is('home'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/wanbo/dashboard">Home <span class="sr-only">(current)</span></a>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/wanbo/dashboard">Warnet</a>
                                     </li>
@@ -29,18 +29,24 @@
                                     </li>
                                 @else
                                     @if (Route::is('dashboard'))
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#category-area">Warnet</a>
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="/wanbo/dashboard">Home <span class="sr-only">(current)</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#category-area">Reserve</a>
+                                            <a class="nav-link" href="/wanbo/dashboard/warnet">Warnet</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#category-area">My Booking</a>
+                                            <a class="nav-link" href="/wanbo/dashboard/warnet">Reserve</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/wanbo/dashboard/warnet">My Booking</a>
                                         </li>
                                     @else
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Warnet</a> {{-- ini buat apa? --}}
+                                        <li class="nav-item {{ Route::is('dashboardBranch') ? 'active' : '' }}">
+                                            <a class="nav-link" href="{{ Route::is('dashboardBranch') ? '#' : '/wanbo/dashboard' }}">Home <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item {{ Route::is('warnet') ? 'active' : '' }}">
+                                            <a class="nav-link" href="/wanbo/dashboard/warnet">Warnet</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Reserve</a> {{-- mungkin form buat bookingan --}}

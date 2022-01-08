@@ -111,6 +111,9 @@
                                 <button type="submit" class="btn dorne-btn" style="height: 40px;line-height:0;border-radius:5px"><i class="fa fa-search pr-2"
                                         aria-hidden="true"></i> Discover</button>
                             </form>
+                            <div style="width: 100%;text-align: center;margin-top:5px">
+                                <a href="/wanbo/dashboard/warnet">More Detail</a>
+                            </div>
                         </div>
                     </div>
                 </div>
