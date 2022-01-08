@@ -34,6 +34,12 @@ class FrontEndController extends Controller
         ]);
     }
 
+    public function dashboardWarnet () {
+        return view('/frontend/page/dashboard/warnet',[
+            'branches' => StoreBranch::all()
+        ]);
+    }
+
     public function profile(){
         return view('/frontend/page/profile/profile',[
             'user' => User::getUser(auth()->user()->id),
