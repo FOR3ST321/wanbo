@@ -26,7 +26,6 @@ use App\Http\Controllers\FoodOrderController;
 Route::get('/', function () {
     return redirect('/wanbo'); //temporary, selagi belum bikin login auth
 });
-Route::get('/wanbo', [FrontEndController::class, 'index'])->name('home');
 
 
 Route::middleware(['guest'])->group(function () {
@@ -35,6 +34,7 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/wanbo/register', [AuthController::class, 'registerUser']);
     Route::get('/wanbo/register', [AuthController::class, 'registerPageUser']);
     Route::get('/wanboAdmin/login', [AuthController::class, 'loginPageAdmin'])->name('login_admin');
+    Route::get('/wanbo', [FrontEndController::class, 'index'])->name('home');
 
     //auth
     Route::post('/wanboAdmin/auth', [AuthController::class, 'authenticate']);

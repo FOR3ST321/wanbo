@@ -34,23 +34,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i = 1 ?>
                             @foreach($food_orders as $foodOrder)
-                                @if($foodOrder->food_status !== 'pending')
-                                    <tr>
-                                        <td>{{ $i }}</td>
-                                        <td>{{ $foodOrder->created_at }}</td>
-                                        <td>{{ $foodOrder->beverage_name }}</td>
-                                        <td>{{ ucwords($foodOrder->type) }}</td>
-                                        <td>{{ $foodOrder->name }}</td>
-                                        <td>{{ $foodOrder->room_name }}</td>
-                                        <td>{{ $foodOrder->quantity }} Item(s)</td>
-                                        <td>{{ $foodOrder->food_status }}</td>
-                                        <?php $i++ ?>
-                                    </tr>
-                                @endif
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $foodOrder->updated_at }}</td>
+                                    <td>{{ $foodOrder->beverage_name }}</td>
+                                    <td>{{ ucwords($foodOrder->type) }}</td>
+                                    <td>{{ $foodOrder->name }}</td>
+                                    <td>{{ $foodOrder->room_name }}</td>
+                                    <td>{{ $foodOrder->quantity }} Item(s)</td>
+                                    @if ($foodOrder->food_status == 'success')
+                                        <td class="text-bold text-success">
+                                    @else
+                                        <td class="text-bold text-danger">
+                                    @endif
+                                    {{ ucwords($foodOrder->food_status) }}</>
+                                </tr>
                             @endforeach
-                            @if ($i == 1) 
+                            @if (count($food_orders) == 0) 
                                 <tr>
                                     <td colspan="7" style="text-align: center">No Data!</td>
                                 </tr>

@@ -101,7 +101,7 @@
                                     <a href="/wanbo/users/{{ $user[0]->id }}/edit" class="btn btn-warning">Edit profile</a>
                                 </td>
                                 <td>
-                                    <a href="/wanbo/logout" class="btn btn-danger" style="float:right">Logout</a>
+                                    <button id="logout"  class="btn btn-danger" style="float:right">Logout</button>
                                 </td>
                             </tr>
                         </tbody>

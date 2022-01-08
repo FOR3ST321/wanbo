@@ -19,14 +19,17 @@ class FoodOrder extends Model
     //     return $this->belongsTo(Order::class);
     // }
 
-    public static function getData(){
+    public static function getData($mode = '='){
+        //mode gunanya buat switch pending / bukan pending yang ditampilin, karena dipakai di 2 function controller
+
         return DB::table('food_orders')
         ->join('orders', 'food_orders.order_id', '=', 'orders.id')
         ->join('beverages', 'beverages.id', '=', 'food_orders.beverage_id')
         ->join('rooms', 'orders.room_id', '=', 'rooms.id')
         ->join('users', 'orders.user_id', '=', 'users.id')
+        ->where('food_orders.food_status' , $mode, 'pending')
         ->select('food_orders.*', 'users.name', 'beverages.beverage_name', 'beverages.type', 'rooms.room_name')
-        ->orderBy('food_orders.updated_at')
+        ->orderByDesc('food_orders.updated_at')
         ->get();
     }
 

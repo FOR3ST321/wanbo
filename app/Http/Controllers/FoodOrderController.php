@@ -27,7 +27,7 @@ class FoodOrderController extends Controller
     {
         return view('/admin/page/foodOrder/foodOrderHistory', [
             'active' => ['report',true, 'food-order-history'],
-            'food_orders' => FoodOrder::getData()
+            'food_orders' => FoodOrder::getData('!=')
         ]);
     }
 

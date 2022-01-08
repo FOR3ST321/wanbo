@@ -36,7 +36,8 @@ class FrontEndController extends Controller
 
     public function profile(){
         return view('/frontend/page/profile/profile',[
-            'user' => User::getUser(auth()->user()->id)
+            'user' => User::getUser(auth()->user()->id),
+            'js' => '/frontend/js/btnLogout.js'
         ]);
     }
 
