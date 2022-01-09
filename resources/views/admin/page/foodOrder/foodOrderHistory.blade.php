@@ -26,10 +26,10 @@
                             <th scope="col">#</th>
                             <th scope="col" style="width:15%">Date Time</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Type</th>
                             <th scope="col">User</th>
                             <th scope="col">Room</th>
                             <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
                             <th scope="col">Status</th>
                             </tr>
                         </thead>
@@ -39,10 +39,10 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $foodOrder->updated_at }}</td>
                                     <td>{{ $foodOrder->beverage_name }}</td>
-                                    <td>{{ ucwords($foodOrder->type) }}</td>
                                     <td>{{ $foodOrder->name }}</td>
                                     <td>{{ $foodOrder->room_name }}</td>
                                     <td>{{ $foodOrder->quantity }} Item(s)</td>
+                                    <td>Rp: {{ $foodOrder->price }}</td>
                                     @if ($foodOrder->food_status == 'success')
                                         <td class="text-bold text-success">
                                     @else

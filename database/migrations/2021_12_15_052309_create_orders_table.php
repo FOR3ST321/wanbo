@@ -18,11 +18,12 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('room_id');
             $table->unsignedBigInteger('user_id');
             $table->enum('status', ['pending', 'canceled', 'failed', 'paid', 'booked', 'done']);
+            $table->string('unique_id')->nullable();
             $table->integer('total_price');
             $table->integer('total_time');
             $table->dateTime('schedule');
-            $table->dateTime('checkin');
-            $table->dateTime('checkout');
+            $table->dateTime('checkin')->nullable();
+            $table->dateTime('checkout')->nullable();
 
             $table->timestamps();
             $table->foreign('room_id')->references('id')->on('rooms');

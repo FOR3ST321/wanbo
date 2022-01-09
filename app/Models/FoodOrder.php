@@ -28,7 +28,7 @@ class FoodOrder extends Model
         ->join('rooms', 'orders.room_id', '=', 'rooms.id')
         ->join('users', 'orders.user_id', '=', 'users.id')
         ->where('food_orders.food_status' , $mode, 'pending')
-        ->select('food_orders.*', 'users.name', 'beverages.beverage_name', 'beverages.type', 'rooms.room_name')
+        ->select('food_orders.*', 'users.name', 'beverages.beverage_name', 'beverages.type', 'beverages.price' ,'rooms.room_name')
         ->orderByDesc('food_orders.updated_at')
         ->get();
     }

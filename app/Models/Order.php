@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Order extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
 
     public static function getData(){
         return DB::table('orders')
@@ -37,7 +38,7 @@ class Order extends Model
         })
         ->leftJoin('users', 'users.id', '=', 'orders.user_id')
         ->join('packages', 'packages.id', '=', 'rooms.package_id')
-        ->select('rooms.id', 'rooms.room_name', 'packages.package_name', 'users.name', 'orders.*')
+        ->select('rooms.id as rooms_id', 'rooms.room_name', 'packages.package_name', 'users.name', 'orders.id as order_id' ,'orders.*')
         ->orderBy('rooms.id')
         ->get();
     }   

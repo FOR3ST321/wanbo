@@ -2,17 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Room;
 use App\Models\Order;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreOrderRequest;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\UpdateOrderRequest;
+
+function generateString(){
+    $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $randomString = '';
+
+    for ($i = 1; $i <= 6; $i++) {
+        $index = rand(0, strlen($characters) - 1);
+        $randomString .= $characters[$index];
+    }
+
+    return $randomString;
+}
+
+function getPrice($room_id, $total_time){
+    $data = Room::find($room_id)->first();
+
+    return ($data->package->price_per_hour * ($total_time/60));
+}
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+
     public function index()
     {
         $billingData = Order::getActiveBilling(date('Y-m-d H:i:s'));
@@ -21,8 +39,40 @@ class OrderController extends Controller
         return view('/admin/page/billing/billingMainMenu', [
             'active' => ['billing', false, null],
             'billingData' => $billingData,
-            'upcomingBilling' => $upcomingBilling
+            'upcomingBilling' => $upcomingBilling,
+            'js' => '/admin/js/billing.js'
         ]);
+    }
+
+    public function guestBooking(Request $request){
+        $data = [
+            'room_id' => $request->room_id,
+            'user_id' => 1, //guest
+            'status' => 'booked',
+            'unique_id' => generateString(),
+            'total_price' => getPrice($request->room_id, $request->total_time),
+            'total_time' => $request->total_time,
+            'schedule' => date('Y-m-d H:i:s'),
+            'checkin' => date('Y-m-d H:i:s'),
+            'checkout' => null
+        ];
+
+        // dump($data);
+        Order::create($data);
+
+        Alert::success('Success', 'Order data created successfully!');
+        return redirect('/wanboAdmin');
+    }
+
+    public function stopBooking(){
+        // dump(request()->id);
+        Order::where('id', request()->id)->update([
+            'status' => 'done',
+            'checkout'=> date('Y-m-d H:i:s'),
+        ]);
+
+        Alert::success('Success', 'Billing has been stopped!');
+        return redirect('/wanboAdmin');
     }
 
     /**

@@ -33,7 +33,7 @@
 
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 0.1
+                <strong>Version</strong> 0.1
             </div>
             <strong>Copyright &copy; 2021-2022 Wanbo Team .</strong> All rights
             reserved.

@@ -57,8 +57,13 @@ Route::middleware(['is_admin'])->group(function () {
     Route::resource('/wanboAdmin/packages', PackageController::class);
     Route::resource('/wanboAdmin/rooms', RoomController::class);
 
-    //foodorder
+    //billing
     Route::get('/wanboAdmin', [OrderController::class, 'index']);
+    Route::post('/wanboAdmin/guestBooking', [OrderController::class, 'guestBooking']);
+    Route::post('/wanboAdmin/billing/{id}', [OrderController::class, 'stopBooking']);
+    
+    
+    //foodorder
     Route::get('/wanboAdmin/foodOrders', [FoodOrderController::class, 'index']);
     Route::put('/wanboAdmin/foodOrders/{foodOrder}', [FoodOrderController::class, 'success']);
     Route::patch('/wanboAdmin/foodOrders/{foodOrder}', [FoodOrderController::class, 'canceled']);
