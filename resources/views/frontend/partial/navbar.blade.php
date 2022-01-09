@@ -36,10 +36,10 @@
                                             <a class="nav-link" href="/wanbo/dashboard/warnet">Warnet</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/wanbo/dashboard/warnet">Reserve</a>
+                                            <a class="nav-link" href="#category-area">Reserve</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/wanbo/dashboard/warnet">My Booking</a>
+                                            <a class="nav-link" href="#category-area">My Booking</a>
                                         </li>
                                     @else
                                         <li class="nav-item {{ Route::is('dashboardBranch') ? 'active' : '' }}">
