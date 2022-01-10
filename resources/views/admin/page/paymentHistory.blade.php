@@ -24,10 +24,10 @@
                         <thead>
                             <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Schedule</th>
                             <th scope="col">Room</th>
                             <th scope="col">User</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Schedule</th>
                             {{-- <th scope="col">Check In</th>
                             <th scope="col">Check Out</th> --}}
                             <th scope="col">Total Time</th>
@@ -40,10 +40,10 @@
                                 @if($order->status !== 'canceled' && $order->status !== 'failed' && $order->status !== 'pending')
                                     <tr>
                                         <td>{{ $i }}</td>
+                                        <td>{{ $order->schedule }}</td>
                                         <td>{{ $order->room_name }}</td>
                                         <td>{{ $order->name }}</td>
                                         <td>{{ ucwords($order->status) }}</td>
-                                        <td>{{ $order->schedule }}</td>
                                         {{-- <td>{{ $order->checkin }}</td>
                                         <td>{{ $order->checkout }}</td> --}}
                                         <td>{{ $order->total_time }} min</td>
@@ -59,9 +59,13 @@
                             @endif
                         </tbody>
                     </table>
+                    {{-- <div class="d-flex justify-content-center" style="margin-bottom: 20px;width:100%">
+                        {{$orders->links()}}
+                    </div> --}}
                 </div><!-- /.card-body -->
             </div>
         </div><!-- /.container-fluid -->
     </section>
+
     <!-- /.content -->
 @endsection
