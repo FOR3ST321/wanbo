@@ -42,10 +42,11 @@ class FrontEndController extends Controller
     }
 
     public function profile(){
+        $user = User::getUserByAcc(auth()->user()->id);
         return view('/frontend/page/profile/profile',[
             'user' => User::getUser(auth()->user()->id),
             'js' => '/frontend/js/btnLogout.js',
-            'orders' => Order::getUserData(auth()->user()->id)
+            'orders' => Order::getUserData($user->id)
         ]);
     }
 
