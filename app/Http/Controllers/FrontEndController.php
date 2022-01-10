@@ -31,8 +31,8 @@ class FrontEndController extends Controller
             'branches' => StoreBranch::all(),
             // 'store' => StoreBranch::getStoreById($request->id),
             // 'packages' => Package::all()
-            'packages' => StoreBranch::getData()
-            // 'packages' => StoreBranch::getPackageInBranch($request->id)
+            // 'packages' => StoreBranch::getData()
+            'packages' => StoreBranch::getPackageInBranch($request->id)
         ]);
     }
 
