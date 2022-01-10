@@ -22,7 +22,7 @@
 
                 <div class="card-body">
 
-                    <a href="/wanboAdmin/packages" class="btn btn-success">
+                    <a href="/wanboAdmin/packages" class="btn btn-secondary">
                         <i class="fas fa-chevron-left" style="margin-right: 5px"></i>
                         Back to package list
                     </a>

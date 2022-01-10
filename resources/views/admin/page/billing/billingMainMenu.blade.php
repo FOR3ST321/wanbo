@@ -70,9 +70,9 @@
                                         <td>{{ $doneTime->format('H:i') }}</td>
                                         <td>{{ $minDiff }} min {{ $secondsDiff }} sec</td>
                                         <td>
-                                            <button class="btn btn-primary">
+                                            <a href='/wanboAdmin/detailBilling/{{$item->order_id}}' class="btn btn-primary">
                                                 <em class="fas fa-info-circle"></em>
-                                            </button>
+                                            </a>
                                             <form action="/wanboAdmin/billing/{{ $item->order_id }}" method="POST"
                                                 class="d-inline">
                                                 @csrf
@@ -115,8 +115,19 @@
                                     <td>{{ $item->room_name }}</td>
                                     <td>{{ date_format(date_create($item->schedule), 'H:i') }}</td>
                                     <td>{{ $item->total_time }} Min</td>
+
                                     <td>
-                                        <button class="btn btn-primary">Detail</button>
+                                        {{-- <button class="btn btn-primary">
+                                            <em class="fas fa-info-circle"></em>
+                                        </button> --}}
+                                        <form action="/wanboAdmin/billing/{{ $item->order_id }}" method="POST"
+                                            class="d-inline">
+                                            @csrf
+                                            <button class="btn bg-danger border-0 cancelBookingBtn"
+                                                value="{{ $item->name }}">
+                                                <em class="fas fa-times"></em>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

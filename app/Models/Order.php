@@ -33,7 +33,8 @@ class Order extends Model
         ->join('users', 'orders.user_id', '=', 'users.id')
         ->where('status', '=', 'done')
         ->where('schedule', 'like', $date.'%')
-        ->orderBy('checkout')
+        ->orderByDesc('checkout')
+        ->select('orders.id as orderID','rooms.*', 'users.*', 'orders.*')
         ->get();
     }
 
@@ -60,5 +61,12 @@ class Order extends Model
         ->orderBy('schedule')
         ->select('orders.id as order_id', 'orders.*', 'rooms.room_name', 'users.name')
         ->get();
+    }
+
+    public static function getBillingDetail($id){
+        return DB::table('orders')
+        ->join('rooms', 'orders.room_id', '=', 'rooms.id')
+        ->join('users', 'orders.user_id', '=', 'users.id')
+        ->where('orders.id' , '=', $id)->get()->first();
     }
 }

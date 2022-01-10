@@ -59,6 +59,7 @@ Route::middleware(['is_admin'])->group(function () {
 
     //billing
     Route::get('/wanboAdmin', [OrderController::class, 'index']);
+    Route::get('/wanboAdmin/detailBilling/{id}', [OrderController::class, 'detailBilling']);
     Route::post('/wanboAdmin/guestBooking', [OrderController::class, 'guestBooking']);
     Route::post('/wanboAdmin/billing/{id}', [OrderController::class, 'stopBooking']);
     

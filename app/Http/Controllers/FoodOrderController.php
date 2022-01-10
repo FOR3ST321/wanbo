@@ -45,7 +45,7 @@ class FoodOrderController extends Controller
     public function canceled(FoodOrder $foodOrder)
     {
         FoodOrder::where('id', $foodOrder->id)->update(['food_status'=>'canceled']);
-        Alert::warning('Info', 'Food order Rejected!'); //sweetalert laravel
+        Alert::success('Info', 'Food order Rejected!'); //sweetalert laravel
         // return view('/admin/page/foodOrder/foodOrderMainMenu', [
         //     'active' => ['food-order-list', false, null],
         //     'food_orders' => FoodOrder::getData()

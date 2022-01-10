@@ -41,7 +41,14 @@ class FoodOrder extends Model
         ->join('users', 'orders.user_id', '=', 'users.id')
         ->select('food_orders.*', 'users.name', 'beverages.beverage_name', 'beverages.price' ,'rooms.room_name')
         ->where('food_orders.updated_at', 'like', $date.'%')
+        ->where('food_orders.food_status', '=', 'success')
         ->orderBy('food_orders.updated_at')
         ->get();
+    }
+
+    public static function getAllFoodOrder($id){
+        return DB::table('food_orders')
+        ->join('beverages', 'beverages.id', '=', 'food_orders.beverage_id')
+        ->where('food_orders.order_id', '=', $id)->get();
     }
 }

@@ -1,5 +1,5 @@
 @extends('admin.partial.headerfooter')
-{{-- @dump($foodOrderData) --}}
+{{-- @dump($bookingData) --}}
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -127,6 +127,7 @@
                                     <th scope="col" style="width:10%">Cust Name</th>
                                     <th scope="col" style="width:10%">Room</th>
                                     <th scope="col" style="width:10%">Schedule</th>
+                                    <th scope="col" style="width:10%">Checkout</th>
                                     <th scope="col" style="width:10%">Total Time</th>
                                     <th scope="col" style="width:10%">Total Payment</th>
                                     <th scope="col" style="width:10%">Action</th>
@@ -139,13 +140,20 @@
                                         <td>{{ $i->name }}</td>
                                         <td>{{ $i->room_name }}</td>
                                         <td>{{ date_format(date_create($i->schedule), 'H:i:s') }}</td>
+                                        <td>{{ date_format(date_create($i->checkout), 'H:i:s') }}</td>
                                         <td>{{ $i->total_time }} min</td>
                                         <td>Rp {{ $i->total_price }}</td>
                                         <td>
-                                            <button class="btn btn-primary">Detail</button>
+                                            <a href="/wanboAdmin/detailBilling/{{$i->orderID}}" class="btn btn-primary"><em class="fas fa-info-circle"></em></a>
                                         </td>
                                     </tr>
                                 @endforeach
+
+                                @if (count($bookingData) == 0)
+                                    <tr>
+                                        <td class="text-center text-bold" style="background-color: #b1acac" colspan="8">No Data!</td>
+                                    </tr>
+                                @endif
                             </tbody>
                         </table>
 
@@ -160,9 +168,10 @@
                                     <th scope="col" style="width:10%">Cust Name</th>
                                     <th scope="col" style="width:10%">Room</th>
                                     <th scope="col" style="width:10%">Food Name</th>
+                                    <th scope="col" style="width:10%">Price</th>
                                     <th scope="col" style="width:10%">Quantity</th>
                                     <th scope="col" style="width:10%">Total Payment</th>
-                                    <th scope="col" style="width:10%">Action</th>
+                                    {{-- <th scope="col" style="width:10%">Action</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -172,13 +181,20 @@
                                         <td>{{ $i->name }}</td>
                                         <td>{{ $i->room_name }}</td>
                                         <td>{{ $i->beverage_name }}</td>
+                                        <td>Rp: {{ $i->price }}</td>
                                         <td>{{ $i->quantity }}</td>
                                         <td>Rp {{ $i->quantity * $i->price }}</td>
-                                        <td>
-                                            <button class="btn btn-primary">Detail</button>
-                                        </td>
+                                        {{-- <td>
+                                            <a href="/wanboAdmin/detailBilling/" class="btn btn-primary">Detail</a>
+                                        </td> --}}
                                     </tr>
                                 @endforeach
+
+                                @if (count($foodOrderData) == 0)
+                                    <tr>
+                                        <td class="text-center text-bold" style="background-color: #b1acac" colspan="7">No Data!</td>
+                                    </tr>
+                                @endif
                             </tbody>
                         </table>
 

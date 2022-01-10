@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Room;
 use App\Models\Order;
+use App\Models\FoodOrder;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreOrderRequest;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -41,6 +42,19 @@ class OrderController extends Controller
             'billingData' => $billingData,
             'upcomingBilling' => $upcomingBilling,
             'js' => '/admin/js/billing.js'
+        ]);
+    }
+
+    public function detailBilling(Request $request){
+        // dump($request->id);
+        $billingData = Order::getBillingDetail($request->id);
+        $foodOrderData = FoodOrder::getAllFoodOrder($request->id);
+        // dump($foodOrderData);
+
+        return view('/admin/page/billing/showBillingDetail', [
+            'active' => ['billing', false, null],
+            'billingData' => $billingData,
+            'foodOrderData' => $foodOrderData,
         ]);
     }
 
