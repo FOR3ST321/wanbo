@@ -15,7 +15,7 @@ class Order extends Model
         return DB::table('orders')
         ->join('rooms', 'orders.room_id', '=', 'rooms.id')
         ->join('users', 'orders.user_id', '=', 'users.id')
-        ->orderBy('status', 'asc')
+        ->orderByDesc('orders.schedule')
         ->get();
     }
 
