@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Account;
 use App\Models\Beverage;
+use App\Models\Order;
 use App\Models\Package;
 use App\Models\StoreBranch;
 use Illuminate\Contracts\Cache\Store;
@@ -44,9 +45,18 @@ class FrontEndController extends Controller
         ]);
     }
 
+    public function dashboardWarnet () {
+        return view('/frontend/page/dashboard/warnet',[
+            'branches' => StoreBranch::all()
+        ]);
+    }
+
     public function profile(){
+        $user = User::getUserByAcc(auth()->user()->id);
         return view('/frontend/page/profile/profile',[
-            'user' => User::getUser(auth()->user()->id)
+            'user' => User::getUser(auth()->user()->id),
+            'js' => '/frontend/js/btnLogout.js',
+            'orders' => Order::getUserData($user->id)
         ]);
     }
 

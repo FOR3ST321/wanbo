@@ -21,6 +21,7 @@
     <link href="/frontend/style.css" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="/frontend/css/responsive/responsive.css" rel="stylesheet">
+    @include('sweetalert::alert')
 </head>
 
 <body class="hold-transition login-page" style="background-image: url(https://media.gettyimages.com/photos/interior-of-la-bastille-internet-cafe-amsterdam-picture-idAA028564?k=20&m=AA028564&s=612x612&w=0&h=4cLUXImRnW0xR47HKekzB0Vlg1sGXD4VQPXuxSqrwyE=); background-size:cover">
@@ -71,7 +72,7 @@
                         @enderror
 
                         @if (session()->has('loginError'))
-                            <p class="text-danger">Email / Pass salah</p>
+                            <p class="text-danger">Wrong Username / Password</p>
                         @endif
                     </div>
 

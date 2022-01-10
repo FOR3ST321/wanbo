@@ -90,15 +90,83 @@
                                 <td>{{ $user[0]->membership_type }}</td>
                             </tr>
                             <tr>
+                                <th scope="row">Member Since</th>
+                                <?php  $monthNum  = Str::substr($user[0]->created_at, 5, 2);
+                                    $dateObj   = DateTime::createFromFormat('!m', $monthNum);
+                                    $monthName = $dateObj->format('F');  ?>
+                                <td>{{ $monthName.' '.substr($user[0]->created_at,0,4) }}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
                                 <td>
-                                    <a href="/wanbo/users/{{ $user[0]->id }}/edit" class="btn btn-warning">Edit profile</a>
-                                </td>
-                                <td>
-                                    <a href="/wanbo/logout" class="btn btn-danger" style="float:right">Logout</a>
+                                    <a href="/wanbo/users/{{ $user[0]->id }}/edit" class="btn btn-warning" style="float:right;width:130px">Edit profile</a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading dark text-center" style="margin-bottom: 0">
+                        <span></span>
+                        <h4>User History</h4>
+                    </div>
+                </div>
+                <div class="col-12" style="overflow-x: auto">
+                    <table class="table mt-2">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Room</th>
+                                <th scope="col">User</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Schedule</th>
+                                <th scope="col">Check In</th>
+                                <th scope="col">Check Out</th>
+                                <th scope="col">Total Time</th>
+                                <th scope="col">Total Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i = 1; ?>
+                            @foreach ($orders as $order)
+                                @if ($order->status !== 'pending' && $order->status !== 'paid' && $order->status !== 'booked')
+                                    <tr>
+                                        <td>{{ $i }}</td>
+                                        <td>{{ $order->room_name }}</td>
+                                        <td>{{ $order->name }}</td>
+                                        @if ($order->status == 'done')
+                                            <td class="text-bold text-success">
+                                            @else
+                                            <td class="text-bold text-danger">
+                                        @endif
+                                        {{ ucwords($order->status) }}</td>
+                                        <td>{{ $order->schedule }}</td>
+                                        @if ($order->status != 'canceled')
+                                            <td>{{ $order->checkin }}</td>
+                                            <td>{{ $order->checkout }}</td>
+                                        @else
+                                            <td>-</td>
+                                            <td>-</td>
+                                        @endif
+
+                                        <td>{{ $order->total_time }} min</td>
+                                        <td>Rp {{ $order->total_price }}</td>
+                                        <?php $i++; ?>
+                                    </tr>
+                                @endif
+                            @endforeach
+                            @if ($i == 1)
+                                <tr>
+                                    <td colspan="9" style="text-align: center">No Data!</td>
+                                </tr>
+                            @endif
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-12 mt-5">
+                    <button id="logout"  class="btn btn-danger mr-2" style="float:right; width:130px">Logout</button>
                 </div>
             </div>
         </div>

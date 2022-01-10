@@ -46,4 +46,10 @@ class User extends Authenticatable
         ->select('users.*', 'accounts.username', 'accounts.password')
         ->get();
     }
+
+    public static function getUserByAcc ($id) {
+        return DB::table('users')
+        ->where('account_id', '=', $id)
+        ->first();
+    }
 }

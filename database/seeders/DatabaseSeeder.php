@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
         Account::create([
             'is_admin' => true,
             'username' => 'wanbo_admin',
@@ -34,13 +35,20 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
+            'name' => 'Guest',
+            'email' => 'guest@gmail.com',
+            'membership_type' => 'platinum',
+            'account_id' => null
+        ]);
+
+        User::create([
             'name' => 'Wanbo',
             'email' => 'wanbo@gmail.com',
             'membership_type' => 'platinum',
             'account_id' => 2
         ]);
 
-        User::factory(50)->create();
+        User::factory(48)->create();
 
         Package::create([
             'package_name' => 'Package1',
@@ -237,6 +245,7 @@ class DatabaseSeeder extends Seeder
             'room_id'=>1,
             'user_id'=>1,
             'status'=>'pending',
+            'unique_id' => null,
             'total_price'=>15000,
             'total_time'=>120,
             'schedule'=>'2022-01-06 11:15:00',
@@ -248,6 +257,7 @@ class DatabaseSeeder extends Seeder
             'room_id'=>2,
             'user_id'=>2,
             'status'=>'canceled',
+            'unique_id' => null,
             'total_price'=>5000,
             'total_time'=>45,
             'schedule'=>'2022-01-06 12:00:00',
@@ -259,6 +269,7 @@ class DatabaseSeeder extends Seeder
             'room_id'=>3,
             'user_id'=>3,
             'status'=>'failed',
+            'unique_id' => null,
             'total_price'=>20000,
             'total_time'=>150,
             'schedule'=>'2022-01-06 12:20:00',
@@ -270,6 +281,7 @@ class DatabaseSeeder extends Seeder
             'room_id'=>4,
             'user_id'=>4,
             'status'=>'paid',
+            'unique_id' => 'HDT526',
             'total_price'=>15000,
             'total_time'=>150,
             'schedule'=>'2022-01-06 12:25:00',
@@ -281,6 +293,7 @@ class DatabaseSeeder extends Seeder
             'room_id'=>5,
             'user_id'=>5,
             'status'=>'booked',
+            'unique_id' => 'JDT936',
             'total_price'=>10000,
             'total_time'=>120,
             'schedule'=>'2022-01-06 12:40:00',
@@ -292,6 +305,7 @@ class DatabaseSeeder extends Seeder
             'room_id'=>6,
             'user_id'=>7,
             'status'=>'done',
+            'unique_id' => 'PQT942',
             'total_price'=>24000,
             'total_time'=>100,
             'schedule'=>'2022-01-06 13:05:00',
@@ -303,6 +317,7 @@ class DatabaseSeeder extends Seeder
             'room_id'=>7,
             'user_id'=>8,
             'status'=>'done',
+            'unique_id' => 'BBH925',
             'total_price'=>36000,
             'total_time'=>90,
             'schedule'=>'2022-01-06 13:20:00',
@@ -314,6 +329,7 @@ class DatabaseSeeder extends Seeder
             'room_id'=>8,
             'user_id'=>9,
             'status'=>'canceled',
+            'unique_id' => null,
             'total_price'=>5000,
             'total_time'=>60,
             'schedule'=>'2022-01-06 14:25:00',
@@ -325,6 +341,7 @@ class DatabaseSeeder extends Seeder
             'room_id'=>9,
             'user_id'=>10,
             'status'=>'paid',
+            'unique_id' => 'OOI917',
             'total_price'=>10000,
             'total_time'=>120,
             'schedule'=>'2022-01-06 15:30:00',
@@ -336,6 +353,7 @@ class DatabaseSeeder extends Seeder
             'room_id'=>10,
             'user_id'=>11,
             'status'=>'pending',
+            'unique_id' => null,
             'total_price'=>30000,
             'total_time'=>240,
             'schedule'=>'2022-01-06 18:30:00',

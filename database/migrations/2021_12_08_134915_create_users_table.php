@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name', 64);
             $table->string('email')->unique();
             $table->enum('membership_type', ['bronze', 'silver', 'gold', 'platinum']);
-            $table->unsignedBigInteger('account_id');
+            $table->unsignedBigInteger('account_id')->nullable();
             $table->timestamps();
 
             $table->foreign('account_id')->references('id')->on('accounts');

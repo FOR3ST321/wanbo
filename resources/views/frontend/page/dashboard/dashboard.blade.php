@@ -1,11 +1,11 @@
 @extends('frontend.partial.headerfooter')
 
 @section('content')
-    @if (session('error'))
+    {{-- @if (session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}
         </div>
-    @endif
+    @endif --}}
 
     <!-- ***** Welcome Area Start ***** -->
     <section class="dorne-welcome-area bg-img bg-overlay" >
@@ -111,6 +111,9 @@
                                 <button type="submit" class="btn dorne-btn" style="height: 40px;line-height:0;border-radius:5px"><i class="fa fa-search pr-2"
                                         aria-hidden="true"></i> Discover</button>
                             </form>
+                            <div style="width: 100%;text-align: center;margin-top:10px">
+                                <a href="/wanbo/dashboard/warnet">More Detail</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -252,8 +255,7 @@
                             <th scope="col" style="width:20%">Name</th>
                             <th scope="col" style="width:10%">Type</th>
                             <th scope="col" style="width:15%">Price</th>
-                            <th scope="col" style="width:40%">Description</th>
-                            <th scope="col" style="width:10%">Action</th>
+                            <th scope="col" style="width:45%">Description</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -264,9 +266,6 @@
                                     <td>{{ ucwords($beverage->type) }}</td>
                                     <td>Rp. {{ $beverage->price }}</td>
                                     <td>{{ ucwords($beverage->description) }}</td>
-                                    <td>
-                                        <a href="#" class="btn bg-info" style="color: white">+ Order</a>
-                                    </td>
                                 </tr>
                             @endforeach
                             @empty ($beverages[0]) 

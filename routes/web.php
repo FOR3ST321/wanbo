@@ -26,7 +26,6 @@ use App\Http\Controllers\FoodOrderController;
 Route::get('/', function () {
     return redirect('/wanbo'); //temporary, selagi belum bikin login auth
 });
-Route::get('/wanbo', [FrontEndController::class, 'index'])->name('home');
 
 
 Route::middleware(['guest'])->group(function () {
@@ -35,6 +34,7 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/wanbo/register', [AuthController::class, 'registerUser']);
     Route::get('/wanbo/register', [AuthController::class, 'registerPageUser']);
     Route::get('/wanboAdmin/login', [AuthController::class, 'loginPageAdmin'])->name('login_admin');
+    Route::get('/wanbo', [FrontEndController::class, 'index'])->name('home');
 
     //auth
     Route::post('/wanboAdmin/auth', [AuthController::class, 'authenticate']);
@@ -57,8 +57,14 @@ Route::middleware(['is_admin'])->group(function () {
     Route::resource('/wanboAdmin/packages', PackageController::class);
     Route::resource('/wanboAdmin/rooms', RoomController::class);
 
-    //foodorder
+    //billing
     Route::get('/wanboAdmin', [OrderController::class, 'index']);
+    Route::get('/wanboAdmin/detailBilling/{id}', [OrderController::class, 'detailBilling']);
+    Route::post('/wanboAdmin/guestBooking', [OrderController::class, 'guestBooking']);
+    Route::post('/wanboAdmin/billing/{id}', [OrderController::class, 'stopBooking']);
+    
+    
+    //foodorder
     Route::get('/wanboAdmin/foodOrders', [FoodOrderController::class, 'index']);
     Route::put('/wanboAdmin/foodOrders/{foodOrder}', [FoodOrderController::class, 'success']);
     Route::patch('/wanboAdmin/foodOrders/{foodOrder}', [FoodOrderController::class, 'canceled']);
@@ -78,6 +84,7 @@ Route::middleware(['is_user'])->group(function () {
     //buat wanbo user
     Route::get('/wanbo/dashboard', [FrontEndController::class, 'dashboard'])->name('dashboard');
     Route::post('/wanbo/dashboard/branch', [FrontEndController::class, 'dashboardBranch'])->name('dashboardBranch');
+    Route::get('/wanbo/dashboard/warnet', [FrontEndController::class, 'dashboardWarnet'])->name('warnet');
     Route::get('/wanbo/profile', [FrontEndController::class, 'profile'])->middleware('is_user');
     Route::get('/wanbo/users/{user}/edit', [FrontEndController::class, 'editProfile']);
     Route::match(array('get','post'),'/wanbo/accounts/{account}/edit', [FrontEndController::class, 'editPass']);

@@ -19,22 +19,25 @@
 
     <!-- Responsive CSS -->
     <link href="/frontend/css/responsive/responsive.css" rel="stylesheet">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .dorne-welcome-area {
-            background-image: url(https://media.gettyimages.com/photos/interior-of-la-bastille-internet-cafe-amsterdam-picture-idAA028564?k=20&m=AA028564&s=612x612&w=0&h=4cLUXImRnW0xR47HKekzB0Vlg1sGXD4VQPXuxSqrwyE=); 
-            height:500px;
+            background-image: url(https://media.gettyimages.com/photos/interior-of-la-bastille-internet-cafe-amsterdam-picture-idAA028564?k=20&m=AA028564&s=612x612&w=0&h=4cLUXImRnW0xR47HKekzB0Vlg1sGXD4VQPXuxSqrwyE=);
+            height: 500px;
         }
+
         @media screen and (max-width: 480px) {
             .dorne-welcome-area {
                 height: 300px;
                 padding-top: 100px;
                 margin-bottom: 75px;
             }
+
             .dorne-catagory-area {
                 display: none;
             }
         }
+
     </style>
 
 </head>
@@ -46,6 +49,7 @@
     </div>
 
     @include('frontend.partial.navbar')
+    @include('sweetalert::alert')
 
     <div class="content-wrapper">
         @yield('content')
@@ -59,8 +63,10 @@
                     <div class="footer-text">
                         <p>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
                 </div>
@@ -79,6 +85,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="/frontend/js/others/plugins.js"></script>
     <!-- Active JS -->
     <script src="/frontend/js/active.js"></script>
+
+    @if (isset($js))
+        <script src="{{$js}}"></script>
+    @endif
 </body>
 
 </html>

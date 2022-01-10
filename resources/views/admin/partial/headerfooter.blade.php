@@ -33,9 +33,9 @@
 
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 0.1
+                <strong>Version</strong> 0.1
             </div>
-            <strong>Copyright &copy; 2014-2021 Wanbo Team .</strong> All rights
+            <strong>Copyright &copy; 2021-2022 Wanbo Team .</strong> All rights
             reserved.
         </footer>
     </div>
@@ -63,7 +63,7 @@
                 denyButtonText: 'Cancel',
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.replace("/wanboAdmin/logout"); //redirect ke delete
+                    window.location.replace("/wanboAdmin/logout");
                 }
             })
         })

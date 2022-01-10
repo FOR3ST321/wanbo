@@ -23,36 +23,47 @@
                     <table class="table table-striped table-hover table-sm text-center">
                         <thead>
                             <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Room</th>
-                            <th scope="col">User</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Schedule</th>
-                            <th scope="col">Check In</th>
-                            <th scope="col">Check Out</th>
-                            <th scope="col">Total Time</th>
-                            <th scope="col">Total Price</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Room</th>
+                                <th scope="col">User</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Schedule</th>
+                                <th scope="col">Check In</th>
+                                <th scope="col">Check Out</th>
+                                <th scope="col">Total Time</th>
+                                <th scope="col">Total Price</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i = 1 ?>
-                            @foreach($orders as $order)
-                                @if($order->status !== 'pending' && $order->status !== 'paid' && $order->status !== 'booked')
+                            <?php $i = 1; ?>
+                            @foreach ($orders as $order)
+                                @if ($order->status !== 'pending' && $order->status !== 'paid' && $order->status !== 'booked')
                                     <tr>
                                         <td>{{ $i }}</td>
                                         <td>{{ $order->room_name }}</td>
                                         <td>{{ $order->name }}</td>
-                                        <td>{{ ucwords($order->status) }}</td>
+                                        @if ($order->status == 'done')
+                                            <td class="text-bold text-success">
+                                            @else
+                                            <td class="text-bold text-danger">
+                                        @endif
+                                        {{ ucwords($order->status) }}</td>
                                         <td>{{ $order->schedule }}</td>
-                                        <td>{{ $order->checkin }}</td>
-                                        <td>{{ $order->checkout }}</td>
+                                        @if ($order->status != 'canceled')
+                                            <td>{{ $order->checkin }}</td>
+                                            <td>{{ $order->checkout }}</td>
+                                        @else
+                                            <td>-</td>
+                                            <td>-</td>
+                                        @endif
+
                                         <td>{{ $order->total_time }} min</td>
                                         <td>Rp {{ $order->total_price }}</td>
-                                        <?php $i++ ?>
+                                        <?php $i++; ?>
                                     </tr>
                                 @endif
                             @endforeach
-                            @if ($i == 1) 
+                            @if ($i == 1)
                                 <tr>
                                     <td colspan="9" style="text-align: center">No Data!</td>
                                 </tr>

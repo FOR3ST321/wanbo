@@ -22,7 +22,7 @@
 
                 <div class="card-body">
 
-                    <a href="/wanboAdmin/rooms" class="btn btn-success">
+                    <a href="/wanboAdmin/rooms" class="btn btn-secondary">
                         <i class="fas fa-chevron-left" style="margin-right: 5px"></i>
                         Back to room list
                     </a>
