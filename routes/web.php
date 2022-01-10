@@ -91,4 +91,5 @@ Route::middleware(['is_user'])->group(function () {
     Route::post('/wanbo/accounts/{account}', [FrontEndController::class, 'updatePass']);
     Route::post('/wanbo/users/{user}', [FrontEndController::class, 'updateProfile']);
     Route::get('/wanbo/logout', [AuthController::class, 'logoutUser']);
+    Route::get('/wanbo/package/{package}', [FrontEndController::class, 'package']);
 });
