@@ -151,7 +151,7 @@
                                         {{-- <p>{{ $package->computer_spec }}</p> --}}
                                     </div>
                                     <div class="feature-favourite">
-                                        <a href="#" role="butotn" class="popover-test" title="{{ $package->computer_spec }}" data-content="{{ $package->computer_spec }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                                        <a href="/wanbo/package/{{ $package->id }}" role="button" class="popover-test" title="{{ $package->computer_spec }}" data-content="{{ $package->computer_spec }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                                         {{-- <p><a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="{{ $package->computer_spec }}">button</a></p> --}}
                                     </div>
                                 </div>
