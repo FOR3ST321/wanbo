@@ -19,6 +19,14 @@ class Order extends Model
         ->get();
     }
 
+    public static function getUserData($id){
+        return DB::table('orders')
+        ->join('rooms', 'orders.room_id', '=', 'rooms.id')
+        ->join('users', 'orders.user_id', '=', 'users.id')
+        ->where('orders.user_id','=',$id)
+        ->get();
+    }
+
     public static function getTodayData($date){
         return DB::table('orders')
         ->join('rooms', 'orders.room_id', '=', 'rooms.id')
