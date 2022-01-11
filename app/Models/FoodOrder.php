@@ -30,7 +30,7 @@ class FoodOrder extends Model
         ->where('food_orders.food_status' , $mode, 'pending')
         ->select('food_orders.*', 'users.name', 'beverages.beverage_name', 'beverages.type', 'beverages.price' ,'rooms.room_name')
         ->orderByDesc('food_orders.updated_at')
-        ->get();
+        ->paginate(10);
     }
 
     public static function getTodayData($date){

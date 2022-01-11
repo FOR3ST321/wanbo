@@ -36,7 +36,7 @@
                         <tbody>
                             <?php $i = 1; ?>
                             @foreach ($food_orders as $foodOrder)
-                                @if ($foodOrder->food_status === 'pending')
+                                {{-- @if ($foodOrder->food_status === 'pending') --}}
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $foodOrder->beverage_name }}</td>
@@ -67,17 +67,20 @@
                                                 </button>
                                             </form>
                                         </td>
-                                        <?php $i++; ?>
                                     </tr>
-                                @endif
+                                {{-- @endif --}}
                             @endforeach
-                            @if ($i == 1)
+                            @if (count($food_orders) == 0)
                                 <tr>
                                     <td colspan="8" style="text-align: center">No Data!</td>
                                 </tr>
                             @endif
                         </tbody>
                     </table>
+
+                    <div class="d-flex justify-content-start" style="margin-top: 20px;">
+                        {{$food_orders->links()}}
+                    </div>
                 </div><!-- /.card-body -->
             </div>
         </div><!-- /.container-fluid -->

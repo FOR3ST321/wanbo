@@ -47,14 +47,14 @@ class ReportController extends Controller
     public function paymentHistory(){
         return view('/admin/page/paymentHistory', [
             'active' => ['report', true, 'payment-history'],
-            'orders' => Order::getData()
+            'orders' => Order::getOrderData(['paid', 'booked', 'done'])
         ]);
     }
     
     public function orderHistory(){
         return view('/admin/page/orderHistory', [
             'active' => ['report', true, 'order-history'],
-            'orders' => Order::getData()
+            'orders' => Order::getOrderData(['canceled', 'failed', 'done'])
         ]);
     }
 }

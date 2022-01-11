@@ -11,12 +11,13 @@ class Order extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public static function getData(){
+    public static function getOrderData($in){
         return DB::table('orders')
         ->join('rooms', 'orders.room_id', '=', 'rooms.id')
         ->join('users', 'orders.user_id', '=', 'users.id')
+        ->whereIn('orders.status', $in)
         ->orderByDesc('orders.schedule')
-        ->get();
+        ->paginate(10);
     }
 
     public static function getUserData($id){
