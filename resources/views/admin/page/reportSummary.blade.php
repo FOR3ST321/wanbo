@@ -181,7 +181,7 @@
                                         <td>{{ $i->name }}</td>
                                         <td>{{ $i->room_name }}</td>
                                         <td>{{ $i->beverage_name }}</td>
-                                        <td>Rp: {{ $i->price }}</td>
+                                        <td>Rp {{ $i->price }}</td>
                                         <td>{{ $i->quantity }}</td>
                                         <td>Rp {{ $i->quantity * $i->price }}</td>
                                         {{-- <td>

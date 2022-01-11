@@ -131,6 +131,11 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            @empty ($upcomingBilling[0]) 
+                                <tr>
+                                    <td colspan="6" style="text-align: center">No Upcoming Booking!</td>
+                                </tr>
+                            @endempty
                         </tbody>
                     </table>
                 </div><!-- /.card-body -->

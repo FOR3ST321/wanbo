@@ -134,9 +134,9 @@
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$item->beverage_name}}</td>
                                     <td>{{$item->type}}</td>
-                                    <td>Rp: {{$item->price}}</td>
+                                    <td>Rp {{$item->price}}</td>
                                     <td>{{$item->quantity}} pcs</td>
-                                    <td>Rp: {{$item->price * $item->quantity}}</td>
+                                    <td>Rp {{$item->price * $item->quantity}}</td>
                                     <td class = "text-bold 
                                     @if ($item->food_status == 'success')
                                     text-success

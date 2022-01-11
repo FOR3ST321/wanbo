@@ -53,7 +53,7 @@
                             @endforeach
                             @if (count($food_orders) == 0) 
                                 <tr>
-                                    <td colspan="7" style="text-align: center">No Data!</td>
+                                    <td colspan="8" style="text-align: center">No Data!</td>
                                 </tr>
                             @endif
                         </tbody>
