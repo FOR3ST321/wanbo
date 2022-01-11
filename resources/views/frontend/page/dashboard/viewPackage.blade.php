@@ -31,10 +31,10 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-12 col-md-20">
+                    <a href="javascript:history.back()" class="btn dorne-btn" style="margin-top: 20px">Back</a>
                     <div class="hero-search-form mt-3 mb-3 d-flex justify-content-center" style="background-color: #130929;padding:50px 20px;border-radius:5px">
                         <div class="tab-pane fade show active" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
                             <div class="isi-card">
-                                <a href="javascript:history.back()" class="btn dorne-btn" style="right:20px;position: absolute;">Back</a>
                                 <h1 style="color:white;text-align:center;margin-bottom:30px">{{ $package->package_name }}</h1>
                                 <div style="display: flex;justify-content:center; margin-bottom:50px; border-top:3px solid white;padding-top:30px">
                                     <img src="{{ $package->photo_url }}" alt="" >
