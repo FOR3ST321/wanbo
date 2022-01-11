@@ -16,4 +16,10 @@ class Package extends Model
         ->join('rooms', 'packages.id', '=', 'rooms.package_id')
         ->get();
     }
+
+    public static function getPackageById ($id) {
+        return DB::table('packages')
+        ->where('id','=',$id)
+        ->first();
+    }
 }

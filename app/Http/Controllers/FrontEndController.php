@@ -26,13 +26,13 @@ class FrontEndController extends Controller
         ]);
     }
 
-    public function package(Request $request){
+    public function package(Package $package){
         return view('/frontend/page/dashboard/viewPackage',[
             'branches' => StoreBranch::all(),
             // 'store' => StoreBranch::getStoreById($request->id),
             // 'packages' => Package::all()
             // 'packages' => StoreBranch::getData()
-            'packages' => StoreBranch::getPackageInBranch($request->id)
+            'package' => Package::getPackageById($package->id)
         ]);
     }
 
