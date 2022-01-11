@@ -58,6 +58,10 @@
                             @endif
                         </tbody>
                     </table>
+
+                    <div class="d-flex justify-content-start" style="margin-top: 20px;">
+                        {{$food_orders->links()}}
+                    </div>
                 </div><!-- /.card-body -->
                 
             </div>

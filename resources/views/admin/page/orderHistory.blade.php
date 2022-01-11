@@ -35,11 +35,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i = 1; ?>
                             @foreach ($orders as $order)
-                                @if ($order->status !== 'pending' && $order->status !== 'paid' && $order->status !== 'booked')
+                                {{-- @if ($order->status !== 'pending' && $order->status !== 'paid' && $order->status !== 'booked') --}}
                                     <tr>
-                                        <td>{{ $i }}</td>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $order->schedule }}</td>
                                         <td>{{ $order->room_name }}</td>
                                         <td>{{ $order->name }}</td>
                                         @if ($order->status == 'done')
@@ -48,7 +48,6 @@
                                             <td class="text-bold text-danger">
                                         @endif
                                         {{ ucwords($order->status) }}</td>
-                                        <td>{{ $order->schedule }}</td>
                                         @if ($order->status != 'canceled')
                                             <td>{{ $order->checkin }}</td>
                                             <td>{{ $order->checkout }}</td>
@@ -59,17 +58,20 @@
 
                                         <td>{{ $order->total_time }} min</td>
                                         <td>Rp {{ $order->total_price }}</td>
-                                        <?php $i++; ?>
                                     </tr>
-                                @endif
+                                {{-- @endif --}}
                             @endforeach
-                            @if ($i == 1)
+                            @if (count($orders) == 0)
                                 <tr>
                                     <td colspan="9" style="text-align: center">No Data!</td>
                                 </tr>
                             @endif
                         </tbody>
                     </table>
+
+                    <div class="d-flex justify-content-start" style="margin-top: 20px;">
+                        {{$orders->links()}}
+                    </div>
                 </div><!-- /.card-body -->
             </div>
         </div><!-- /.container-fluid -->

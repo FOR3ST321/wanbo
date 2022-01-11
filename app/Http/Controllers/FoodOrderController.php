@@ -18,12 +18,12 @@ class FoodOrderController extends Controller
     {
         return view('/admin/page/foodOrder/foodOrderMainMenu', [
             'active' => ['food-order-list', false, null],
-            'food_orders' => FoodOrder::getData()->sortBy('created_at'),
+            'food_orders' => FoodOrder::getData(),
             'js' => "/admin/js/foodOrder.js"
         ]);
     }
 
-    public function index2()
+    public function foodOrderHistory()
     {
         return view('/admin/page/foodOrder/foodOrderHistory', [
             'active' => ['report',true, 'food-order-history'],

@@ -68,7 +68,7 @@ Route::middleware(['is_admin'])->group(function () {
     Route::get('/wanboAdmin/foodOrders', [FoodOrderController::class, 'index']);
     Route::put('/wanboAdmin/foodOrders/{foodOrder}', [FoodOrderController::class, 'success']);
     Route::patch('/wanboAdmin/foodOrders/{foodOrder}', [FoodOrderController::class, 'canceled']);
-    Route::get('/wanboAdmin/foodOrderHistory', [FoodOrderController::class, 'index2']);
+    Route::get('/wanboAdmin/foodOrderHistory', [FoodOrderController::class, 'foodOrderHistory']);
     
     //beverage
     Route::resource('/wanboAdmin/beverages', BeverageController::class);
