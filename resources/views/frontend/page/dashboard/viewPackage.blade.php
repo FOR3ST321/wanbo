@@ -23,18 +23,23 @@
     <!-- ***** Welcome Area End ***** -->
 
     <!-- ***** About Area Start ***** -->
-    <section class="dorne-about-area section-padding-0-100">
+    <section class="dorne-about-area section-padding-0-200">
         <div class="container h-100">
             <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-12 col-md-10">
+                <div class="col-12 col-md-20">
                     <div class="hero-search-form mt-3 mb-3 d-flex justify-content-center" style="background-color: #130929;padding:50px 20px;border-radius:5px">
                         <div class="tab-pane fade show active" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
-                            <h2 style="color:white;text-align:center;margin-bottom:30px">{{ $package->package_name }}</h4>
-                            <img src="{{ $package->photo_url }}" alt="">
-                            <h4 style="color:white;text-align:center;margin-bottom:30px">Price: Rp {{ $package->price_per_hour }}/hour</h4>
-                            <h4 style="color:white;text-align:center;margin-bottom:30px">Specification: {{ $package->computer_spec }}</h4>
-                            <h4 style="color:white;text-align:center;margin-bottom:30px">Description: {{ $package->description }}</h4>
-                            
+                            <div class="isi-card">
+                                <h2 style="color:white;text-align:center;margin-bottom:30px">{{ $package->package_name }}</h4>
+                                <img src="{{ $package->photo_url }}" alt="">
+                                <h4 style="color:white;text-align:center;margin-bottom:30px">Price: Rp {{ $package->price_per_hour }}/hour</h4>
+                                <h4 style="color:white;text-align:center;margin-bottom:30px">Specification: {{ $package->computer_spec }}</h4>
+                                <h4 style="color:white;text-align:center;margin-bottom:30px">Description: {{ $package->description }}</h4>
+                                <label for="tanggal-order" style="color: white; text-align:center">Choose Date: </label>
+                                <input type="date" name="tanggal-order" id="">
+                                <br>
+                                <button type="submit" class="btn dorne-btn" style="margin-top:30px">Order</button>
+                            </div>
                         </div>
                     </div>
                 </div>
