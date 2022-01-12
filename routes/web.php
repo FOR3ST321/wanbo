@@ -92,4 +92,8 @@ Route::middleware(['is_user'])->group(function () {
     Route::post('/wanbo/users/{user}', [FrontEndController::class, 'updateProfile']);
     Route::get('/wanbo/logout', [AuthController::class, 'logoutUser']);
     Route::get('/wanbo/package/{package}', [FrontEndController::class, 'package']);
+
+    //booking
+    Route::get('/wanbo/reserve', [OrderController::class, 'reserve']);
+    Route::get('/wanbo/mybooking', [OrderController::class, 'mybooking']);
 });

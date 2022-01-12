@@ -89,6 +89,22 @@ class OrderController extends Controller
         return redirect('/wanboAdmin');
     }
 
+
+    //frontend
+    public function reserve(){
+        
+        return view('/frontend/page/booking/reserveMainMenu', [
+            'active' => 'reserve'
+        ]);
+    }
+
+    public function mybooking(){
+        
+        return view('/frontend/page/booking/mybookingMainMenu', [
+            'active' => 'mybooking'
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
