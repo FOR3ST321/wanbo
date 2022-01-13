@@ -27,13 +27,23 @@ class StoreBranch extends Model
     }
 
     
-    public static function getPackageInBranch ($id) {
-        return DB::table('store_branches')
-        ->join('rooms', 'store_branches.id', '=', 'rooms.store_branch_id')
-        ->join('packages', 'packages.id', '=', 'rooms.package_id')
-        ->where('store_branches.id','=',$id)
-        ->select('packages.*')
-        ->distinct()
-        ->get();
+    public static function getPackageInBranch ($id = null) {
+        if($id == null){
+            return $db = DB::table('store_branches')
+            ->join('rooms', 'store_branches.id', '=', 'rooms.store_branch_id')
+            ->join('packages', 'packages.id', '=', 'rooms.package_id')
+            ->select('packages.*')
+            ->distinct()
+            ->get();
+        }
+        else{
+            return $db = DB::table('store_branches')
+            ->join('rooms', 'store_branches.id', '=', 'rooms.store_branch_id')
+            ->join('packages', 'packages.id', '=', 'rooms.package_id')
+            ->where('store_branches.id','=',$id)
+            ->select('packages.*')
+            ->distinct()
+            ->get();
+        }
     }
 }

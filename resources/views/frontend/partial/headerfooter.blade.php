@@ -17,6 +17,9 @@
     <!-- Core Stylesheet -->
     <link href="/frontend/style.css" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
+
     <!-- Responsive CSS -->
     <link href="/frontend/css/responsive/responsive.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

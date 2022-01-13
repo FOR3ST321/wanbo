@@ -6,7 +6,7 @@
             {{ session('error') }}
         </div>
     @endif --}}
-
+    {{-- @dump($packages) --}}
     <!-- ***** Welcome Area Start ***** -->
     <section class="dorne-welcome-area bg-img bg-overlay" >
         <div class="container h-100">

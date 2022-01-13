@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Room;
 use App\Models\Order;
 use App\Models\FoodOrder;
+use App\Models\StoreBranch;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreOrderRequest;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -92,9 +93,10 @@ class OrderController extends Controller
 
     //frontend
     public function reserve(){
-        
         return view('/frontend/page/booking/reserveMainMenu', [
-            'active' => 'reserve'
+            'active' => 'reserve',
+            'packages' => StoreBranch::getPackageInBranch(),
+            'js' => '/frontend/js/booking.js'
         ]);
     }
 
