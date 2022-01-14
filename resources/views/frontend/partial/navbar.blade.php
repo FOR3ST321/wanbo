@@ -36,7 +36,7 @@
                                             <a class="nav-link" href="/wanbo/dashboard/warnet">Warnet</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/wanbo/reserve">Reserve</a>
+                                            <a class="nav-link" href="#category-area">Reserve</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="/wanbo/mybooking">My Booking</a>
@@ -49,7 +49,7 @@
                                             <a class="nav-link" href="/wanbo/dashboard/warnet">Warnet</a>
                                         </li>
                                         <li class="nav-item {{ isset($active) && $active == 'reserve' ? 'active' : '' }}">
-                                            <a class="nav-link" href="/wanbo/reserve">Reserve</a> {{-- mungkin form buat bookingan --}}
+                                            <a class="nav-link" href="/wanbo/reserve{{ isset($branch_id) ? '?id='.$branch_id : '' }}">Reserve</a> {{-- mungkin form buat bookingan --}}
                                         </li>
                                         <li class="nav-item {{ isset($active) && $active == 'mybook' ? 'active' : '' }}">
                                             <a class="nav-link" href="/wanbo/mybooking">My Booking</a> {{-- ini mungkin history booking --}}

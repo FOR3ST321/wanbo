@@ -73,11 +73,13 @@ class OrderController extends Controller
 
 
     //frontend
-    public function reserve(){
+    public function reserve(Request $request){
         return view('/frontend/page/booking/reserveMainMenu', [
             'active' => 'reserve',
-            'packages' => StoreBranch::getPackageInBranch(),
-            'js' => '/frontend/js/booking.js'
+            'packages' => StoreBranch::getPackageInBranch($request->id),
+            'js' => '/frontend/js/booking.js',
+            'branches' => StoreBranch::all(),
+            'branch_id' => $request->id
         ]);
     }
 

@@ -42,6 +42,7 @@ class FrontEndController extends Controller
             'beverages' => Beverage::all(),
             'store' => StoreBranch::getStoreById($request->id),
             'branches' => StoreBranch::all(),
+            'branch_id' => $request->id,
             'packages' => StoreBranch::getPackageInBranch($request->id)
         ]);
     }
