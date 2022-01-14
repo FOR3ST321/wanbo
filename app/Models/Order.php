@@ -33,6 +33,7 @@ class Order extends Model
             'store_branches.*',
             'rooms.*'
         )
+        ->orderByDesc('orders.schedule')
         ->get();
     }
 

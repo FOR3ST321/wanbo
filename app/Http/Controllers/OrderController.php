@@ -171,4 +171,22 @@ class OrderController extends Controller
         // Alert::success('Success', 'Order data created successfully!');
         return redirect('/wanbo/mybooking');
     }
+
+    public function cancelBooking(){
+        // dump(request()->id);
+        Order::where('id', request()->id)->update([
+            'status' => 'canceled',
+        ]);
+
+        return redirect('/wanbo/mybooking');
+    }
+
+    public function checkinBooking(){
+        Order::where('id', request()->id)->update([
+            'status' => 'booked',
+            'checkin' => date('Y-m-d H:i:s')
+        ]);
+
+        return redirect('/wanbo/mybooking');
+    }
 }

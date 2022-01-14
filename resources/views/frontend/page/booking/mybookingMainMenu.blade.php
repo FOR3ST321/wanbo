@@ -57,12 +57,45 @@
                     </div>
                 @endif
 
+                {{-- @dump($booking['ongoing']) --}}
+
                 @if (count($booking['ongoing']) != 0)
                     <div class="container-fluid">
                         <h5>Ongoing Booking :</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci atque a obcaecati, velit
-                            tenetur ratione nihil fugiat. Blanditiis ullam id, fugit laborum, tempora atque, dolor cum eos
-                            molestias quos beatae.</p>
+                        @foreach ($booking['ongoing'] as $item)
+                            <div class="col-12 card"
+                                style="border:2px solid #9f80e9;background-color:#f3f3f3;margin:20px 0px">
+                                <div class="card-body">
+                                    <h5>{{ $item->store_name }} - Room {{ $item->room_name }}</h5>
+                                    <p>
+                                        <strong>Schedule: </strong> {{ $item->schedule }} <br>
+                                        <strong>Check In: </strong> {{ $item->checkin }} <br>
+                                        <strong>Total Time: </strong> {{ $item->total_time }} Minutes <br>
+                                        <?php
+                                        $doneTime = new DateTime($item->schedule);
+                                        $doneTime->modify("+$item->total_time minutes");
+                                        
+                                        $secondsDiff = strtotime($doneTime->format('Y-m-d H:i:s')) - strtotime(date('Y-m-d H:i:s'));
+                                        $minDiff = floor($secondsDiff / 60);
+                                        $secondsDiff -= $minDiff * 60;
+                                        ?>
+                                        <strong>Done : </strong> {{ $doneTime->format('H:i') }} <br>
+                                        <strong>Time Left : </strong> {{ $minDiff }} min {{ $secondsDiff }} sec <br>
+                            
+
+                                    </p>
+
+                                    <div class="row">
+                                        <a class="btn dorne-btn" href="/wanbo/mybooking/{{ $item->orders_id }}"
+                                            style="margin:10px;cursor: pointer;color:white">
+                                            Details
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        @endforeach
+
                         <hr>
                     </div>
                 @endif
@@ -85,28 +118,43 @@
                                     </p>
 
                                     <div class="row">
-                                        <button id="checkInBooking" class="btn dorne-btn"
-                                            style="margin:10px;cursor: pointer;">
-                                            Check in now
-                                        </button>
 
-                                        <button id="cancelBooking" class="btn dorne-btn"
-                                            style="margin:10px;background-color:rgb(224, 45, 45);cursor: pointer;">
-                                            Cancel Booking
-                                        </button>
+                                        @if (date_format(date_create($item->schedule), 'Y-m-d') <= date('Y-m-d'))
+                                            <form action="/wanbo/checkin/{{ $item->orders_id }}" method="POST">
+                                                @csrf
+                                                <button class="btn dorne-btn checkInBooking"
+                                                    style="margin:10px;cursor: pointer;"
+                                                    data-roomname="{{ $item->room_name }}">
+                                                    Check in now
+                                                </button>
+                                            </form>
+                                        @else
+
+                                            <button type="submit" class="btn dorne-btn" disabled style="margin:10px;">
+                                                Check in now
+                                            </button>
+
+                                        @endif
+
+
+                                        <form action="/wanbo/cancelbooking/{{ $item->orders_id }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn dorne-btn cancelBooking"
+                                                style="margin:10px;background-color:rgb(224, 45, 45);cursor: pointer;">
+                                                Cancel Booking
+                                            </button>
+                                        </form>
                                     </div>
 
                                 </div>
                             </div>
                         @endforeach
 
-
-
                         <hr>
                     </div>
                 @endif
 
-                @dump($booking['done'])
+                {{-- @dump($booking['done']) --}}
                 @if (count($booking['done']) != 0)
                     <div class="container-fluid">
                         <h5>Finished/Canceled Booking :</h5>
@@ -125,16 +173,16 @@
                                         <strong>Total time: </strong> {{ $item->total_time }} minutes <br>
                                         <strong>Total price: </strong> Rp: {{ $item->total_price }} <br>
 
-                                        <strong>Status: </strong> 
-                                        <span class="{{($item->status == 'done') ? 'text-success' : 'text-danger'}}">
+                                        <strong>Status: </strong>
+                                        <span class="{{ $item->status == 'done' ? 'text-success' : 'text-danger' }}">
                                             {{ ucwords($item->status) }} <br>
                                         </span>
                                     </p>
 
                                     <div class="row">
-                                        <a class="btn dorne-btn" href="/wanbo/myBooking/{{$item->orders_id}}"
+                                        <a class="btn dorne-btn" href="/wanbo/mybooking/{{ $item->orders_id }}"
                                             style="margin:10px;cursor: pointer;color:white">
-                                            Detail
+                                            Details
                                         </a>
                                     </div>
 
