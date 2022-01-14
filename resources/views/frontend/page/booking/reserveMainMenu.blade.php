@@ -31,7 +31,7 @@
                 <div class="col-12 col-md-10">
                     <div class="hero-search-form mt-1 d-flex justify-content-center" style="background-color: #341a79;padding:20px;border-radius:5px">
                         <div class="tab-pane fade show active" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
-                            <h6 style="color:white;text-align:center">Choose your Wanbo branch</h6>
+                            <h6 style="color:white;text-align:center">Change Wanbo branch</h6>
                             <form action="/wanbo/reserve" method="get">
                                 @csrf
                                 <select class="custom-select" name="id">
@@ -42,9 +42,6 @@
                                 <button type="submit" class="btn dorne-btn" style="height: 40px;line-height:0;border-radius:5px"><i class="fa fa-search pr-2"
                                         aria-hidden="true"></i> Discover</button>
                             </form>
-                            <div style="width: 100%;text-align: center;margin-top:5px">
-                                <a href="/wanbo/dashboard/warnet">More Detail</a>
-                            </div>
                         </div>
                     </div>
                 </div>
