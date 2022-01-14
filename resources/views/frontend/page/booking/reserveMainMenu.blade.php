@@ -12,8 +12,48 @@
     <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(/frontend/img/bg-img/hero-1.jpg)"></div>
     <!-- ***** Breadcumb Area End ***** -->
 
+    <section class="dorne-listing-destinations-area" style="padding-top: 50px">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading dark text-center" style="margin-bottom: 0">
+                        <span></span>
+                        <h4>reserve warnet room</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dorne-about-area" style="padding-top: 50px;padding-bottom:50px">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12 col-md-10">
+                    <div class="hero-search-form mt-1 d-flex justify-content-center" style="background-color: #341a79;padding:20px;border-radius:5px">
+                        <div class="tab-pane fade show active" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
+                            <h6 style="color:white;text-align:center">Choose your Wanbo branch</h6>
+                            <form action="/wanbo/reserve" method="get">
+                                @csrf
+                                <select class="custom-select" name="id">
+                                    @foreach ($branches as $branch)
+                                        <option value="{{ $branch->id }}" {{ $branch->id == $branch_id ? 'selected': '' }}>{{ $branch->store_name }}</option>
+                                    @endforeach
+                                </select>
+                                <button type="submit" class="btn dorne-btn" style="height: 40px;line-height:0;border-radius:5px"><i class="fa fa-search pr-2"
+                                        aria-hidden="true"></i> Discover</button>
+                            </form>
+                            <div style="width: 100%;text-align: center;margin-top:5px">
+                                <a href="/wanbo/dashboard/warnet">More Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </section>
+
     <!-- ***** Listing Destinations Area Start ***** -->
-    <section class="dorne-listing-destinations-area section-padding-100-50">
+    <section class="dorne-listing-destinations-area section-padding-00-50">
         <div class="container">
             <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
                 <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
@@ -48,7 +88,6 @@
 
 
             <div class="container-fluid">
-                <h3 class="text-center">Reserve Warnet Room</h3>
                 <hr>
 
                 <h5>Please Choose Your Desired Package :</h5>
@@ -66,9 +105,9 @@
                                 <div class="feature-title">
                                     <h5>{{ $package->package_name }}</h5>
                                     
-                                    <p><strong>Rp. {{ $package->price_per_hour }}/hour</strong> <br>
-                                        {{ $package->description }} Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sint cum exercitationem mollitia vitae, placeat assumenda, deserunt error beatae, illo corporis laudantium officiis dolorem! Alias aliquid veritatis molestiae nemo cumque!</p>
-                                    {{-- <p>{{ $package->computer_spec }}</p> --}}
+                                    <p><strong>Rp {{ $package->price_per_hour }}/hour</strong> <br>
+                                        {{ $package->description }} 
+                                    <p>{{ $package->computer_spec }}</p>
                                 </div>
                             </div>
                         </div>
