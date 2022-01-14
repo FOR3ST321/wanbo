@@ -101,9 +101,33 @@ class OrderController extends Controller
     }
 
     public function mybooking(){
-        
+        $allBooking = Order::getUserData(auth()->user()->id);
+        $categoryBooking = [
+            'upcoming' => [],
+            'done' => [],
+            'ongoing' => [],
+        ];
+
+        foreach($allBooking as $a){
+            switch($a->status){
+                case 'paid':
+                    array_push($categoryBooking['upcoming'], $a);
+                    break;
+                case 'booked':
+                    array_push($categoryBooking['ongoing'], $a);
+                    break;
+                default :
+                    array_push($categoryBooking['done'], $a);
+                    break;
+            }
+        }
+
+        // dump($categoryBooking);
+
         return view('/frontend/page/booking/mybookingMainMenu', [
-            'active' => 'mybooking'
+            'active' => 'mybooking',
+            'booking' => $categoryBooking,
+            'js' => '/frontend/js/booking.js'
         ]);
     }
 
