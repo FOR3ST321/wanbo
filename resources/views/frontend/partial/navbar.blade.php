@@ -39,7 +39,7 @@
                                             <a class="nav-link" href="/wanbo/reserve">Reserve</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#category-area">My Booking</a>
+                                            <a class="nav-link" href="/wanbo/mybooking">My Booking</a>
                                         </li>
                                     @else
                                         <li class="nav-item {{ Route::is('dashboardBranch') ? 'active' : '' }}">

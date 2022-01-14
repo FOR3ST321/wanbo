@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
 use App\Models\Room;
 use App\Models\Order;
+use App\Models\Package;
 use App\Models\FoodOrder;
 use App\Models\StoreBranch;
 use Illuminate\Http\Request;
@@ -31,7 +33,6 @@ function getPrice($room_id, $total_time){
 
 class OrderController extends Controller
 {
-    
 
     public function index()
     {
@@ -59,26 +60,6 @@ class OrderController extends Controller
         ]);
     }
 
-    public function guestBooking(Request $request){
-        $data = [
-            'room_id' => $request->room_id,
-            'user_id' => 1, //guest
-            'status' => 'booked',
-            'unique_id' => generateString(),
-            'total_price' => getPrice($request->room_id, $request->total_time),
-            'total_time' => $request->total_time,
-            'schedule' => date('Y-m-d H:i:s'),
-            'checkin' => date('Y-m-d H:i:s'),
-            'checkout' => null
-        ];
-
-        // dump($data);
-        Order::create($data);
-
-        Alert::success('Success', 'Order data created successfully!');
-        return redirect('/wanboAdmin');
-    }
-
     public function stopBooking(){
         // dump(request()->id);
         Order::where('id', request()->id)->update([
@@ -100,6 +81,23 @@ class OrderController extends Controller
         ]);
     }
 
+    public function bookRoom(Request $request){
+        //timestamp = jarak cek query dari hari ini(sementara) sampai dengan jam selesai orderan yang dipilih
+        $timestamp = date_create($request->tanggal_order." ".$request->jam_order.":00");
+        $doneTime = $timestamp;
+        $doneTime->modify("+$request->total_time minutes");
+        // dump($doneTime);
+        $room = Order::getAvailableRoom($doneTime, $request->package_id);
+        // dump($room);
+        return view('/frontend/page/booking/pickRooms', [
+            'prevData' => $request,
+            'package' => Package::getPackageById($request->package_id),
+            'availableRooms' => $room,
+            'active' => 'reserve',
+            'js' => '/frontend/js/booking.js'
+        ]);
+    }
+
     public function mybooking(){
         
         return view('/frontend/page/booking/mybookingMainMenu', [
@@ -107,69 +105,43 @@ class OrderController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function guestBooking(Request $request){
+        $data = [
+            'room_id' => $request->room_id,
+            'user_id' => 1, //guest
+            'status' => 'booked',
+            'unique_id' => generateString(),
+            'total_price' => getPrice($request->room_id, $request->total_time),
+            'total_time' => $request->total_time,
+            'schedule' => date('Y-m-d H:i:s'),
+            'checkin' => date('Y-m-d H:i:s'),
+            'checkout' => null
+        ];
+
+        // dump($data);
+        Order::create($data);
+
+        Alert::success('Success', 'Order data created successfully!');
+        return redirect('/wanboAdmin');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreOrderRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreOrderRequest $request)
-    {
-        //
-    }
+    public function createOrder(Request $request){
+        $data = [
+            'room_id' => $request->selected_room,
+            'user_id' =>auth()->user()->id,
+            'status' => 'paid',
+            'unique_id' => generateString(),
+            'total_price' => $request->total_price,
+            'total_time' => $request->total_time,
+            'schedule' => $request->schedule,
+            'checkin' => null,
+            'checkout' => null
+        ];
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $order)
-    {
-        //
-    }
+        // dump($data);
+        Order::create($data);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateOrderRequest  $request
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateOrderRequest $request, Order $order)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Order $order)
-    {
-        //
+        // Alert::success('Success', 'Order data created successfully!');
+        return redirect('/wanbo/mybooking');
     }
 }

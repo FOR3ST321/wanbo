@@ -51,7 +51,23 @@ class Order extends Model
         ->select('rooms.id as rooms_id', 'rooms.room_name', 'packages.package_name', 'users.name', 'orders.id as order_id' ,'orders.*')
         ->orderBy('rooms.id')
         ->get();
-    }   
+    }
+    
+    public static function getAvailableRoom($order_date, $package_id){
+        return DB::table('orders')
+        ->rightJoin('rooms', function($join) use($order_date){
+            $join->on('orders.room_id', '=', 'rooms.id')
+            ->whereIn('orders.status', ['booked', 'paid'])
+            ->whereBetween('orders.schedule', [date_create(date('Y-m-d')." 00:00:00"), $order_date]);
+            // between pertama masih belum bener, soalnya, ngambil di 00:00:00 harusnya liat donetime tiap booking
+        })
+        ->leftJoin('users', 'users.id', '=', 'orders.user_id')
+        ->join('packages', 'packages.id', '=', 'rooms.package_id')
+        ->where('packages.id', '=', $package_id)
+        ->select('rooms.id as rooms_id', 'rooms.room_name', 'packages.package_name', 'users.name', 'orders.id as order_id' ,'orders.*')
+        ->orderBy('rooms.id')
+        ->get();
+    }
 
     public static function upcomingBooking($date){
         return DB::table('orders')

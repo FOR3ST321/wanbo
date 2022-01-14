@@ -32,7 +32,8 @@ class FrontEndController extends Controller
             // 'store' => StoreBranch::getStoreById($request->id),
             // 'packages' => Package::all()
             // 'packages' => StoreBranch::getData()
-            'package' => Package::getPackageById($package->id)
+            'package' => Package::getPackageById($package->id),
+            'js' => '/frontend/js/booking.js'
         ]);
     }
 
