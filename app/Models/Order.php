@@ -24,6 +24,7 @@ class Order extends Model
         return DB::table('orders')
         ->join('rooms', 'orders.room_id', '=', 'rooms.id')
         ->join('users', 'orders.user_id', '=', 'users.id')
+        ->join('store_branches', 'store_branches.id', '=', 'rooms.store_branch_id')
         ->where('orders.user_id','=',$id)
         ->get();
     }
