@@ -125,6 +125,7 @@ class OrderController extends Controller
         return view('/frontend/page/booking/mybookingMainMenu', [
             'active' => 'mybooking',
             'booking' => $categoryBooking,
+            'emptyOrder' => count($allBooking) == 0 ? true : false,
             'js' => '/frontend/js/booking.js'
         ]);
     }

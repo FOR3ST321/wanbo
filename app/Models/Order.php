@@ -26,6 +26,13 @@ class Order extends Model
         ->join('users', 'orders.user_id', '=', 'users.id')
         ->join('store_branches', 'store_branches.id', '=', 'rooms.store_branch_id')
         ->where('orders.user_id','=',$id)
+        ->select(
+            'orders.id as orders_id',
+            'orders.*',
+            'users.*',
+            'store_branches.*',
+            'rooms.*'
+        )
         ->get();
     }
 

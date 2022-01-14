@@ -51,6 +51,12 @@
                 <h3 class="text-center">My Booking</h3>
                 <hr>
 
+                @if ($emptyOrder)
+                    <div class="container-fluid">
+                        <h4 class="text-center text-danger">You didn't have any order data!</h4>
+                    </div>
+                @endif
+
                 @if (count($booking['ongoing']) != 0)
                     <div class="container-fluid">
                         <h5>Ongoing Booking :</h5>
@@ -112,19 +118,24 @@
                                     <h5>{{ $item->store_name }} - Room {{ $item->room_name }}</h5>
                                     <p>
                                         <strong>Schedule: </strong> {{ ucwords($item->schedule) }} <br>
-                                        <strong>Check in: </strong> {{ ($item->checkin == null)? "-" : $item->checkin }} <br>
-                                        <strong>Check out: </strong> {{ ($item->checkout == null)? "-" : $item->checkout }} <br>
+                                        <strong>Check in: </strong> {{ $item->checkin == null ? '-' : $item->checkin }}
+                                        <br>
+                                        <strong>Check out: </strong>
+                                        {{ $item->checkout == null ? '-' : $item->checkout }} <br>
                                         <strong>Total time: </strong> {{ $item->total_time }} minutes <br>
                                         <strong>Total price: </strong> Rp: {{ $item->total_price }} <br>
-                                        
-                                        <strong>Status: </strong> {{ ucwords($item->status) }} <br>
+
+                                        <strong>Status: </strong> 
+                                        <span class="{{($item->status == 'done') ? 'text-success' : 'text-danger'}}">
+                                            {{ ucwords($item->status) }} <br>
+                                        </span>
                                     </p>
 
                                     <div class="row">
-                                        <button id="checkInBooking" class="btn dorne-btn"
-                                            style="margin:10px;cursor: pointer;">
+                                        <a class="btn dorne-btn" href="/wanbo/myBooking/{{$item->orders_id}}"
+                                            style="margin:10px;cursor: pointer;color:white">
                                             Detail
-                                        </button>
+                                        </a>
                                     </div>
 
                                 </div>
