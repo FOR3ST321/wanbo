@@ -12,6 +12,19 @@
     <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(/frontend/img/bg-img/hero-1.jpg)"></div>
     <!-- ***** Breadcumb Area End ***** -->
 
+    <section class="dorne-listing-destinations-area" style="padding-top: 50px">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading dark text-center" style="margin-bottom: 0">
+                        <span></span>
+                        <h4>My Booking</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ***** Listing Destinations Area Start ***** -->
     <section class="dorne-listing-destinations-area section-padding-100-50">
         <div class="container">
@@ -48,8 +61,6 @@
 
 
             <div class="container-fluid">
-                <h3 class="text-center">My Booking</h3>
-                <hr>
 
                 @if ($emptyOrder)
                     <div class="container-fluid">

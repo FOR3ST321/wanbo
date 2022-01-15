@@ -91,9 +91,9 @@
     <script src="/frontend/js/active.js"></script>
 
     <script>
-        let header = document.getElementsByClassName('breadcumb-area');
-        header[0].style.backgroundImage = "url(https://media.gettyimages.com/photos/interior-of-la-bastille-internet-cafe-amsterdam-picture-idAA028564?k=20&m=AA028564&s=612x612&w=0&h=4cLUXImRnW0xR47HKekzB0Vlg1sGXD4VQPXuxSqrwyE=)";
-        header[0].style.backgroundPosition = 'top';
+        // let header = document.getElementsByClassName('breadcumb-area');
+        // header[0].style.backgroundImage = "url(https://media.gettyimages.com/photos/interior-of-la-bastille-internet-cafe-amsterdam-picture-idAA028564?k=20&m=AA028564&s=612x612&w=0&h=4cLUXImRnW0xR47HKekzB0Vlg1sGXD4VQPXuxSqrwyE=)";
+        // header[0].style.backgroundPosition = 'top';
 
         $('.dorne-btn').css({
             paddingTop: '10px'
