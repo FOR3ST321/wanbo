@@ -81,7 +81,7 @@
                                         ?>
                                         <strong>Done : </strong> {{ $doneTime->format('H:i') }} <br>
                                         <strong>Time Left : </strong> {{ $minDiff }} min {{ $secondsDiff }} sec <br>
-                            
+
 
                                     </p>
 
@@ -90,6 +90,15 @@
                                             style="margin:10px;cursor: pointer;color:white">
                                             Details
                                         </a>
+
+                                        <form action="/wanbo/checkout/{{ $item->orders_id }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn dorne-btn checkoutBooking"
+                                                data-roomname="{{ $item->room_name }}"
+                                                style="margin:10px;background-color:rgb(224, 45, 45);cursor: pointer;">
+                                                Check Out
+                                            </button>
+                                        </form>
                                     </div>
 
                                 </div>
@@ -104,7 +113,12 @@
                     <div class="container-fluid">
                         <h5>Upcoming Booking :</h5>
 
+
+
                         @foreach ($booking['upcoming'] as $item)
+                            @php
+                                $compareDate = date_format(date_create($item->schedule), 'Y-m-d H:i:s') <= date('Y-m-d H:i:s');
+                            @endphp
                             <div class="col-12 card"
                                 style="border:2px solid #9f80e9;background-color:#f3f3f3;margin:20px 0px">
                                 <div class="card-body">
@@ -119,19 +133,19 @@
 
                                     <div class="row">
 
-                                        @if (date_format(date_create($item->schedule), 'Y-m-d') <= date('Y-m-d'))
+                                        @if ($compareDate)
                                             <form action="/wanbo/checkin/{{ $item->orders_id }}" method="POST">
                                                 @csrf
                                                 <button class="btn dorne-btn checkInBooking"
                                                     style="margin:10px;cursor: pointer;"
                                                     data-roomname="{{ $item->room_name }}">
-                                                    Check in now
+                                                    Check in Now
                                                 </button>
                                             </form>
                                         @else
 
                                             <button type="submit" class="btn dorne-btn" disabled style="margin:10px;">
-                                                Check in now
+                                                Check in
                                             </button>
 
                                         @endif
@@ -144,7 +158,11 @@
                                                 Cancel Booking
                                             </button>
                                         </form>
+
                                     </div>
+                                    @if (!$compareDate)
+                                        <p class="text-danger">*You can only Checkin after {{date_format(date_create($item->schedule), 'Y-m-d H:i:s')}}</p>
+                                    @endif
 
                                 </div>
                             </div>

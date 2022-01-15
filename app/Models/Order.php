@@ -78,12 +78,13 @@ class Order extends Model
         ->get();
     }
 
-    public static function upcomingBooking($date){
+    public static function upcomingBooking($minDate, $maxDate){
         return DB::table('orders')
         ->join('rooms', 'orders.room_id', '=', 'rooms.id')
         ->join('users', 'orders.user_id', '=', 'users.id')
         ->where('status', '=', 'paid')
-        ->where('schedule', '>=', $date)
+        ->whereBetween('schedule', [$minDate, $maxDate])
+        // ->where('schedule', '>=', $date)
         ->orderBy('schedule')
         ->select('orders.id as order_id', 'orders.*', 'rooms.room_name', 'users.name')
         ->get();
@@ -93,6 +94,9 @@ class Order extends Model
         return DB::table('orders')
         ->join('rooms', 'orders.room_id', '=', 'rooms.id')
         ->join('users', 'orders.user_id', '=', 'users.id')
-        ->where('orders.id' , '=', $id)->get()->first();
+        ->join('store_branches', 'store_branches.id', '=', 'rooms.store_branch_id')
+        ->where('orders.id' , '=', $id)
+        ->select('orders.id as orders_id', 'orders.*', 'users.*', 'rooms.*', 'store_branches.store_name')
+        ->get()->first();
     }
 }

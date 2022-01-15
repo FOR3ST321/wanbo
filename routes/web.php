@@ -99,6 +99,10 @@ Route::middleware(['is_user'])->group(function () {
     Route::post('/wanbo/createOrder', [OrderController::class, 'createOrder']);
 
     Route::get('/wanbo/mybooking', [OrderController::class, 'mybooking']);
+    Route::get('/wanbo/mybooking/{id}', [OrderController::class, 'mybookingDetail']);
     Route::post('wanbo/cancelbooking/{id}', [OrderController::class, 'cancelBooking']);
     Route::post('wanbo/checkin/{id}', [OrderController::class, 'checkinBooking']);
+    Route::post('/wanbo/checkout/{id}', [OrderController::class, 'checkoutBooking']);
+    Route::post('/wanbo/orderfood/{id}', [FoodOrderController::class, 'createOrderFood']);
+    
 });

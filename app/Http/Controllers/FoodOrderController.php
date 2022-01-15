@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FoodOrder;
+use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\StoreFoodOrderRequest;
 use App\Http\Requests\UpdateFoodOrderRequest;
@@ -51,6 +52,19 @@ class FoodOrderController extends Controller
         //     'food_orders' => FoodOrder::getData()
         // ]);
         return redirect('/wanboAdmin/foodOrders');
+    }
+
+    public function createOrderFood(Request $request){
+        $data = [
+            'order_id' => $request->id,
+            'beverage_id' => $request->beverage_id,
+            'quantity' => $request->qty,
+            'food_status' => 'pending'
+        ];
+
+        // dump($data);
+        FoodOrder::create($data);
+        return redirect('/wanbo/mybooking/'.$request->id);
     }
     /**
      * Show the form for creating a new resource.

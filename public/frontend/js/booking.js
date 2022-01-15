@@ -126,3 +126,47 @@ $(".checkInBooking").on("click", function (e) {
         }
     });
 });
+
+//checkout booking
+$(".checkoutBooking").on("click", function (e) {
+    e.preventDefault();
+    var form = $(this).parents("form");
+
+    Swal.fire({
+        title: `Checkout From Room ${$(this).data("roomname")}?`,
+        text: "Your action cannot be undone!",
+        icon: "question",
+        showDenyButton: true,
+        confirmButtonText: "Checkout",
+        denyButtonText: "Cancel",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            form.submit();
+        }
+    });
+});
+
+// //order foods
+$('.pickfood').on("click", function () {
+    $('#foodOrderTitle').text($(this).data('name'));
+    $('#prices').text($(this).data('price'));
+    $('#beverage_id').val($(this).data('id'))
+    $('#totalPrice').text('Rp: ' + $(this).data('price'));
+});
+
+$('#qty').change(function(){
+    $('#orderButtonSubmit').removeAttr('disabled');
+
+    if($(this).val() < 1){
+        $('#totalPrice').text('Invalid ! (Qty cant be less than 1)')
+
+        $('#orderButtonSubmit').attr('disabled','disabled');
+    }
+    else if($(this).val() > 10){
+        $('#totalPrice').text('Invalid ! (Qty cant be more than 10)')
+        $('#orderButtonSubmit').attr('disabled','disabled');
+    }
+
+    //kalau bener
+    $('#totalPrice').text(`Rp: ${$('#prices').text() * $(this).val()}`)
+})

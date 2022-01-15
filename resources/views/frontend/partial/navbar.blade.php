@@ -4,7 +4,7 @@
 @else
     <header class="header_area" id="header">
 @endif
-    <div class="container-fluid h-100">
+    <div class="container-fluid h-100" >
         <div class="row h-100">
             <div class="col-12 h-100">
                 <nav class="h-100 navbar navbar-expand-lg">

@@ -6,6 +6,7 @@ use DateTime;
 use App\Models\Room;
 use App\Models\Order;
 use App\Models\Package;
+use App\Models\Beverage;
 use App\Models\FoodOrder;
 use App\Models\StoreBranch;
 use Illuminate\Http\Request;
@@ -37,7 +38,7 @@ class OrderController extends Controller
     public function index()
     {
         $billingData = Order::getActiveBilling(date('Y-m-d H:i:s'));
-        $upcomingBilling = Order::upcomingBooking(date('Y-m-d H:i:s'));
+        $upcomingBilling = Order::upcomingBooking(date('Y-m-d H:i:s'), date('Y-m-d 23:59:59'));
 
         return view('/admin/page/billing/billingMainMenu', [
             'active' => ['billing', false, null],
@@ -132,6 +133,17 @@ class OrderController extends Controller
         ]);
     }
 
+    public function mybookingDetail(Request $request){
+        // dump($request->id);
+        return view('/frontend/page/booking/mybookingDetail', [
+            'active' => 'mybooking',
+            'bookDetail' => Order::getBillingDetail($request->id),
+            'foodList' => Beverage::all(),
+            'foodOrderList' => FoodOrder::getAllFoodOrder($request->id),
+            'js' => '/frontend/js/booking.js'
+        ]);
+    }  
+
     public function guestBooking(Request $request){
         $data = [
             'room_id' => $request->room_id,
@@ -185,6 +197,15 @@ class OrderController extends Controller
         Order::where('id', request()->id)->update([
             'status' => 'booked',
             'checkin' => date('Y-m-d H:i:s')
+        ]);
+
+        return redirect('/wanbo/mybooking');
+    }
+
+    public function checkoutBooking(){
+        Order::where('id', request()->id)->update([
+            'status' => 'done',
+            'checkout' => date('Y-m-d H:i:s')
         ]);
 
         return redirect('/wanbo/mybooking');
