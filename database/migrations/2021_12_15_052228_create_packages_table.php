@@ -17,7 +17,7 @@ class CreatePackagesTable extends Migration
             $table->id();
             $table->string('package_name', 64);
             $table->integer('price_per_hour');
-            $table->string('computer_spec')->nullable();
+            $table->longText('computer_spec')->nullable();
             $table->string('description');
             $table->string('photo_url')->nullable();
             $table->timestamps();

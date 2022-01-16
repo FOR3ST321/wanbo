@@ -51,47 +51,88 @@ class DatabaseSeeder extends Seeder
         User::factory(48)->create();
 
         Package::create([
-            'package_name' => 'Package1',
+            'package_name' => 'Hemat Package',
             'price_per_hour' => 5000,
-            'computer_spec' => 'Intel Core i5-1135G7 Processor - 8GB DDR4 2666 RAM - 250 GB M.2 NVMe Solid State Drive - 15.6″ Wide Screen Display - Microsoft Windows 10',
-            'description' => 'this is the package1',
+            'computer_spec' => 'Intel Core i5-12400f Processor<br>
+            8GB DDR4 2666MHz RAM<br>
+            Nvidia GTX 1050 GPU<br>
+            M.2 NVMe Solid State Drive Storage<br>
+            24" 75Hz Display<br>
+            Windows 10 Operating System',
+            'description' => 'This is the cheapest package we got!<br>
+            But being the cheapest package doesn\'t mean that the experience will also be cheap.<br>
+            You can do basic task in this package smoothly.',
             'photo_url' => 'https://media.gettyimages.com/photos/streaming-live-esport-event-on-computer-at-home-picture-id1190641416?k=20&m=1190641416&s=612x612&w=0&h=GDhOS17zD0Liylkf7j3Xhf7gl96J58id-LV3o5ah4ag='
         ]);
 
         Package::create([
-            'package_name' => 'Package2',
-            'price_per_hour' => 10000,
-            'computer_spec' => 'Intel Core i5-1135G7 Processor - 8GB DDR4 2666 RAM - 250 GB M.2 NVMe Solid State Drive - 15.6″ Wide Screen Display - Microsoft Windows 10',
-            'description' => 'this is the package2',
+            'package_name' => 'Learning Package',
+            'price_per_hour' => 8000,
+            'computer_spec' => 'Intel Core i5-12400f Processor<br>
+            8GB DDR4 2666MHz RAM<br>
+            Nvidia GTX 1050 GPU<br>
+            M.2 NVMe Solid State Drive Storage<br>
+            24" 75Hz Display<br>
+            Windows 10 Operating System',
+            'description' => 'This package is for you student out there!<br>
+            This package is enough for your basic learning.<br>
+            Webcam and Mic is included for online meeting.',
             'photo_url' => 'https://media.gettyimages.com/photos/classic-computer-classroom-picture-id1145371232?k=20&m=1145371232&s=612x612&w=0&h=pfcK32cfHzfuZNCokUdhiLbpijjQr4OwvXlpegEKV7g='
         ]);
 
         Package::create([
-            'package_name' => 'Package3',
-            'price_per_hour' => 12000,
-            'computer_spec' => 'Intel Core i5-1135G7 Processor - 8GB DDR4 2666 RAM - 250 GB M.2 NVMe Solid State Drive - 15.6″ Wide Screen Display - Microsoft Windows 10',
-            'description' => 'this is the package3',
+            'package_name' => 'Regular Package',
+            'price_per_hour' => 10000,
+            'computer_spec' => 'Intel Core i5-12400f Processor<br>
+            16GB DDR4 2666MHz RAM<br>
+            Nvidia RTX 2060 GPU<br>
+            M.2 NVMe Solid State Drive Storage<br>
+            24" 144Hz Display<br>
+            Windows 10 Operating System',
+            'description' => 'This package is for you who wants to do basic computing stuff and light gaming.<br>
+            It\'s worth the price for the performance that you can get from this package!',
             'photo_url' => 'https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs='
         ]);
         Package::create([
-            'package_name' => 'Package4',
-            'price_per_hour' => 12000,
-            'computer_spec' => 'Intel Core i5-1135G7 Processor - 8GB DDR4 2666 RAM - 250 GB M.2 NVMe Solid State Drive - 15.6″ Wide Screen Display - Microsoft Windows 10',
-            'description' => 'this is the package3',
+            'package_name' => 'Gaming Package',
+            'price_per_hour' => 15000,
+            'computer_spec' => 'AMD Ryzen 7 5800x Processor<br>
+            16GB DDR4 3200MHz RAM<br>
+            Nvidia RTX 3060 GPU<br>
+            M.2 NVMe Solid State Drive Storage<br>
+            27" 144Hz Display<br>
+            Windows 10 Operating System',
+            'description' => 'This package is for you gamers out there!<br>
+            Play demanding games with ease in this package!
+            Included with mic for better voice chat in online games!',
             'photo_url' => 'https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs='
         ]);
         Package::create([
-            'package_name' => 'Package5',
-            'price_per_hour' => 12000,
-            'computer_spec' => 'Intel Core i5-1135G7 Processor - 8GB DDR4 2666 RAM - 250 GB M.2 NVMe Solid State Drive - 15.6″ Wide Screen Display - Microsoft Windows 10',
-            'description' => 'this is the package3',
+            'package_name' => 'Gaming Pro Package',
+            'price_per_hour' => 25000,
+            'computer_spec' => 'AMD Ryzen 7 5800x Processor<br>
+            32GB DDR4 3600MHz RAM<br>
+            Nvidia RTX 3080 GPU<br>
+            M.2 NVMe Solid State Drive Storage<br>
+            27" 144Hz Display<br>
+            Windows 10 Operating System',
+            'description' => 'This package is for you hardcore gamers out there!<br>
+            Play AAA games with ease in this package!
+            Included with mic for better voice chat in online games!',
             'photo_url' => 'https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs='
         ]);
         Package::create([
-            'package_name' => 'Package6',
-            'price_per_hour' => 12000,
-            'computer_spec' => 'Intel Core i5-1135G7 Processor - 8GB DDR4 2666 RAM - 250 GB M.2 NVMe Solid State Drive - 15.6″ Wide Screen Display - Microsoft Windows 10',
-            'description' => 'this is the package3',
+            'package_name' => 'Sultan Package',
+            'price_per_hour' => 50000,
+            'computer_spec' => 'AMD Ryzen 9 5950x Processor<br>
+            64GB DDR4 3200MHz RAM<br>
+            Nvidia RTX 3090 GPU<br>
+            M.2 NVMe Solid State Drive Storage<br>
+            49" 240Hz Curved Gaming Monitor Display<br>
+            Windows 10 Operating System',
+            'description' => 'This package is for you who want the best hardware out there!<br>
+            Capable to do heavy task with ease!<br>
+            Included with camera and mic for streaming or other things!',
             'photo_url' => 'https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs='
         ]);
         
