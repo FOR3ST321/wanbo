@@ -61,7 +61,6 @@
 
 
             <div class="container-fluid">
-
                 @if ($emptyOrder)
                     <div class="container-fluid">
                         <h4 class="text-center text-danger">You didn't have any order data!</h4>
@@ -69,6 +68,16 @@
                 @endif
 
                 {{-- @dump($booking['ongoing']) --}}
+
+                @if (count($booking['ongoing']) == 0 && count($booking['upcoming']) == 0)
+                    <div class="container-fluid text-center">
+                        <hr>
+                        <h4>You don't have upcoming booking!</h4>
+
+                        <a href="/wanbo/reserve" class="btn dorne-btn" style="margin:30px 0px">Reserve Now!</a>
+                        <hr>
+                    </div>
+                @endif
 
                 @if (count($booking['ongoing']) != 0)
                     <div class="container-fluid">
@@ -125,7 +134,6 @@
                         <h5>Upcoming Booking :</h5>
 
 
-
                         @foreach ($booking['upcoming'] as $item)
                             @php
                                 $compareDate = date_format(date_create($item->schedule), 'Y-m-d H:i:s') <= date('Y-m-d H:i:s');
@@ -172,7 +180,8 @@
 
                                     </div>
                                     @if (!$compareDate)
-                                        <p class="text-danger">*You can only Checkin after {{date_format(date_create($item->schedule), 'Y-m-d H:i:s')}}</p>
+                                        <p class="text-danger">*You can only Checkin after
+                                            {{ date_format(date_create($item->schedule), 'Y-m-d H:i:s') }}</p>
                                     @endif
 
                                 </div>

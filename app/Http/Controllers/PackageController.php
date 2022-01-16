@@ -19,7 +19,7 @@ class PackageController extends Controller
     {
         return view('/admin/page/package/packageMainMenu', [
             'active' => ['packages', true, 'package-list'],
-            'packages' => Package::all(),
+            'packages' => Package::with('Room')->get(),
             'js' => '/admin/js/deleteConfirm.js'
         ]);
     }

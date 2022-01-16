@@ -9,16 +9,11 @@ use Illuminate\Http\Request;
 
 class BeverageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('/admin/page/foodList/foodListMainMenu', [
             'active' => ['beverage-list', true, null],
-            'beverages' => Beverage::all(),
+            'beverages' => Beverage::with('FoodOrder')->get(),
             'js' => '/admin/js/deleteConfirm.js'
         ]);
     }

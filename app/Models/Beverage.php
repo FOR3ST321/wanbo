@@ -17,4 +17,9 @@ class Beverage extends Model
         // ->select('beverages.*', 'food_orders.*')
         ->get();
     }
+
+    public function FoodOrder()
+    {
+        return $this->hasMany(FoodOrder::class);
+    }
 }

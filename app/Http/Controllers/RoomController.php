@@ -20,7 +20,7 @@ class RoomController extends Controller
     {
         return view('admin/page/room/roomMainMenu',[
             'active' => ['packages', true, 'room-list'],
-            'rooms' => Room::all(),
+            'rooms' => Room::with('order')->get(),
             'js' => '/admin/js/deleteConfirm.js'
         ]);
     }

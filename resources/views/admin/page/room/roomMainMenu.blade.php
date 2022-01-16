@@ -33,6 +33,7 @@
                     <a href="/wanboAdmin/rooms/create" class="btn btn-primary">+ Insert new room</a>
                 </div> <!-- /.card-body -->
                 <div class="card-body">
+                    <p class="text-danger">* You can't delete room data if it already has an order</p>
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
@@ -52,6 +53,12 @@
                                     <td>
                                         <a href="/wanboAdmin/rooms/{{ $room->id }}" class="btn bg-info"><i class="fas fa-eye"></i> Detail</a>
                                         <a href="/wanboAdmin/rooms/{{ $room->id }}/edit" class="btn bg-warning"><i class="fas fa-edit"></i> Edit</a>
+                                        
+                                        @if (count($room->order) > 0)
+                                            <button class="btn bg-danger border-0 formBtn" disabled>
+                                                <i class="fas fa-trash-alt"></i> Delete
+                                            </button>
+                                        @else
                                         <form action="/wanboAdmin/rooms/{{ $room->id }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
@@ -59,6 +66,7 @@
                                             <i class="fas fa-trash-alt"></i> Delete
                                         </button>
                                         </form>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

@@ -181,7 +181,7 @@ class OrderController extends Controller
         Order::create($data);
 
         // Alert::success('Success', 'Order data created successfully!');
-        return redirect('/wanbo/mybooking');
+        return redirect('/wanbo/mybooking')->with('success', 'New booking created successfully!');
     }
 
     public function cancelBooking(){
@@ -190,7 +190,7 @@ class OrderController extends Controller
             'status' => 'canceled',
         ]);
 
-        return redirect('/wanbo/mybooking');
+        return redirect('/wanbo/mybooking')->with('success', 'Your booking has been canceled.');
     }
 
     public function checkinBooking(){
@@ -199,7 +199,7 @@ class OrderController extends Controller
             'checkin' => date('Y-m-d H:i:s')
         ]);
 
-        return redirect('/wanbo/mybooking');
+        return redirect('/wanbo/mybooking')->with('success', 'Checkin Success!');
     }
 
     public function checkoutBooking(){
@@ -208,6 +208,6 @@ class OrderController extends Controller
             'checkout' => date('Y-m-d H:i:s')
         ]);
 
-        return redirect('/wanbo/mybooking');
+        return redirect('/wanbo/mybooking')->with('success', 'Checkout success!');
     }
 }

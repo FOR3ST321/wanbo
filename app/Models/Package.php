@@ -22,4 +22,9 @@ class Package extends Model
         ->where('id','=',$id)
         ->first();
     }
+
+    public function Room()
+    {
+        return $this->hasMany(Room::class);
+    }
 }

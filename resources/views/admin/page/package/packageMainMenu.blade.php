@@ -34,6 +34,7 @@
                          + Insert new package</a>
                 </div> <!-- /.card-body -->
                 <div class="card-body">
+                    <p class="text-danger">* You can't delete package data if it already has a room</p>
                     <table class="table table-striped table-md">
                         <thead>
                             <tr>
@@ -52,6 +53,11 @@
                                     <td>
                                         <a href="/wanboAdmin/packages/{{ $package->id }}" class="btn bg-info"><i class="fas fa-eye"></i> Detail</a>
                                         <a href="/wanboAdmin/packages/{{ $package->id }}/edit" class="btn bg-warning"><i class="fas fa-edit"></i> Edit</a>
+                                        @if (count($package->Room) > 0)
+                                            <button class="btn bg-danger border-0 formBtn" disabled>
+                                                <i class="fas fa-trash-alt"></i> Delete
+                                            </button>
+                                        @else
                                         <form action="/wanboAdmin/packages/{{ $package->id }}" method="POST" class="d-inline">
                                             @method('delete')
                                             @csrf
@@ -59,6 +65,7 @@
                                                 <i class="fas fa-trash-alt"></i> Delete
                                             </button>
                                         </form>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
