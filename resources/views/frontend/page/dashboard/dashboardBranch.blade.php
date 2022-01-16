@@ -102,7 +102,7 @@
                             <h6 style="color:white;text-align:center">Change Wanbo branch</h6>
                             <form action="/wanbo/dashboard/branch" method="post">
                                 @csrf
-                                <select class="custom-select" name="id">
+                                <select class="custom-select" name="id" style="width: 180px">
                                     <option selected value="1">Select Branch</option>
                                     @foreach ($branches as $branch)
                                         <option value="{{ $branch->id }}">{{ $branch->store_name }}</option>
