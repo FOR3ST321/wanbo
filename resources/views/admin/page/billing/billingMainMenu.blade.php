@@ -37,7 +37,7 @@
                             <tr>
                                 <th scope="col" style="width:4%">No</th>
                                 <th scope="col" style="width:10%">Room name</th>
-                                <th scope="col" style="width:7%">Type</th>
+                                <th scope="col" style="width:10%">Type</th>
                                 <th scope="col" style="width:18%">Status</th>
                                 <th scope="col" style="width:10%">Schedule</th>
                                 <th scope="col" style="width:10%">Total Time</th>

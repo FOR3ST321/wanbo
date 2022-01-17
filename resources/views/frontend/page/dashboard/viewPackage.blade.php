@@ -52,10 +52,11 @@
                                         style="color:#9f80e9">Price: </span> <br /> Rp.
                                     {{ $package->price_per_hour }}/hour</h4>
                                 <h4 style="color:white;text-align:center;margin-bottom:30px"><span
-                                        style="color:#9f80e9">Specification: </span> <br /> {{ $package->computer_spec }}
+                                        style="color:#9f80e9">Specification: </span> <br /> 
+                                        {!! $package->computer_spec !!}
                                 </h4>
                                 <h4 style="color:white;text-align:center;margin-bottom:30px"><span
-                                        style="color:#9f80e9">Description: </span> <br /> {{ $package->description }}</h4>
+                                        style="color:#9f80e9">Description: </span> <br /> {!! $package->description !!}</h4>
                                 <hr style="border: 2px solid white;margin-top:100px">
                                 <div class="container col-sm-12 col-xl-6">
                                     {{-- form otw pilih room --}}

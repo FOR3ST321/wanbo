@@ -110,6 +110,7 @@ $(".checkInBooking").on("click", function (e) {
         if (result.isConfirmed) {
             Swal.fire({
                 title: "Please Insert Unique code on the Computer...",
+                text:`UNIQUE CODE: ${$(this).data("uniquecode")}`,
                 icon: "info",
                 confirmButtonText: "Im done Check In",
             }).then((result) => {

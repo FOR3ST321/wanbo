@@ -157,7 +157,8 @@
                                                 @csrf
                                                 <button class="btn dorne-btn checkInBooking"
                                                     style="margin:10px;cursor: pointer;"
-                                                    data-roomname="{{ $item->room_name }}">
+                                                    data-roomname="{{ $item->room_name }}"
+                                                    data-uniquecode="{{ $item->unique_id}}">
                                                     Check in Now
                                                 </button>
                                             </form>

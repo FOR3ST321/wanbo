@@ -100,11 +100,13 @@
                             <div class="feature-content d-flex align-items-center justify-content-between"
                                 style="padding: 60px 20px 20px 20px">
                                 <div class="feature-title">
-                                    <h5>{{ $package->package_name }}</h5>
+                                    <h5>{{ $package->package_name }}</h5> <br>
                                     
                                     <p><strong>Rp {{ $package->price_per_hour }}/hour</strong> <br>
-                                        {{ $package->description }} 
-                                    <p>{{ $package->computer_spec }}</p>
+                                        {!! $package->description !!} <br> <br>
+                                        <strong>Computer Specification:</strong> <br>
+                                        {!! $package->computer_spec !!}
+                                    </p>
                                 </div>
                             </div>
                         </div>

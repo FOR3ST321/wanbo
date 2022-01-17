@@ -53,11 +53,11 @@
                             </tr>
                             <tr>
                                 <td>Computer Spec</td>
-                                <td>{{ $package->computer_spec }}</td>
+                                <td>{!! $package->computer_spec !!}</td>
                             </tr>
                             <tr>    
                                 <td>Desc</td>
-                                <td>{{ $package->description }}</td>
+                                <td>{!! $package->description !!}</td>
                             </tr>
                             <tr>
                                 <td>Associated Room</td>

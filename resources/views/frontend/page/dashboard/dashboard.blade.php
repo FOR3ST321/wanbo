@@ -244,11 +244,17 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-12">
-                    {{-- <div class="features-slides owl-carousel"> --}}
-                        <!-- Single Features Area -->
-                        <table class="table table-striped table-hover" style="color: white">
+            <div class="row d-flex justify-content-around">
+                    @foreach ($beverages as $beverage)
+                        <div class="card col-lg-2 col-md-4" style="margin:5px;">
+                            <h6 class="card-title text-center" style="margin-top:10px"> <u>{{$beverage->beverage_name}}</u></h6>
+                            <div style="margin-bottom: 10px">
+                                <span class="font-weight-bold">Rp: {{ $beverage->price }} </span> <br> 
+                                {!!$beverage->description!!}
+                            </div>
+                        </div>
+                    @endforeach
+                        {{-- <table class="table table-striped table-hover" style="color: white">
                             <thead>
                             <tr>
                             <th scope="col" style="width:5%">#</th>
@@ -265,7 +271,7 @@
                                     <td>{{ $beverage->beverage_name }}</td>
                                     <td>{{ ucwords($beverage->type) }}</td>
                                     <td>Rp. {{ $beverage->price }}</td>
-                                    <td>{{ ucwords($beverage->description) }}</td>
+                                     <td>{{ ucwords($beverage->description) }}</td>
                                 </tr>
                             @endforeach
                             @empty ($beverages[0]) 
@@ -274,9 +280,7 @@
                                 </tr>
                             @endempty
                         </tbody>
-                        </table>
-                    {{-- </div> --}}
-                </div>
+                        </table>--}}
             </div>
         </div>
     </section>

@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
+        /* Account and User Section */
         Account::create([
             'is_admin' => true,
             'username' => 'wanbo_admin',
@@ -34,6 +35,12 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password')
         ]);
 
+        Account::create([
+            'is_admin' => false,
+            'username' => 'faturrahman',
+            'password' => bcrypt('password')
+        ]);
+
         User::create([
             'name' => 'Guest',
             'email' => 'guest@gmail.com',
@@ -42,16 +49,25 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Wanbo',
-            'email' => 'wanbo@gmail.com',
+            'name' => 'Faisal Darmadi',
+            'email' => 'faisaldarmadi@gmail.com',
             'membership_type' => 'platinum',
             'account_id' => 2
         ]);
 
-        User::factory(48)->create();
+        User::create([
+            'name' => 'Syamsul faturrahman',
+            'email' => 'faturrahman@gmail.com',
+            'membership_type' => 'platinum',
+            'account_id' => 3
+        ]);
 
+        // User::factory(48)->create();
+
+
+        /* PACKAGE SECTION */
         Package::create([
-            'package_name' => 'Hemat Package',
+            'package_name' => 'Hemat',
             'price_per_hour' => 5000,
             'computer_spec' => 'Intel Core i5-12400f Processor<br>
             8GB DDR4 2666MHz RAM<br>
@@ -66,7 +82,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Package::create([
-            'package_name' => 'Learning Package',
+            'package_name' => 'Learning',
             'price_per_hour' => 8000,
             'computer_spec' => 'Intel Core i5-12400f Processor<br>
             8GB DDR4 2666MHz RAM<br>
@@ -81,7 +97,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Package::create([
-            'package_name' => 'Regular Package',
+            'package_name' => 'Regular',
             'price_per_hour' => 10000,
             'computer_spec' => 'Intel Core i5-12400f Processor<br>
             16GB DDR4 2666MHz RAM<br>
@@ -94,7 +110,7 @@ class DatabaseSeeder extends Seeder
             'photo_url' => 'https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs='
         ]);
         Package::create([
-            'package_name' => 'Gaming Package',
+            'package_name' => 'Gaming',
             'price_per_hour' => 15000,
             'computer_spec' => 'AMD Ryzen 7 5800x Processor<br>
             16GB DDR4 3200MHz RAM<br>
@@ -108,7 +124,7 @@ class DatabaseSeeder extends Seeder
             'photo_url' => 'https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs='
         ]);
         Package::create([
-            'package_name' => 'Gaming Pro Package',
+            'package_name' => 'Gaming Pro',
             'price_per_hour' => 25000,
             'computer_spec' => 'AMD Ryzen 7 5800x Processor<br>
             32GB DDR4 3600MHz RAM<br>
@@ -122,7 +138,7 @@ class DatabaseSeeder extends Seeder
             'photo_url' => 'https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs='
         ]);
         Package::create([
-            'package_name' => 'Sultan Package',
+            'package_name' => 'Sultan',
             'price_per_hour' => 50000,
             'computer_spec' => 'AMD Ryzen 9 5950x Processor<br>
             64GB DDR4 3200MHz RAM<br>
@@ -137,311 +153,298 @@ class DatabaseSeeder extends Seeder
         ]);
         
         StoreBranch::create([
-            'store_name' => 'Wanbo Branch',
+            'store_name' => 'Wanbo Sentul',
             'address' => 'Ikan Kakap Street, Number 9',
             'account_id' => 1
         ]);
 
-        Room::create([
-            'room_name' => 'Rose',
-            'description' => 'go straight, turn right, the farthest room on the left side',
-            'package_id' => mt_rand(1,6),
-            'store_branch_id' => 1
-        ]);
-        
-        Room::create([
-            'room_name' => 'Orchid',
-            'description' => 'go straight, turn right, the second room from the far end on the left side',
-            'package_id' => mt_rand(1,6),
-            'store_branch_id' => 1
-        ]);
-        
-        Room::create([
-            'room_name' => 'Daisy',
-            'description' => 'go straight, turn right, the third room from the far end on the left side',
-            'package_id' => mt_rand(1,6),
-            'store_branch_id' => 1
-        ]);
+        /* ROOM DATA */
 
-        Room::create([
-            'room_name' => 'Lily',
-            'description' => 'go straight, turn right, second room on the left',
-            'package_id' => mt_rand(1,6),
-            'store_branch_id' => 1
-        ]);
+        //package 1 - hemat
+        for($i=1;$i<=5;$i++){
+            Room::create([
+                'room_name' => 'HM'.$i,
+                'description' => 'Room no '.$i.' for Hemat Package',
+                'package_id' => 1,
+                'store_branch_id' => 1
+            ]);
+        }
 
-        Room::create([
-            'room_name' => 'Iris',
-            'description' => 'go straight, turn right, first room on the left',
-            'package_id' => mt_rand(1,6),
-            'store_branch_id' => 1
-        ]);
+        //package 2 - learning
+        for($i=1;$i<=5;$i++){
+            Room::create([
+                'room_name' => 'LN'.$i,
+                'description' => 'Room no '.$i.' for Leraning Package',
+                'package_id' => 2,
+                'store_branch_id' => 1
+            ]);
+        }
 
-        Room::create([
-            'room_name' => 'Tulip',
-            'description' => 'go straight, turn left, the farthest room on the right side',
-            'package_id' => mt_rand(1,6),
-            'store_branch_id' => 1
-        ]);
+        //package 3 - regular
+        for($i=1;$i<=5;$i++){
+            Room::create([
+                'room_name' => 'RG'.$i,
+                'description' => 'Room no '.$i.' for Regular Package',
+                'package_id' => 3,
+                'store_branch_id' => 1
+            ]);
+        }
 
-        Room::create([
-            'room_name' => 'Sunflower',
-            'description' => 'go straight, turn left, the second room from the far end on the right side',
-            'package_id' => mt_rand(1,6),
-            'store_branch_id' => 1
-        ]);
+        //package 4 - gaming
+        for($i=1;$i<=10;$i++){
+            Room::create([
+                'room_name' => 'G'.$i,
+                'description' => 'Room no '.$i.' for Gaming Package',
+                'package_id' => 4,
+                'store_branch_id' => 1
+            ]);
+        }
 
-        Room::create([
-            'room_name' => 'Camellia',
-            'description' => 'go straight, turn left, the third room from the far end on the right side',
-            'package_id' => mt_rand(1,6),
-            'store_branch_id' => 1
-        ]);
+        //package 5 - gaming pro
+        for($i=1;$i<=5;$i++){
+            Room::create([
+                'room_name' => 'GP'.$i,
+                'description' => 'Room no '.$i.' for Gaming Pro Package',
+                'package_id' => 5,
+                'store_branch_id' => 1
+            ]);
+        }
 
-        Room::create([
-            'room_name' => 'Lavender',
-            'description' => 'go straight, turn left, second room on the right',
-            'package_id' => mt_rand(1,6),
-            'store_branch_id' => 1
-        ]);
+        //package 6 - sultan
+        for($i=1;$i<=3;$i++){
+            Room::create([
+                'room_name' => 'SUL'.$i,
+                'description' => 'Room no '.$i.' for Sultan Package',
+                'package_id' => 6,
+                'store_branch_id' => 1
+            ]);
+        }
 
-        Room::create([
-            'room_name' => 'Jasmine',
-            'description' => 'go straight, turn left, first room on the right',
-            'package_id' => mt_rand(1,6),
-            'store_branch_id' => 1
-        ]);
-
+        /* Beverage Data */
         Beverage::create([
             'beverage_name' => 'Tubruk Hard Coffee',
             'type' => 'drink',
             'price' => 21000,
-            'description' => 'this is a tubruk hard coffee'
+            'description' => 'Traditional Tubruk coffee from Indonesia'
         ]);
         
         Beverage::create([
             'beverage_name' => 'Dark Choco Hot',
             'type' => 'drink',
             'price' => 18000,
-            'description' => 'this is a dark choco hot'
+            'description' => 'Hot chocolate plus milk, perfect for your gaming session.'
         ]);
 
         Beverage::create([
             'beverage_name' => 'Thai Tea',
             'type' => 'drink',
             'price' => 18000,
-            'description' => 'this is a thai tea'
+            'description' => 'Original thai tea wih pearl.'
         ]);
 
         Beverage::create([
             'beverage_name' => 'Bandrek',
             'type' => 'drink',
             'price' => 8500,
-            'description' => 'this is a bandrek'
+            'description' => 'Hot Bandrek with extra ginger.'
         ]);
 
         Beverage::create([
             'beverage_name' => 'Fried Rice',
             'type' => 'food',
             'price' => 25000,
-            'description' => 'this is a fried rice'
+            'description' => 'Fried rice with lot of topping, include chicken, sausage, beef and pete.'
         ]);
 
         Beverage::create([
             'beverage_name' => 'Grilled Rice',
             'type' => 'food',
             'price' => 28000,
-            'description' => 'this is a grilled rice'
+            'description' => 'Fish fillet coated with rice and banana leaf, and grilled.'
         ]);
 
         Beverage::create([
             'beverage_name' => 'Indomie All Variants',
             'type' => 'food',
             'price' => 5000,
-            'description' => 'these are indomie all variants'
+            'description' => 'Having warnet session without indomie?? Impossible!'
         ]);
 
         Beverage::create([
             'beverage_name' => 'Toast',
             'type' => 'snack',
             'price' => 12000,
-            'description' => 'this is a toast'
+            'description' => 'Toast with a lot of topping will make you satisfied.<br>*You can order toast with pineapple plus mayo here'
         ]);
 
         Beverage::create([
             'beverage_name' => 'Crispy Mushroom',
             'type' => 'snack',
-            'price' => 4000,
-            'description' => 'this is a crispy mushroom'
+            'price' => 5000,
+            'description' => 'Crispy Mushrooms Topped With cheese, nori, and garlic powder.'
         ]);
 
         Beverage::create([
-            'beverage_name' => 'Extra Cheese',
+            'beverage_name' => 'Cola 1.5L + Potato Chips',
             'type' => 'other',
-            'price' => 5000,
-            'description' => 'this is an extra cheese'
+            'price' => 25000,
+            'description' => 'You can be umaru-chan if you buy this package.'
+        ]);
+
+        Beverage::create([
+            'beverage_name' => 'Bat soup',
+            'type' => 'other',
+            'price' => 75000,
+            'description' => 'Special menu from [REDACTED] kitchen market!'
         ]);
 
         Order::create([
             'room_id'=>1,
             'user_id'=>1,
-            'status'=>'pending',
+            'status'=>'canceled',
             'unique_id' => null,
-            'total_price'=>15000,
+            'total_price'=>10000,
             'total_time'=>120,
             'schedule'=>'2022-01-06 11:15:00',
-            'checkin'=>'2022-01-06 00:00:00',
-            'checkout'=>'2022-01-06 00:00:00'
+            'checkin'=>null,
+            'checkout'=>null
         ]);
 
         Order::create([
             'room_id'=>2,
             'user_id'=>2,
-            'status'=>'canceled',
-            'unique_id' => null,
-            'total_price'=>5000,
-            'total_time'=>45,
-            'schedule'=>'2022-01-06 12:00:00',
-            'checkin'=>'2022-01-06 00:00:00',
-            'checkout'=>'2022-01-06 00:00:00'
-        ]);
-
-        Order::create([
-            'room_id'=>3,
-            'user_id'=>3,
-            'status'=>'failed',
-            'unique_id' => null,
-            'total_price'=>20000,
-            'total_time'=>150,
-            'schedule'=>'2022-01-06 12:20:00',
-            'checkin'=>'2022-01-06 00:00:00',
-            'checkout'=>'2022-01-06 00:00:00'
-        ]);
-
-        Order::create([
-            'room_id'=>4,
-            'user_id'=>4,
-            'status'=>'paid',
-            'unique_id' => 'HDT526',
-            'total_price'=>15000,
-            'total_time'=>150,
-            'schedule'=>'2022-01-06 12:25:00',
-            'checkin'=>'2022-01-06 00:00:00',
-            'checkout'=>'2022-01-06 00:00:00'
-        ]);
-
-        Order::create([
-            'room_id'=>5,
-            'user_id'=>5,
-            'status'=>'booked',
-            'unique_id' => 'JDT936',
-            'total_price'=>10000,
-            'total_time'=>120,
-            'schedule'=>'2022-01-06 12:40:00',
-            'checkin'=>'2022-01-06 12:50:00',
-            'checkout'=>'2022-01-06 00:00:00'
-        ]);
-
-        Order::create([
-            'room_id'=>6,
-            'user_id'=>7,
             'status'=>'done',
-            'unique_id' => 'PQT942',
-            'total_price'=>24000,
-            'total_time'=>100,
-            'schedule'=>'2022-01-06 13:05:00',
-            'checkin'=>'2022-01-06 13:10:00',
-            'checkout'=>'2022-01-06 15:08:33'
+            'unique_id' => null,
+            'total_price'=>15000,
+            'total_time'=>180,
+            'schedule'=>'2022-01-06 12:00:00',
+            'checkin'=>'2022-01-06 12:01:00',
+            'checkout'=>'2022-01-06 15:00:00'
         ]);
 
         Order::create([
             'room_id'=>7,
-            'user_id'=>8,
+            'user_id'=>1,
             'status'=>'done',
-            'unique_id' => 'BBH925',
-            'total_price'=>36000,
-            'total_time'=>90,
-            'schedule'=>'2022-01-06 13:20:00',
-            'checkin'=>'2022-01-06 13:20:59',
-            'checkout'=>'2022-01-06 16:03:21'
-        ]);
-
-        Order::create([
-            'room_id'=>8,
-            'user_id'=>9,
-            'status'=>'canceled',
             'unique_id' => null,
-            'total_price'=>5000,
-            'total_time'=>60,
-            'schedule'=>'2022-01-06 14:25:00',
-            'checkin'=>'2022-01-06 00:00:00',
-            'checkout'=>'2022-01-06 00:00:00'
+            'total_price'=>24000,
+            'total_time'=>180,
+            'schedule'=>'2022-01-06 17:00:00',
+            'checkin'=>'2022-01-06 17:00:35',
+            'checkout'=>'2022-01-06 20:00:00'
         ]);
 
         Order::create([
-            'room_id'=>9,
-            'user_id'=>10,
-            'status'=>'paid',
-            'unique_id' => 'OOI917',
+            'room_id'=>13,
+            'user_id'=>2,
+            'status'=>'done',
+            'unique_id' => null,
             'total_price'=>10000,
-            'total_time'=>120,
-            'schedule'=>'2022-01-06 15:30:00',
-            'checkin'=>'2022-01-06 00:00:00',
-            'checkout'=>'2022-01-06 00:00:00'
+            'total_time'=>60,
+            'schedule'=>'2022-01-14 10:00:00',
+            'checkin'=>'2022-01-14 10:00:01',
+            'checkout'=>'2022-01-14 10:59:00'
         ]);
 
         Order::create([
-            'room_id'=>10,
-            'user_id'=>11,
-            'status'=>'pending',
+            'room_id'=>24,
+            'user_id'=>1,
+            'status'=>'done',
             'unique_id' => null,
-            'total_price'=>30000,
-            'total_time'=>240,
-            'schedule'=>'2022-01-06 18:30:00',
-            'checkin'=>'2022-01-06 00:00:00',
-            'checkout'=>'2022-01-06 00:00:00'
+            'total_price'=>75000,
+            'total_time'=>300,
+            'schedule'=>'2022-01-16 10:00:00',
+            'checkin'=>'2022-01-16 10:00:01',
+            'checkout'=>'2022-01-16 14:59:00'
+        ]);
+
+        Order::create([
+            'room_id'=>31,
+            'user_id'=>1,
+            'status'=>'done',
+            'unique_id' => null,
+            'total_price'=>100000,
+            'total_time'=>120,
+            'schedule'=>'2022-01-16 20:00:00',
+            'checkin'=>'2022-01-16 20:00:00',
+            'checkout'=>'2022-01-16 21:59:45'
         ]);
 
         FoodOrder::create([
             'order_id'=>1,
             'beverage_id'=>2,
             'quantity'=>3,
-            'food_status'=>'pending'
-        ]);
-
-        FoodOrder::create([
-            'order_id'=>2,
-            'beverage_id'=>5,
-            'quantity'=>3,
-            'food_status'=>'pending'
+            'food_status'=>'success'
         ]);
 
         FoodOrder::create([
             'order_id'=>3,
-            'beverage_id'=>3,
+            'beverage_id'=>4,
+            'quantity'=>1,
+            'food_status'=>'success'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>3,
+            'beverage_id'=>5,
+            'quantity'=>2,
+            'food_status'=>'success'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>3,
+            'beverage_id'=>7,
             'quantity'=>3,
-            'food_status'=>'pending'
+            'food_status'=>'success'
         ]);
 
         FoodOrder::create([
             'order_id'=>4,
             'beverage_id'=>1,
-            'quantity'=>3,
-            'food_status'=>'pending'
+            'quantity'=>20,
+            'food_status'=>'canceled'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>4,
+            'beverage_id'=>8,
+            'quantity'=>2,
+            'food_status'=>'success'
         ]);
 
         FoodOrder::create([
             'order_id'=>5,
-            'beverage_id'=>9,
-            'quantity'=>3,
-            'food_status'=>'pending'
+            'beverage_id'=>3,
+            'quantity'=>1,
+            'food_status'=>'success'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>1,
+            'beverage_id'=>2,
+            'quantity'=>1,
+            'food_status'=>'success'
         ]);
 
         FoodOrder::create([
             'order_id'=>6,
-            'beverage_id'=>8,
-            'quantity'=>3,
-            'food_status'=>'pending'
+            'beverage_id'=>11,
+            'quantity'=>1,
+            'food_status'=>'success'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>3,
+            'beverage_id'=>10,
+            'quantity'=>1,
+            'food_status'=>'success'
+        ]);
+
+        FoodOrder::create([
+            'order_id'=>2,
+            'beverage_id'=>9,
+            'quantity'=>4,
+            'food_status'=>'canceled'
         ]);
     }
 }
