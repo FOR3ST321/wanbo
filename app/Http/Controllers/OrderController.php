@@ -199,7 +199,7 @@ class OrderController extends Controller
             'checkin' => date('Y-m-d H:i:s')
         ]);
 
-        return redirect('/wanbo/mybooking')->with('success', 'Checkin Success!');
+        return redirect('/wanbo/mybooking/'.request()->id)->with('success', 'Checkin Success!');
     }
 
     public function checkoutBooking(){

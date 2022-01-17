@@ -1,3 +1,9 @@
+$(".single-features-area").hover(function () {
+    $(this).css({
+        cursor:'pointer'
+    })
+});
+
 $(".single-features-area").click(function () {
     // console.log($(this).data('id'));
 

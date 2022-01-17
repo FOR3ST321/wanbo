@@ -19,11 +19,25 @@ class FrontEndController extends Controller
         return view('/frontend/welcome');
     }
 
-    public function dashboard(){
-        return view('/frontend/page/dashboard/dashboard',[
-            'beverages' => Beverage::all(),
-            'branches' => StoreBranch::all()
-        ]);
+    public function dashboard(Request $request){
+        $beverage = Beverage::all();
+        $branches = StoreBranch::all();
+
+        if($request->id == null){
+            return view('/frontend/page/dashboard/dashboard',[
+                'beverages' => $beverage,
+                'branches' => $branches
+            ]);
+        }
+        else{
+            return view('/frontend/page/dashboard/dashboardBranch',[
+                'beverages' => $beverage,
+                'store' => StoreBranch::getStoreById($request->id),
+                'branches' => $branches,
+                'branch_id' => $request->id,
+                'packages' => StoreBranch::getPackageInBranch($request->id)
+            ]);
+        }
     }
 
     public function package(Package $package){
@@ -34,16 +48,6 @@ class FrontEndController extends Controller
             // 'packages' => StoreBranch::getData()
             'package' => Package::getPackageById($package->id),
             'js' => '/frontend/js/booking.js'
-        ]);
-    }
-
-    public function dashboardBranch(Request $request){
-        return view('/frontend/page/dashboard/dashboardBranch',[
-            'beverages' => Beverage::all(),
-            'store' => StoreBranch::getStoreById($request->id),
-            'branches' => StoreBranch::all(),
-            'branch_id' => $request->id,
-            'packages' => StoreBranch::getPackageInBranch($request->id)
         ]);
     }
 
