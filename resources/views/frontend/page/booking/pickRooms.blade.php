@@ -106,9 +106,9 @@
 
                     <div class="container-fluid">
                         <h5>Select Payment:</h5>
-                        <input type="radio" name="payment" value="ovo" checked> OVO <br>
-                        <input type="radio" name="payment" value="gopay"> Gopay <br>
-                        <input type="radio" name="payment" value="dana"> Dana <br>
+                        <input type="radio" name="payment" value="ovo" checked> <img src="/frontend/img/clients-img/ovo.png" alt="" style="width: 80px;margin:15px 0 15px 30px"> <br>
+                        <input type="radio" name="payment" value="gopay"> <img src="/frontend/img/clients-img/gopay.png" alt="" style="width: 100px;margin-left:30px"> <br>
+                        <input type="radio" name="payment" value="dana"> <img src="/frontend/img/clients-img/dana.png" alt="" style="width: 150px"> <br>
                         <hr>
                     </div>
 
