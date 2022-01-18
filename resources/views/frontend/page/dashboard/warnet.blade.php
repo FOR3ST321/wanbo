@@ -31,7 +31,7 @@
                                     <td>{{ $branch->store_name }}</td>
                                     <td>{{ ucwords($branch->address) }}</td>
                                     <td>
-                                        <form action="/wanbo/dashboard/branch" method="POST" class="d-inline">
+                                        <form action="/wanbo/dashboard" method="get" class="d-inline">
                                             @csrf
                                             <button class="btn bg-primary border-0 formBtn" value="{{ $branch->id }}" name="id" style="cursor: pointer;color:white">
                                                 <i class="fa fa-search pr-2" aria-hidden="true"></i> Discover

@@ -110,7 +110,7 @@
                                         aria-hidden="true"></i> Discover</button>
                             </form>
                             <div style="width: 100%;text-align: center;margin-top:10px">
-                                <a href="/wanbo/dashboard/warnet">More Detail</a>
+                                <a href="/wanbo/warnet">More Detail</a>
                             </div>
                         </div>
                     </div>
