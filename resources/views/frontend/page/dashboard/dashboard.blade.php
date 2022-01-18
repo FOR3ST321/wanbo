@@ -135,9 +135,11 @@
             <div class="row d-flex justify-content-around">
                     @foreach ($beverages as $beverage)
                         <div class="card col-lg-2 col-md-4" style="margin:5px;">
-                            <h6 class="card-title text-center" style="margin-top:10px"> <u>{{$beverage->beverage_name}}</u></h6>
+                            <div style="height: 75px">
+                                <h5 class="card-title text-center" style="margin-top:20px;color:#7643EA;"> <strong>{{strtoupper($beverage->beverage_name)}}</strong></h5>
+                            </div>
                             <div style="margin-bottom: 10px">
-                                <span class="font-weight-bold">Rp: {{ $beverage->price }} </span> <br> 
+                                <span class="font-weight-bold">Rp {{ $beverage->price }} </span> <br> 
                                 {!!$beverage->description!!}
                             </div>
                         </div>
