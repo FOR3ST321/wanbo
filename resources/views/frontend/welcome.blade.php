@@ -202,7 +202,7 @@
                             <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
                                 <div class="feature-title" style="height: 90px">
                                     <h5>Hemat</h5>
-                                    <p>cheapest but not cheap</p>
+                                    <p>Cheapest but not cheap</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -219,7 +219,7 @@
                             <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
                                 <div class="feature-title" style="height: 90px">
                                     <h5>Learning</h5>
-                                    <p>suitable for online class</p>
+                                    <p>Suitable for online class</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -236,7 +236,7 @@
                             <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
                                 <div class="feature-title" style="height: 90px">
                                     <h5>Regular</h5>
-                                    <p>for basic computing and gaming</p>
+                                    <p>For basic computing and gaming</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -253,7 +253,7 @@
                             <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
                                 <div class="feature-title" style="height: 90px">
                                     <h5>Gaming</h5>
-                                    <p>nice spec for gaming</p>
+                                    <p>Nice spec for gaming</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -270,7 +270,7 @@
                             <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
                                 <div class="feature-title" style="height: 90px">
                                     <h5>Gaming Pro</h5>
-                                    <p>ofcourse better than gaming</p>
+                                    <p>Of course better than gaming</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
