@@ -58,7 +58,7 @@
                                 <h4 style="color:white;text-align:center;margin-bottom:30px"><span
                                         style="color:#9f80e9">Description: </span> <br /> {!! $package->description !!}</h4>
                                 <hr style="border: 2px solid white;margin-top:100px">
-                                <div class="container col-sm-12 col-xl-6">
+                                <div class="container col-8">
                                     {{-- form otw pilih room --}}
                                     <form action="/wanbo/order/rooms" method="get"
                                         class="d-flex flex-column justify-content-center">
