@@ -121,7 +121,7 @@
                                         aria-hidden="true"></i> Discover</button>
                             </form>
                             <div style="width: 100%;text-align: center;margin-top:5px">
-                                <a href="/wanbo/dashboard/warnet">More Detail</a>
+                                <a href="/wanbo/warnet">More Detail</a>
                             </div>
                         </div>
                     </div>
@@ -156,11 +156,11 @@
                                     <img src="{{ $package->photo_url }}" alt="" style="height: 125px">
                                     <!-- Price -->
                                     <div class="price-start">
-                                        <p style="top: 125px;left:0">Rp. {{ $package->price_per_hour }}/hour</p>
+                                        <p style="top: 125px;left:0">Rp {{ $package->price_per_hour }}/hour</p>
                                     </div>
                                     <div class="feature-content d-flex align-items-center justify-content-between"
                                         style="padding: 60px 20px 20px 20px">
-                                        <div class="feature-title">
+                                        <div class="feature-title" style="height: 250px">
                                             <h5 class="package-name" style="color:rgb(59, 59, 59)">
                                                 {{ $package->package_name }}</h5>
                                             <p> <br> {!! $package->description !!}</p>
@@ -198,13 +198,14 @@
             <div class="row d-flex justify-content-around">
                 @foreach ($beverages as $beverage)
                     <div class="card col-lg-2 col-md-4" style="margin:5px;">
-                        <h6 class="card-title text-center" style="margin-top:10px"> <u>{{ $beverage->beverage_name }}</u>
-                        </h6>
-                        <div style="margin-bottom: 10px">
-                            <span class="font-weight-bold">Rp: {{ $beverage->price }} </span> <br>
-                            {!! $beverage->description !!}
+                            <div style="height: 75px">
+                                <h5 class="card-title text-center" style="margin-top:20px;color:#7643EA;"> <strong>{{strtoupper($beverage->beverage_name)}}</strong></h5>
+                            </div>
+                            <div style="margin-bottom: 10px">
+                                <span class="font-weight-bold">Rp {{ $beverage->price }} </span> <br> 
+                                {!!$beverage->description!!}
+                            </div>
                         </div>
-                    </div>
                 @endforeach
             </div>
         </div>

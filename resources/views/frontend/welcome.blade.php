@@ -194,15 +194,15 @@
                     <div class="features-slides owl-carousel">
                         <!-- Single Features Area -->
                         <div class="single-features-area">
-                            <img src="https://media.gettyimages.com/photos/streaming-live-esport-event-on-computer-at-home-picture-id1190641416?k=20&m=1190641416&s=612x612&w=0&h=GDhOS17zD0Liylkf7j3Xhf7gl96J58id-LV3o5ah4ag=" alt="" style="height: 125px">
+                            <img src="http://localhost:8000/frontend/img/package-img/hemat.jpg" alt="" style="height: 125px">
                             <!-- Price -->
                             <div class="price-start">
-                                <p style="top: 125px;left:0">Rp. 5.000/hour</p>
+                                <p style="top: 125px;left:0">Rp 5.000/hour</p>
                             </div>
                             <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
-                                <div class="feature-title">
-                                    <h5>Package1</h5>
-                                    <p>Streaming</p>
+                                <div class="feature-title" style="height: 90px">
+                                    <h5>Hemat</h5>
+                                    <p>Cheapest but not cheap</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -211,15 +211,32 @@
                         </div>
                         <!-- Single Features Area -->
                         <div class="single-features-area">
-                            <img src="https://media.gettyimages.com/photos/classic-computer-classroom-picture-id1145371232?k=20&m=1145371232&s=612x612&w=0&h=pfcK32cfHzfuZNCokUdhiLbpijjQr4OwvXlpegEKV7g=" alt="" style="height: 125px">
+                            <img src="http://localhost:8000/frontend/img/package-img/learning.jpg" alt="" style="height: 125px">
+                            <!-- Price -->
+                            <div class="price-start">
+                                <p style="top: 125px;left:0">Rp 8.000/hour</p>
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
+                                <div class="feature-title" style="height: 90px">
+                                    <h5>Learning</h5>
+                                    <p>Suitable for online class</p>
+                                </div>
+                                <div class="feature-favourite">
+                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area">
+                            <img src="http://localhost:8000/frontend/img/package-img/regular.jpg" alt="" style="height: 125px">
                             <!-- Price -->
                             <div class="price-start">
                                 <p style="top: 125px;left:0">Rp. 10.000/hour</p>
                             </div>
                             <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
-                                <div class="feature-title">
-                                    <h5>Package2</h5>
-                                    <p>Classic</p>
+                                <div class="feature-title" style="height: 90px">
+                                    <h5>Regular</h5>
+                                    <p>For basic computing and gaming</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -228,15 +245,15 @@
                         </div>
                         <!-- Single Features Area -->
                         <div class="single-features-area">
-                            <img src="https://media.gettyimages.com/photos/gamer-room-picture-id1311350206?k=20&m=1311350206&s=612x612&w=0&h=RJM19owwEk8BcaemUSNB8pjjV4uNDuccjQ67sAaVLKs=" alt="" style="height: 125px">
+                            <img src="http://localhost:8000/frontend/img/package-img/gaming.jpg" alt="" style="height: 125px">
                             <!-- Price -->
                             <div class="price-start">
-                                <p style="top: 125px;left:0">Rp. 12.000/hour</p>
+                                <p style="top: 125px;left:0">Rp. 15.000/hour</p>
                             </div>
                             <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
-                                <div class="feature-title">
-                                    <h5>Package3</h5>
-                                    <p>Gaming</p>
+                                <div class="feature-title" style="height: 90px">
+                                    <h5>Gaming</h5>
+                                    <p>Nice spec for gaming</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -245,15 +262,15 @@
                         </div>
                         <!-- Single Features Area -->
                         <div class="single-features-area">
-                            <img src="https://media.gettyimages.com/photos/cozy-scandinavian-style-home-office-picture-id1043634192?k=20&m=1043634192&s=612x612&w=0&h=fHxeXZkN7gZqodcPbqTlsxQdOZ0gTtqNiJ7iuH1sd9c=" alt="" style="height: 125px">
+                            <img src="http://localhost:8000/frontend/img/package-img/gaming-pro.jpg" alt="" style="height: 125px">
                             <!-- Price -->
                             <div class="price-start">
-                                <p style="top: 125px;left:0">Rp. 20.000/hour</p>
+                                <p style="top: 125px;left:0">Rp. 25.000/hour</p>
                             </div>
                             <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
-                                <div class="feature-title">
-                                    <h5>Package4</h5>
-                                    <p>Private</p>
+                                <div class="feature-title" style="height: 90px">
+                                    <h5>Gaming Pro</h5>
+                                    <p>Of course better than gaming</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -262,15 +279,15 @@
                         </div>
                         <!-- Single Features Area -->
                         <div class="single-features-area">
-                            <img src="https://media.gettyimages.com/photos/interior-of-modern-office-picture-id973712582?k=20&m=973712582&s=612x612&w=0&h=WMIUDLloWdFetm6hJQ5ehlSC1-pMqGizfEsxcGKyAWw=" alt="" style="height: 125px">
+                            <img src="http://localhost:8000/frontend/img/package-img/sultan.jpg" alt="" style="height: 125px">
                             <!-- Price -->
                             <div class="price-start">
                                 <p style="top: 125px;left:0">Rp. 50.000/hour</p>
                             </div>
                             <div class="feature-content d-flex align-items-center justify-content-between" style="padding: 60px 20px 20px 20px">
-                                <div class="feature-title">
-                                    <h5>Package5</h5>
-                                    <p>Collaboration</p>
+                                <div class="feature-title" style="height: 90px">
+                                    <h5>Sultan</h5>
+                                    <p>best of the best!</p>
                                 </div>
                                 <div class="feature-favourite">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
